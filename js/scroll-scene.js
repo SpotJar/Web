@@ -1,5 +1,5 @@
 /*
- * SpotJar — scroll-driven hero scene and the floating jar.
+ * SpotJar: scroll-driven hero scene and the floating jar.
  *
  * The whole visible state is a pure function of the current scroll position:
  * progress `p` through the pinned scene, which step is active, and whether the
@@ -114,8 +114,8 @@
       jar.style.setProperty('--level', s.level);
       jar.classList.toggle('is-in', s.level > 0);
       jarLabel.textContent = s.level > 0
-        ? s.level + ' / ' + LEVELS.length + ' — ' + LEVELS[s.level - 1]
-        : 'Incoming…';
+        ? s.level + ' / ' + LEVELS.length + ': ' + LEVELS[s.level - 1]
+        : 'Incoming...';
     }
   }
 

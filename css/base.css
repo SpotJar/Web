@@ -1,9 +1,9 @@
 /* ==========================================================================
-   SpotJar — shared base: fonts, tokens, reset, typography, shared components
+   SpotJar shared base: fonts, tokens, reset, typography, shared components
    ========================================================================== */
 
 /* Fonts are self-hosted (Latin subset, variable weight axis). No request ever
-   goes to Google Fonts — the privacy policy says so, keep it true. */
+   goes to Google Fonts. The privacy policy says so, so keep it true. */
 @font-face {
   font-family: "Fredoka";
   src: url("../fonts/fredoka-latin.woff2") format("woff2");

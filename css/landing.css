@@ -1,5 +1,5 @@
 /* ==========================================================================
-   SpotJar — landing page
+   SpotJar landing page
    States of the scene are classes on #how, set by js/scroll-scene.js:
      s-empty  search field still empty        s-sheet  share sheet is up
      s-found  pin dropped, place card shown   s-pick   SpotJar icon tapped

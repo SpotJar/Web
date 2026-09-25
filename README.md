@@ -32,7 +32,7 @@ from nothing else:
 | 0–0.20 | `s-empty` until the first letter; `--chars` on `.typed` types the name | Find it in Maps |
 | 0.20–0.40 | `s-found`: pin drops, place card slides in | Found a spot worth keeping? |
 | 0.40–0.50 | `s-press`: Share button pressed | Tap Share |
-| 0.50–0.84 | `s-sheet`: share sheet up; from 0.64 also `s-pick` | Tap Share → Pick SpotJar |
+| 0.50–0.84 | `s-sheet`: share sheet up; from 0.64 also `s-pick` | Tap Share, then pick SpotJar |
 | 0.84–1 | `s-saved`: toast "In your jar" | It's in your jar |
 
 The floating `.jar` shows from `p ≥ 0.40`, fills to level 1 at `p ≥ 0.84`, then one level per
