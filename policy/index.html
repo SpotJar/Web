@@ -50,6 +50,8 @@
       <a href="https://spotjar.app/">spotjar.app</a>. SpotJar has no accounts and no server of
       its own. Your spots, notes and trips stay on your device. This policy explains the few
       cases in which the app or website contacts another service and why that happens.
+      A short summary is also in the app itself: in Settings, tap the info button next to
+      the privacy note.
     </p>
 
     <nav class="toc" aria-labelledby="toc-title">
@@ -240,10 +242,10 @@
           coordinates), and the app's identifier and API key.</li>
       </ul>
       <p>
-        <strong>Short links.</strong> Links like <code>maps.app.goo.gl/...</code> contain no place
-        until they are opened. To find out which place such a link stands for, the app asks the
-        link's server (Google) where it leads, on both iOS and Android. Google receives the link
-        itself.
+        <strong>Short links.</strong> Links like <code>maps.app.goo.gl/...</code> or
+        <code>maps.apple/p/...</code> contain no place until they are opened. To find out which
+        place such a link stands for, the app asks the link's own server (Google or Apple) where
+        it leads, on both iOS and Android. That provider receives the link itself.
       </p>
 
       <h3>Your location</h3>
@@ -303,7 +305,7 @@
     <section id="crash">
       <h2>11. Crash reports and diagnostics</h2>
       <p>
-        To find and fix errors, the app sends crash and error reports to Sentry, a service of
+        To find and fix errors, the app can send crash and error reports to Sentry, a service of
         Functional Software, Inc., 45 Fremont Street, 8th Floor, San Francisco, CA 94105, USA.
         SpotJar's Sentry project is set up in Sentry's EU region.
         <!-- TODO: confirm the EU data region (org "monkeyttack" is configured for de.sentry.io). -->
@@ -322,16 +324,17 @@
         By default, the app does not send personal information or screenshots, and performance
         tracing is disabled. Reports are not linked to you because SpotJar has no user accounts.
       </p>
-      <!-- TODO: once the in-app switch has shipped, replace the first sentence of the next
-           paragraph with:
-           "You can turn crash reports off at any time in the app under Settings, then <name of the
-           switch>; from then on, the app sends nothing to Sentry. You can also object (Art. 21
-           GDPR) by writing to the address in section 1."
-           Only claim "IP addresses are not stored" once "Prevent Storing of IP Addresses" is on
+      <!-- Only claim "IP addresses are not stored" once "Prevent Storing of IP Addresses" is on
            in the Sentry project settings. -->
       <p>
-        You can object to crash reporting at any time (Art. 21 GDPR) by writing to the address in
-        section 1. See also
+        Crash reports are switched on by default. You can turn them off at any time in the app
+        under Settings, then <strong>Send error reports</strong>. From then on, the app sends
+        nothing to Sentry, including reports that were still waiting to be sent, and Sentry is not
+        even started the next time you open the app. You can turn them back on the same way.
+      </p>
+      <p>
+        You can also object to crash reporting at any time (Art. 21 GDPR) by writing to the
+        address in section 1. See also
         <a href="https://sentry.io/privacy/">Sentry's privacy policy</a>.
       </p>
     </section>
@@ -376,8 +379,8 @@
             </tr>
             <tr>
               <td>Apple</td>
-              <td>Map display and place search (iOS)</td>
-              <td>IP address, map area, search text, search area</td>
+              <td>Map display and place search on iOS, plus resolving short Apple Maps links</td>
+              <td>IP address, map area, search text, search area and the short link</td>
               <td>EU / USA</td>
             </tr>
             <tr>
@@ -472,7 +475,7 @@
 
   <footer class="site-footer">
     <div class="container">
-      <p>Copyright 2026 SpotJar</p>
+      <p>© 2026 SpotJar</p>
       <ul>
         <li><a href="../">Home</a></li>
         <li><a href="../imprint/">Imprint</a></li>

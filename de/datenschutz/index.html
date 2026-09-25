@@ -47,7 +47,8 @@
       Website <a href="https://spotjar.app/de/">spotjar.app</a>. SpotJar hat keine Benutzerkonten
       und keinen eigenen Server. Deine Orte, Notizen und Reisen bleiben auf deinem Gerät. Nur in
       wenigen Fällen kontaktiert die App oder Website einen anderen Dienst. Diese Fälle werden
-      hier beschrieben.
+      hier beschrieben. Eine kurze Zusammenfassung findest du auch direkt in der App: In den
+      Einstellungen auf den Info-Button neben dem Datenschutzhinweis tippen.
     </p>
 
     <nav class="toc" aria-labelledby="toc-title">
@@ -196,9 +197,10 @@
         <li><strong>Android:</strong> über die Google Places API. Google erhält den Suchtext oder die Ortskennung, falls bekannt den Suchbereich, außerdem die App-Kennung und den API-Schlüssel.</li>
       </ul>
       <p>
-        <strong>Kurzlinks.</strong> Links wie <code>maps.app.goo.gl/...</code> enthalten zunächst
-        keinen erkennbaren Ort. Um das Ziel zu bestimmen, fragt die App auf iOS und Android den
-        Server des Links, also Google, wohin er führt. Google erhält dabei den Link selbst.
+        <strong>Kurzlinks.</strong> Links wie <code>maps.app.goo.gl/...</code> oder
+        <code>maps.apple/p/...</code> enthalten zunächst keinen erkennbaren Ort. Um das Ziel zu
+        bestimmen, fragt die App auf iOS und Android den Server des Links, also Google oder
+        Apple, wohin er führt. Der jeweilige Anbieter erhält dabei den Link selbst.
       </p>
       <h3>Dein Standort</h3>
       <p>
@@ -248,8 +250,8 @@
     <section id="crash">
       <h2>11. Fehlerberichte und Diagnose</h2>
       <p>
-        Um Fehler zu finden und zu beheben, sendet die App Absturz- und Fehlerberichte an Sentry,
-        einen Dienst der Functional Software, Inc., 45 Fremont Street, 8th Floor, San Francisco,
+        Um Fehler zu finden und zu beheben, kann die App Absturz- und Fehlerberichte an Sentry senden.
+        Sentry ist ein Dienst der Functional Software, Inc., 45 Fremont Street, 8th Floor, San Francisco,
         CA 94105, USA. Das Sentry-Projekt von SpotJar verwendet die EU-Region von Sentry.
       </p>
       <p>Jeder Bericht enthält folgende Angaben:</p>
@@ -265,7 +267,14 @@
         mit dir verknüpft.
       </p>
       <p>
-        Du kannst der Übermittlung von Fehlerberichten jederzeit nach Art. 21 DSGVO über die
+        Fehlerberichte sind standardmäßig eingeschaltet. Du kannst sie jederzeit in der App unter
+        Einstellungen, <strong>Fehlerberichte senden</strong>, ausschalten. Ab dann sendet die App
+        nichts mehr an Sentry, auch keine Berichte, die noch auf den Versand gewartet haben, und
+        Sentry wird beim nächsten App-Start gar nicht erst gestartet. Auf demselben Weg kannst du
+        sie wieder einschalten.
+      </p>
+      <p>
+        Außerdem kannst du der Übermittlung von Fehlerberichten jederzeit nach Art. 21 DSGVO über die
         Adresse in Abschnitt 1 widersprechen. Weitere Informationen enthält die
         <a href="https://sentry.io/privacy/">Datenschutzerklärung von Sentry</a>.
       </p>
@@ -293,7 +302,7 @@
           <thead><tr><th scope="col">Empfänger</th><th scope="col">Zweck</th><th scope="col">Daten</th><th scope="col">Ort</th></tr></thead>
           <tbody>
             <tr><td>GitHub, Inc.</td><td>Website-Hosting</td><td>IP-Adresse, Anfrageprotokolle</td><td>USA</td></tr>
-            <tr><td>Apple</td><td>Kartenanzeige und Ortssuche unter iOS</td><td>IP-Adresse, Kartenausschnitt, Suchtext, Suchbereich</td><td>EU / USA</td></tr>
+            <tr><td>Apple</td><td>Kartenanzeige und Ortssuche unter iOS, Auflösen kurzer Apple-Karten-Links</td><td>IP-Adresse, Kartenausschnitt, Suchtext, Suchbereich und Kurzlink</td><td>EU / USA</td></tr>
             <tr><td>Google</td><td>Kartenanzeige und Ortssuche unter Android, Auflösen kurzer Kartenlinks</td><td>IP-Adresse, Kartenausschnitt, Suchtext, Suchbereich, App-Kennung und Kurzlink</td><td>EU / USA</td></tr>
             <tr><td>Wikimedia Foundation, Inc.</td><td>Foto eines gespeicherten Ortes</td><td>IP-Adresse, Koordinaten des Ortes, Name und Version der App</td><td>USA</td></tr>
             <tr><td>Functional Software, Inc. (Sentry)</td><td>Fehlerberichte</td><td>Fehlerdetails, technische Protokolle, Geräte- und App-Metadaten, IP-Adresse</td><td>EU, Anbieter in den USA</td></tr>
@@ -358,6 +367,6 @@
     </section>
   </main>
 
-  <footer class="site-footer"><div class="container"><p>Copyright 2026 SpotJar</p><ul><li><a href="../">Startseite</a></li><li><a href="../impressum/">Impressum</a></li></ul></div></footer>
+  <footer class="site-footer"><div class="container"><p>© 2026 SpotJar</p><ul><li><a href="../">Startseite</a></li><li><a href="../impressum/">Impressum</a></li></ul></div></footer>
 </body>
 </html>
