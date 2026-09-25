@@ -1,12 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://spotjar.app/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://spotjar.app/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://spotjar.app/de/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://spotjar.app/" />
   </url>
   <url>
     <loc>https://spotjar.app/policy/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://spotjar.app/policy/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://spotjar.app/de/datenschutz/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://spotjar.app/policy/" />
   </url>
   <url>
     <loc>https://spotjar.app/imprint/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://spotjar.app/imprint/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://spotjar.app/de/impressum/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://spotjar.app/imprint/" />
+  </url>
+  <url>
+    <loc>https://spotjar.app/de/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://spotjar.app/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://spotjar.app/de/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://spotjar.app/" />
+  </url>
+  <url>
+    <loc>https://spotjar.app/de/datenschutz/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://spotjar.app/policy/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://spotjar.app/de/datenschutz/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://spotjar.app/policy/" />
+  </url>
+  <url>
+    <loc>https://spotjar.app/de/impressum/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://spotjar.app/imprint/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://spotjar.app/de/impressum/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://spotjar.app/imprint/" />
   </url>
 </urlset>

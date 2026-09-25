@@ -197,6 +197,40 @@ a:hover {
   gap: 8px;
 }
 
+.site-header__actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.language-switch {
+  display: inline-flex;
+  padding: 3px;
+  border: 1px solid rgba(245, 237, 225, 0.16);
+  border-radius: var(--radius-pill);
+}
+
+.language-switch a {
+  min-width: 34px;
+  padding: 4px 8px;
+  border-radius: var(--radius-pill);
+  color: var(--text-muted);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  line-height: 1.5;
+  text-align: center;
+  text-decoration: none;
+}
+
+.language-switch a:hover {
+  color: var(--cream);
+}
+
+.language-switch a[aria-current="page"] {
+  background: var(--cream);
+  color: var(--bg);
+}
+
 /* --- Buttons & pills ----------------------------------------------------- */
 
 .pill {
@@ -288,5 +322,27 @@ a:hover {
     transition-delay: 0s !important;
     animation-duration: 0s !important;
     animation-iteration-count: 1 !important;
+  }
+}
+
+@media (max-width: 560px) {
+  .site-header .container {
+    gap: 8px;
+  }
+
+  .site-header__actions {
+    gap: 6px;
+  }
+
+  .site-header__nav .pill {
+    display: none;
+  }
+
+  .site-header__actions > .pill {
+    display: none;
+  }
+
+  .site-header .pill {
+    padding-inline: 12px;
   }
 }

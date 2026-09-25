@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="de" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SpotJar | Deine Orte. Deine nächste Reise.</title>
+  <meta name="description" content="Speichere Orte aus Google Maps oder Apple Karten in SpotJar, ergänze Notizen und Kategorien, plane deine Reise und öffne die fertige Route wieder in Maps.">
+  <link rel="canonical" href="https://spotjar.app/de/">
+  <link rel="alternate" hreflang="en" href="https://spotjar.app/">
+  <link rel="alternate" hreflang="de" href="https://spotjar.app/de/">
+  <link rel="alternate" hreflang="x-default" href="https://spotjar.app/">
+  <meta name="theme-color" content="#211C19">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="SpotJar">
+  <meta property="og:title" content="SpotJar | Deine Orte. Deine nächste Reise.">
+  <meta property="og:description" content="Speichere einen Ort aus Maps, organisiere ihn in SpotJar und öffne die fertige Route, wenn es losgeht.">
+  <meta property="og:url" content="https://spotjar.app/de/">
+  <meta property="og:image" content="https://spotjar.app/img/icon-512.png">
+
+  <link rel="icon" href="../favicon.ico" sizes="any">
+  <link rel="icon" href="../img/favicon-64.png" type="image/png">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="preload" href="../fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../fonts/fredoka-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/landing.css">
+  <script>document.documentElement.classList.replace('no-js', 'js');</script>
+  <script src="../js/scroll-scene.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Zum Inhalt springen</a>
+
+  <header class="site-header">
+    <div class="container">
+      <a class="site-header__logo" href="./" aria-label="SpotJar Startseite">
+        <img src="../img/logo.png" alt="SpotJar" width="1040" height="303">
+      </a>
+      <div class="site-header__actions">
+        <nav class="site-header__nav" aria-label="Hauptnavigation">
+          <a class="pill" href="#how">So funktioniert es</a>
+        </nav>
+        <nav class="language-switch" aria-label="Sprache">
+          <a href="../" lang="en" hreflang="en">EN</a>
+          <a href="./" lang="de" hreflang="de" aria-current="page">DE</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="container hero__inner">
+        <h1 class="hero__logo">
+          <img src="../img/logo.png" alt="SpotJar: Deine Orte. Deine nächste Reise." width="1040" height="303" fetchpriority="high">
+        </h1>
+        <p class="hero__lead">
+          Speichere einen Ort in Google Maps oder Apple Karten. SpotJar hält Notiz, Kategorie und
+          Reiseplan zusammen, bis du die Route wieder in Maps öffnen möchtest.
+        </p>
+        <a class="btn" href="#how">
+          So funktioniert es
+          <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+        </a>
+      </div>
+    </section>
+
+    <section class="scene" id="how" aria-labelledby="how-title">
+      <div class="scene__sticky">
+        <div class="container scene__grid">
+          <div class="scene__stage">
+            <div class="phone" aria-hidden="true">
+              <div class="phone__screen">
+                <div class="map">
+                  <span class="map__park"></span>
+                  <span class="map__water"></span>
+                  <span class="map__road"></span>
+                  <span class="map__road map__road--minor"></span>
+                  <span class="map__block" style="--x:8%;--y:30%;--w:22%;--h:9%"></span>
+                  <span class="map__block" style="--x:12%;--y:43%;--w:16%;--h:12%"></span>
+                  <span class="map__block" style="--x:66%;--y:24%;--w:24%;--h:10%"></span>
+                  <span class="map__block" style="--x:70%;--y:38%;--w:18%;--h:8%"></span>
+                  <span class="map__block" style="--x:62%;--y:58%;--w:28%;--h:7%"></span>
+                  <span class="map__block" style="--x:6%;--y:62%;--w:20%;--h:8%"></span>
+                </div>
+                <div class="statusbar"><span>9:41</span><span class="statusbar__battery"></span></div>
+                <div class="search">
+                  <svg class="search__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+                  <span class="typed"><span style="--i:1">C</span><span style="--i:2">a</span><span style="--i:3">f</span><span style="--i:4">é</span><span style="--i:5"> </span><span style="--i:6">A</span><span style="--i:7">l</span><span style="--i:8">t</span><span style="--i:9">e</span><span style="--i:10"> </span><span style="--i:11">M</span><span style="--i:12">ü</span><span style="--i:13">h</span><span style="--i:14">l</span><span style="--i:15">e</span></span><span class="caret"></span>
+                  <span class="search__placeholder">Orte suchen</span>
+                </div>
+                <div class="pin"><span class="pin__head"></span><span class="pin__shadow"></span></div>
+                <div class="card">
+                  <div class="card__title">Café Alte Mühle</div>
+                  <div class="card__meta">Café · <span class="card__star">★</span> 4.7 · 12 Min. Fahrt</div>
+                  <div class="card__actions">
+                    <span class="chip chip--primary"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 4.5 20.3l.7.7L12 18l6.8 3 .7-.7z"/></svg>Route</span>
+                    <span class="chip chip--share"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15V3M7 8l5-5 5 5"/><path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7"/></svg>Teilen<span class="ripple"></span></span>
+                  </div>
+                </div>
+                <div class="dim"></div>
+                <div class="sheet">
+                  <span class="sheet__grabber"></span>
+                  <div class="sheet__link"><span class="sheet__thumb"></span><span><span class="sheet__name">Café Alte Mühle</span><span class="sheet__url">Maps-Link</span></span></div>
+                  <div class="sheet__apps">
+                    <span class="app"><span class="app__icon app__icon--msg"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 4C7 4 3 7.1 3 11c0 2.1 1.2 4 3 5.3V20l3.4-2.3c.8.2 1.7.3 2.6.3 5 0 9-3.1 9-7s-4-7-9-7z"/></svg></span><span class="app__label">Nachrichten</span></span>
+                    <span class="app app--spotjar"><span class="app__icon app__icon--jar"><img src="../img/jar-icon.png" alt="" width="240" height="371" loading="lazy"><span class="ripple"></span></span><span class="app__label">SpotJar</span></span>
+                    <span class="app"><span class="app__icon app__icon--notes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M7 8h10M7 12h10M7 16h6"/></svg></span><span class="app__label">Notizen</span></span>
+                    <span class="app"><span class="app__icon app__icon--mail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="m4 7 8 6 8-6"/></svg></span><span class="app__label">Mail</span></span>
+                  </div>
+                  <div class="sheet__row">Link kopieren<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg></div>
+                </div>
+                <div class="toast"><img src="../img/jar-icon.png" alt="" width="240" height="371" loading="lazy"><span><span class="toast__title">In deinem Jar</span><span class="toast__sub">Café Alte Mühle · gespeichert</span></span></div>
+              </div>
+            </div>
+
+            <div class="captions">
+              <h2 class="kicker" id="how-title">So funktioniert es</h2>
+              <div class="captions__stack">
+                <div class="cap" data-cap="0"><h3>Finde den Ort in Google Maps oder Apple Karten</h3><p>Nutze Maps einfach so wie immer.</p><p class="cap__hint" aria-hidden="true">Weiter scrollen <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg></p></div>
+                <div class="cap" data-cap="1"><h3>Du möchtest dir den Ort merken?</h3><p>Vielleicht ist es ein Café von Freunden, ein Bergpass für den nächsten Sommer oder ein See für Sonntag.</p></div>
+                <div class="cap" data-cap="2"><h3>Tippe auf Teilen</h3><p>Du musst Maps dafür nicht verlassen.</p></div>
+                <div class="cap" data-cap="3"><h3>Wähle SpotJar</h3><p>SpotJar erscheint zusammen mit deinen anderen Apps im Teilen-Menü.</p></div>
+                <div class="cap" data-cap="4"><h3>Der Ort ist gespeichert</h3><p>Name, Adresse und Standort werden automatisch übernommen. Alles Weitere kannst du später ergänzen.</p></div>
+              </div>
+              <ol class="dots" aria-hidden="true"><li></li><li></li><li></li><li></li><li></li></ol>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sj-steps" aria-labelledby="steps-title">
+      <div class="container sj-steps__grid">
+        <h2 class="visually-hidden" id="steps-title">Wie es weitergeht</h2>
+        <article class="sj-step">
+          <h3>SpotJar legt den Ort an</h3>
+          <p>Aus dem geteilten Link wird automatisch ein gespeicherter Ort. Du kannst auch einen Link einfügen, nach einem Namen suchen oder den Ort von Hand anlegen.</p>
+          <div class="shots"><div class="shot shot--todo" role="img" aria-label="Ansicht Neuer Ort mit den Optionen Link, Suche und Manuell"><img src="../img/jar-icon.png" alt="" width="240" height="371" loading="lazy"><span>Neuer Ort</span></div></div>
+        </article>
+        <article class="sj-step">
+          <h3>Ergänze, was dir wichtig ist</h3>
+          <p>Notiere, warum dir der Ort aufgefallen ist, und wähle eine Kategorie wie Aussicht, Essen oder Wanderung. Eine Reise musst du noch nicht planen.</p>
+          <div class="shots"><picture><source srcset="../img/app-spot-list.webp" type="image/webp"><img class="shot" src="../img/app-spot-list.jpg" width="560" height="1218" loading="lazy" decoding="async" alt="SpotJar-Liste Deine Orte mit Filtern und nach Ländern gruppierten Orten."></picture></div>
+        </article>
+        <article class="sj-step">
+          <h3>Sieh alles auf der Karte</h3>
+          <p>Jeder Ort erscheint als Pin. Die Farbe zeigt, ob er offen, erlebt, ein Muss oder ein Favorit ist. Außerdem siehst du, welche Länder du schon besucht hast.</p>
+          <div class="shots shots--pair"><div class="shot shot--todo" role="img" aria-label="Karte mit farbigen Pins und Legende"><img src="../img/jar-icon.png" alt="" width="240" height="371" loading="lazy"><span>Pins nach Status</span></div><div class="shot shot--todo" role="img" aria-label="Karte mit bereits besuchten Ländern"><img src="../img/jar-icon.png" alt="" width="240" height="371" loading="lazy"><span>Besuchte Länder</span></div></div>
+        </article>
+        <article class="sj-step">
+          <h3>Plane deine Reise nach und nach</h3>
+          <p>Füge den Ort einer Reise hinzu, sammle weitere Ziele und verteile sie auf die Tage. Unterwegs markierst du jeden besuchten Ort als erlebt.</p>
+          <div class="shots"><picture><source srcset="../img/app-trip-days.webp" type="image/webp"><img class="shot" src="../img/app-trip-days.jpg" width="560" height="1218" loading="lazy" decoding="async" alt="SpotJar-Reise Nepal mit zehn Tagen und sieben Orten, nach Tagen geordnet."></picture></div>
+        </article>
+        <article class="sj-step">
+          <h3>Öffne die Route in Maps</h3>
+          <p>Mit einem Tipp wird die ganze Reise als sortierte Route an Google Maps oder Apple Karten übergeben.</p>
+          <div class="shots"><picture><source srcset="../img/app-trip-route.webp" type="image/webp"><img class="shot" src="../img/app-trip-route.jpg" width="560" height="1218" loading="lazy" decoding="async" alt="Kartenansicht einer Reise mit nummerierten Pins, Routenlinien und der Schaltfläche Route öffnen."></picture></div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <div class="jar" aria-hidden="true" style="--level:0" data-levels="Geteilt|Gesammelt|Ergänzt|Auf der Karte|In einer Reise|Unterwegs" data-incoming="Eingang..."><span class="jar__lid"></span><span class="jar__body"><span class="jar__fill"></span></span><span class="jar__pin"></span><span class="jar__label">Eingang...</span></div>
+  <footer class="site-footer"><div class="container"><img src="../img/logo.png" alt="SpotJar" width="1040" height="303" loading="lazy"><p>© 2026 SpotJar</p><ul><li><a href="./datenschutz/">Datenschutz</a></li><li><a href="./impressum/">Impressum</a></li></ul></div></footer>
+</body>
+</html>

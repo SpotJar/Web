@@ -10,6 +10,9 @@ requests to other domains at runtime.
 index.html            Landing page
 policy/index.html     Privacy policy
 imprint/index.html    Imprint (Impressum)
+de/index.html         German landing page
+de/datenschutz/       German privacy policy
+de/impressum/         German imprint
 css/base.css          Fonts, design tokens, reset, header/footer/buttons (shared)
 css/landing.css       Landing page only: hero, pinned scene, floating jar, steps
 css/policy.css        Policy page only
@@ -75,3 +78,7 @@ Pages, and turn on **Enforce HTTPS** (the policy says the site is only served ov
 
 All paths are relative, so the site also works under `user.github.io/repo/`. Only `canonical`,
 `og:url`, `og:image`, `robots.txt` and `sitemap.xml` name the domain.
+
+English pages live at the root and German pages under `de/`. Each page links to its translation
+through the language switcher and matching `hreflang` metadata. Keep both versions in sync when
+changing user-facing text.

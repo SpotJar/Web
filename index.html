@@ -6,6 +6,9 @@
   <title>SpotJar | Your spots. Your next trip.</title>
   <meta name="description" content="Save places from Google Maps or Apple Maps into SpotJar, add a note and a category, plan them into a trip, and send the whole route back to Maps to navigate.">
   <link rel="canonical" href="https://spotjar.app/">
+  <link rel="alternate" hreflang="en" href="https://spotjar.app/">
+  <link rel="alternate" hreflang="de" href="https://spotjar.app/de/">
+  <link rel="alternate" hreflang="x-default" href="https://spotjar.app/">
   <meta name="theme-color" content="#211C19">
 
   <meta property="og:type" content="website">
@@ -37,9 +40,15 @@
       <a class="site-header__logo" href="./" aria-label="SpotJar home">
         <img src="./img/logo.png" alt="SpotJar" width="1040" height="303">
       </a>
-      <nav class="site-header__nav" aria-label="Main">
-        <a class="pill" href="#how">How it works</a>
-      </nav>
+      <div class="site-header__actions">
+        <nav class="site-header__nav" aria-label="Main navigation">
+          <a class="pill" href="#how">How it works</a>
+        </nav>
+        <nav class="language-switch" aria-label="Language">
+          <a href="./" lang="en" hreflang="en" aria-current="page">EN</a>
+          <a href="./de/" lang="de" hreflang="de">DE</a>
+        </nav>
+      </div>
     </div>
   </header>
 

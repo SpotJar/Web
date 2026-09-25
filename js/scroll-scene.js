@@ -25,7 +25,10 @@
 
   var TEXT_LENGTH = typed ? typed.children.length : 0;
   var QUANT = 200;
-  var LEVELS = ['Shared', 'Collected', 'Detailed', 'On the map', 'In a trip', 'On the road'];
+  var LEVELS = jar && jar.dataset.levels
+    ? jar.dataset.levels.split('|')
+    : ['Shared', 'Collected', 'Detailed', 'On the map', 'In a trip', 'On the road'];
+  var INCOMING = jar && jar.dataset.incoming ? jar.dataset.incoming : 'Incoming...';
 
   // Phase boundaries in p.
   var FOUND = 0.2;
@@ -115,7 +118,7 @@
       jar.classList.toggle('is-in', s.level > 0);
       jarLabel.textContent = s.level > 0
         ? s.level + ' / ' + LEVELS.length + ': ' + LEVELS[s.level - 1]
-        : 'Incoming...';
+        : INCOMING;
     }
   }
 
