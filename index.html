@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SpotJar — Your spots. Your next trip.</title>
+  <meta name="description" content="Save places from Google Maps or Apple Maps into SpotJar, add a note and a category, plan them into a trip — and send the whole route back to Maps to navigate.">
+  <link rel="canonical" href="https://spotjar.app/">
+  <meta name="theme-color" content="#211C19">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="SpotJar">
+  <meta property="og:title" content="SpotJar — Your spots. Your next trip.">
+  <meta property="og:description" content="From a pin in Maps to a trip of its own — and back to Maps to navigate.">
+  <meta property="og:url" content="https://spotjar.app/">
+  <meta property="og:image" content="https://spotjar.app/img/icon-512.png">
+
+  <link rel="icon" href="./favicon.ico" sizes="any">
+  <link rel="icon" href="./img/favicon-64.png" type="image/png">
+  <link rel="apple-touch-icon" href="./apple-touch-icon.png">
+
+  <link rel="preload" href="./fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./fonts/fredoka-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="./css/base.css">
+  <link rel="stylesheet" href="./css/landing.css">
+
+  <!-- Flip to the scroll-driven layout only when JS runs. Without it the page
+       is a plain long read: every caption visible, nothing pinned. -->
+  <script>document.documentElement.classList.replace('no-js', 'js');</script>
+  <script src="./js/scroll-scene.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container">
+      <a class="site-header__logo" href="./" aria-label="SpotJar home">
+        <img src="./img/logo.png" alt="SpotJar" width="1040" height="303">
+      </a>
+      <nav class="site-header__nav" aria-label="Main">
+        <a class="pill" href="#how">How it works</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ============================== Hero ============================== -->
+    <section class="hero">
+      <div class="container hero__inner">
+        <h1 class="hero__logo">
+          <img src="./img/logo.png" alt="SpotJar — Your spots. Your next trip." width="1040" height="303" fetchpriority="high">
+        </h1>
+        <p class="hero__lead">
+          It starts in Google Maps or Apple Maps, and it ends up back there too.
+          In between, SpotJar is where the spot gets a note, a category, and a trip of its own.
+        </p>
+        <a class="btn" href="#how">
+          See a spot become a trip
+          <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- ========================= Pinned scene =========================== -->
+    <section class="scene" id="how" aria-labelledby="how-title">
+      <div class="scene__sticky">
+        <div class="container scene__grid">
+          <div class="scene__stage">
+
+            <!-- Decoration only: an abstract, neutral map app. Not a copy of
+                 Google Maps or Apple Maps — no logos, no map tiles. -->
+            <div class="phone" aria-hidden="true">
+              <div class="phone__screen">
+                <div class="map">
+                  <span class="map__park"></span>
+                  <span class="map__water"></span>
+                  <span class="map__road"></span>
+                  <span class="map__road map__road--minor"></span>
+                  <span class="map__block" style="--x:8%;--y:30%;--w:22%;--h:9%"></span>
+                  <span class="map__block" style="--x:12%;--y:43%;--w:16%;--h:12%"></span>
+                  <span class="map__block" style="--x:66%;--y:24%;--w:24%;--h:10%"></span>
+                  <span class="map__block" style="--x:70%;--y:38%;--w:18%;--h:8%"></span>
+                  <span class="map__block" style="--x:62%;--y:58%;--w:28%;--h:7%"></span>
+                  <span class="map__block" style="--x:6%;--y:62%;--w:20%;--h:8%"></span>
+                </div>
+
+                <div class="statusbar">
+                  <span>9:41</span>
+                  <span class="statusbar__battery"></span>
+                </div>
+
+                <div class="search">
+                  <svg class="search__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+                  <span class="typed"><span style="--i:1">C</span><span style="--i:2">a</span><span style="--i:3">f</span><span style="--i:4">é</span><span style="--i:5"> </span><span style="--i:6">A</span><span style="--i:7">l</span><span style="--i:8">t</span><span style="--i:9">e</span><span style="--i:10"> </span><span style="--i:11">M</span><span style="--i:12">ü</span><span style="--i:13">h</span><span style="--i:14">l</span><span style="--i:15">e</span></span><span class="caret"></span>
+                  <span class="search__placeholder">Search places</span>
+                </div>
+
+                <div class="pin">
+                  <span class="pin__head"></span>
+                  <span class="pin__shadow"></span>
+                </div>
+
+                <div class="card">
+                  <div class="card__title">Café Alte Mühle</div>
+                  <div class="card__meta">Café · <span class="card__star">★</span> 4.7 · 12 min drive</div>
+                  <div class="card__actions">
+                    <span class="chip chip--primary">
+                      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 4.5 20.3l.7.7L12 18l6.8 3 .7-.7z"/></svg>
+                      Directions
+                    </span>
+                    <span class="chip chip--share">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15V3M7 8l5-5 5 5"/><path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7"/></svg>
+                      Share
+                      <span class="ripple"></span>
+                    </span>
+                  </div>
+                </div>
+
+                <div class="dim"></div>
+
+                <div class="sheet">
+                  <span class="sheet__grabber"></span>
+                  <div class="sheet__link">
+                    <span class="sheet__thumb"></span>
+                    <span>
+                      <span class="sheet__name">Café Alte Mühle</span>
+                      <span class="sheet__url">maps link</span>
+                    </span>
+                  </div>
+                  <div class="sheet__apps">
+                    <span class="app">
+                      <span class="app__icon app__icon--msg"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 4C7 4 3 7.1 3 11c0 2.1 1.2 4 3 5.3V20l3.4-2.3c.8.2 1.7.3 2.6.3 5 0 9-3.1 9-7s-4-7-9-7z"/></svg></span>
+                      <span class="app__label">Messages</span>
+                    </span>
+                    <span class="app app--spotjar">
+                      <span class="app__icon app__icon--jar"><img src="./img/jar-icon.png" alt="" width="240" height="371" loading="lazy"><span class="ripple"></span></span>
+                      <span class="app__label">SpotJar</span>
+                    </span>
+                    <span class="app">
+                      <span class="app__icon app__icon--notes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M7 8h10M7 12h10M7 16h6"/></svg></span>
+                      <span class="app__label">Notes</span>
+                    </span>
+                    <span class="app">
+                      <span class="app__icon app__icon--mail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="m4 7 8 6 8-6"/></svg></span>
+                      <span class="app__label">Mail</span>
+                    </span>
+                  </div>
+                  <div class="sheet__row">
+                    Copy link
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg>
+                  </div>
+                </div>
+
+                <div class="toast">
+                  <img src="./img/jar-icon.png" alt="" width="240" height="371" loading="lazy">
+                  <span>
+                    <span class="toast__title">In your jar</span>
+                    <span class="toast__sub">Café Alte Mühle · saved</span>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div class="captions">
+              <h2 class="kicker" id="how-title">How it works</h2>
+              <div class="captions__stack">
+                <div class="cap" data-cap="0">
+                  <h3>Find it in Google Maps or Apple Maps</h3>
+                  <p>Search the way you always do. No new habit to learn.</p>
+                  <p class="cap__hint" aria-hidden="true">Keep scrolling
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+                  </p>
+                </div>
+                <div class="cap" data-cap="1">
+                  <h3>Found a spot worth keeping?</h3>
+                  <p>A café a friend posted, a pass road for next summer, a lake for Sunday.</p>
+                </div>
+                <div class="cap" data-cap="2">
+                  <h3>Tap Share</h3>
+                  <p>Right there in Maps. The moment you do, your jar is ready for it.</p>
+                </div>
+                <div class="cap" data-cap="3">
+                  <h3>Pick SpotJar</h3>
+                  <p>From the share sheet, the same way you’d send a link to a friend.</p>
+                </div>
+                <div class="cap" data-cap="4">
+                  <h3>It’s in your jar</h3>
+                  <p>Name, address and location come along automatically. Here’s what happens next.</p>
+                </div>
+              </div>
+              <ol class="dots" aria-hidden="true">
+                <li></li><li></li><li></li><li></li><li></li>
+              </ol>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================= The five steps ========================= -->
+    <section class="sj-steps" aria-labelledby="steps-title">
+      <div class="container sj-steps__grid">
+        <h2 class="visually-hidden" id="steps-title">What happens next</h2>
+
+        <article class="sj-step">
+          <h3>SpotJar takes it from there</h3>
+          <p>The shared link turns into a spot on its own. Prefer another way in? Paste a link, search by name, or add one by hand.</p>
+          <div class="shots">
+            <!-- TODO: raw in-app screenshot "New spot" (link / search / manual) as
+                 img/app-new-spot.webp + .jpg, 560×1212 — then swap this placeholder
+                 for a <picture> like the ones in step 4 and 5. -->
+            <div class="shot shot--todo" role="img" aria-label="Screenshot: the New spot screen with the options Link, Search and Manual">
+              <img src="./img/jar-icon.png" alt="" width="240" height="371" loading="lazy">
+              <span>New spot</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="sj-step">
+          <h3>Add a note, pick a category</h3>
+          <p>Write down why it caught your eye, tag what it is — a view, food, a hike — and collect it. No trip needed yet.</p>
+          <div class="shots">
+            <!-- TODO: once there is a raw screenshot of "Create spot" with note + categories
+                 (img/app-spot-details.webp + .jpg), it fits this step better than the list. -->
+            <picture>
+              <source srcset="./img/app-spot-list.webp" type="image/webp">
+              <img class="shot" src="./img/app-spot-list.jpg" width="560" height="1218" loading="lazy" decoding="async"
+                   alt="SpotJar’s “Your spots” list: 2 of 10 spots experienced, filters for All, Viewpoint and Town, and spots grouped by country — United States, France, Nepal, India and more.">
+            </picture>
+          </div>
+        </article>
+
+        <article class="sj-step">
+          <h3>It shows up on your map</h3>
+          <p>Every spot is a pin, color-coded by open, experienced, must-see and favorite — plus the countries you’ve already been to.</p>
+          <div class="shots shots--pair">
+            <!-- TODO: raw in-app screenshots img/app-map-pins.(webp|jpg) and
+                 img/app-map-countries.(webp|jpg) -->
+            <div class="shot shot--todo" role="img" aria-label="Screenshot: map with color-coded pins and a legend">
+              <img src="./img/jar-icon.png" alt="" width="240" height="371" loading="lazy">
+              <span>Pins by status</span>
+            </div>
+            <div class="shot shot--todo" role="img" aria-label="Screenshot: map highlighting the countries already visited">
+              <img src="./img/jar-icon.png" alt="" width="240" height="371" loading="lazy">
+              <span>Countries visited</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="sj-step">
+          <h3>Add it to a trip, keep building</h3>
+          <p>Drop the spot into a trip, add more as you find them, arrange them by day. Once you’re there, check each one off as seen.</p>
+          <div class="shots">
+            <picture>
+              <source srcset="./img/app-trip-days.webp" type="image/webp">
+              <img class="shot" src="./img/app-trip-days.jpg" width="560" height="1218" loading="lazy" decoding="async"
+                   alt="SpotJar trip “Nepal”, 10 days and 7 spots. Day 1 lists Kathmandu, Swayambhunath and Durbar Square in order, with buttons to add a spot and open the route.">
+            </picture>
+          </div>
+        </article>
+
+        <article class="sj-step">
+          <h3>Send it back to Maps, and navigate</h3>
+          <p>One tap turns the whole trip into an ordered route in Google Maps or Apple Maps — ready to navigate, the way you’re used to.</p>
+          <div class="shots">
+            <picture>
+              <source srcset="./img/app-trip-route.webp" type="image/webp">
+              <img class="shot" src="./img/app-trip-route.jpg" width="560" height="1218" loading="lazy" decoding="async"
+                   alt="The trip’s map tab: numbered pins around Kathmandu joined by route lines, with an “Open route” button at the bottom.">
+            </picture>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- The jar that fills up as the story goes on. Decoration: the steps above
+       carry the same information as text. -->
+  <div class="jar" aria-hidden="true" style="--level:0">
+    <span class="jar__lid"></span>
+    <span class="jar__body"><span class="jar__fill"></span></span>
+    <span class="jar__pin"></span>
+    <span class="jar__label">Incoming…</span>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <img src="./img/logo.png" alt="SpotJar" width="1040" height="303" loading="lazy">
+      <p>© 2026 SpotJar</p>
+      <ul>
+        <li><a href="./policy/">Privacy Policy</a></li>
+        <li><a href="./imprint/">Imprint</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,987 @@
+/* ==========================================================================
+   SpotJar — landing page
+   States of the scene are classes on #how, set by js/scroll-scene.js:
+     s-empty  search field still empty        s-sheet  share sheet is up
+     s-found  pin dropped, place card shown   s-pick   SpotJar icon tapped
+     s-press  Share button pressed            s-saved  toast "In your jar"
+   Everything that is *hidden* before its phase is scoped to `.js`, so without
+   JavaScript the phone shows a sensible finished frame instead of nothing.
+   ========================================================================== */
+
+:root {
+  --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --t: 0.5s var(--ease);
+  --left-col: 270px;
+}
+
+/* --- Hero ---------------------------------------------------------------- */
+
+.hero {
+  padding: clamp(56px, 10vh, 112px) 0 clamp(72px, 12vh, 128px);
+  text-align: center;
+}
+
+.hero__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero__logo img {
+  width: min(520px, 86vw);
+}
+
+.hero__lead {
+  max-width: 600px;
+  margin: 36px 0 36px;
+  font-size: clamp(1.0625rem, 1.6vw, 1.25rem);
+  line-height: 1.65;
+}
+
+/* --- Scene layout -------------------------------------------------------- */
+
+.scene {
+  position: relative;
+  scroll-margin-top: var(--header-h);
+}
+
+.js .scene {
+  height: 420vh;
+}
+
+.js .scene__sticky {
+  position: sticky;
+  top: var(--header-h);
+  height: calc(100vh - var(--header-h));
+  display: flex;
+  align-items: center;
+}
+
+@supports (height: 100svh) {
+  .js .scene__sticky {
+    height: calc(100svh - var(--header-h));
+  }
+}
+
+.scene__grid {
+  display: grid;
+  grid-template-columns: var(--left-col) 1fr;
+}
+
+/* The left column stays empty: that is where the jar floats. */
+.scene__stage {
+  grid-column: 2;
+  display: flex;
+  align-items: center;
+  gap: clamp(32px, 6vw, 88px);
+}
+
+.captions {
+  flex: 1;
+  max-width: 440px;
+}
+
+.kicker {
+  margin-bottom: 18px;
+  color: var(--teal);
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.cap h3 {
+  font-size: clamp(1.75rem, 3vw, 2.625rem);
+  margin-bottom: 14px;
+}
+
+.cap p {
+  font-size: 1.125rem;
+}
+
+.cap__hint {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 22px;
+  color: var(--text-muted);
+  font-size: 0.875rem !important;
+}
+
+/* Without JS: all captions one below the other. */
+.captions__stack {
+  display: grid;
+  gap: 40px;
+}
+
+.no-js .cap__hint,
+.no-js .dots {
+  display: none;
+}
+
+/* With JS: stacked in one cell, one visible at a time. */
+.js .captions__stack {
+  gap: 0;
+}
+
+.js .cap {
+  grid-area: 1 / 1;
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity var(--t), transform var(--t);
+}
+
+.js .cap.is-active {
+  opacity: 1;
+  transform: none;
+}
+
+.dots {
+  display: flex;
+  gap: 8px;
+  margin: 32px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.dots li {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(245, 237, 225, 0.18);
+  transition: width var(--t), background-color var(--t);
+}
+
+.dots li.is-active {
+  width: 24px;
+  background: var(--orange);
+}
+
+/* --- Phone --------------------------------------------------------------- */
+
+.phone {
+  position: relative;
+  flex-shrink: 0;
+  height: min(640px, calc(100vh - 150px));
+  aspect-ratio: 9 / 19.5;
+  border: 8px solid #3a322c;
+  border-radius: 40px;
+  background: #3a322c;
+  box-shadow: var(--shadow), 0 0 0 1px rgba(245, 237, 225, 0.06);
+  /* Everything inside is sized in cqw, i.e. relative to the screen width. */
+  container-type: inline-size;
+}
+
+.no-js .phone {
+  height: min(640px, 80vh);
+}
+
+.phone__screen {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: 32px;
+  font-size: 4.6cqw;
+  line-height: 1.3;
+  color: var(--cream);
+  background: #262b28;
+}
+
+.phone svg {
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+/* Map: an abstract grid, a few blocks, one diagonal road. */
+.map {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(rgba(245, 237, 225, 0.035) 1px, transparent 1px) 0 0 / 12cqw 12cqw,
+    linear-gradient(90deg, rgba(245, 237, 225, 0.035) 1px, transparent 1px) 0 0 / 12cqw 12cqw,
+    #262b28;
+}
+
+.map__block {
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  width: var(--w);
+  height: var(--h);
+  border-radius: 1.6cqw;
+  background: rgba(245, 237, 225, 0.055);
+}
+
+.map__road {
+  position: absolute;
+  left: 34%;
+  top: -20%;
+  width: 16cqw;
+  height: 140%;
+  transform: rotate(24deg);
+  background:
+    linear-gradient(90deg, transparent calc(50% - 0.4cqw), rgba(245, 237, 225, 0.22) 0, rgba(245, 237, 225, 0.22) calc(50% + 0.4cqw), transparent 0) 0 0 / 100% 7cqw,
+    rgba(245, 237, 225, 0.1);
+}
+
+.map__road--minor {
+  left: -10%;
+  top: 50%;
+  width: 130%;
+  height: 7cqw;
+  transform: rotate(-8deg);
+  background: rgba(245, 237, 225, 0.07);
+}
+
+.map__park {
+  position: absolute;
+  right: -10%;
+  top: 70%;
+  width: 60%;
+  height: 22%;
+  border-radius: 40% 30% 0 50%;
+  background: rgba(63, 179, 157, 0.14);
+}
+
+.map__water {
+  position: absolute;
+  left: -12%;
+  top: 76%;
+  width: 46%;
+  height: 30%;
+  border-radius: 50%;
+  background: rgba(70, 110, 140, 0.18);
+}
+
+/* Status bar + search */
+.statusbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3.6cqw 7cqw 0;
+  font-size: 0.78em;
+  font-weight: 600;
+}
+
+.statusbar__battery {
+  width: 6cqw;
+  height: 2.8cqw;
+  border-radius: 1cqw;
+  border: 0.5cqw solid rgba(245, 237, 225, 0.7);
+  background: linear-gradient(90deg, rgba(245, 237, 225, 0.7) 70%, transparent 0) content-box;
+  padding: 0.4cqw;
+}
+
+.search {
+  position: absolute;
+  top: 12cqw;
+  left: 5cqw;
+  right: 5cqw;
+  display: flex;
+  align-items: center;
+  height: 12cqw;
+  padding: 0 4.5cqw;
+  border-radius: 999px;
+  background: rgba(46, 40, 35, 0.96);
+  box-shadow: 0 2cqw 5cqw -2cqw rgba(0, 0, 0, 0.6);
+  white-space: nowrap;
+}
+
+.search__icon {
+  width: 4.6cqw;
+  height: 4.6cqw;
+  margin-right: 2.6cqw;
+  color: rgba(245, 237, 225, 0.55);
+}
+
+.typed {
+  --chars: 99;
+  display: inline-flex;
+  font-weight: 500;
+}
+
+/* One span per character; JS sets --chars, a character shows once it is typed.
+   Hidden characters collapse to zero width so the caret follows the text. */
+.typed > span {
+  display: inline-block;
+  overflow: hidden;
+  white-space: pre;
+  max-width: clamp(0em, calc((var(--chars) - var(--i) + 1) * 1em), 1em);
+}
+
+.caret {
+  width: 0.5cqw;
+  min-width: 2px;
+  height: 1.15em;
+  margin-left: 0.3cqw;
+  border-radius: 1px;
+  background: var(--orange);
+  animation: caret-blink 1s steps(1) infinite;
+  transition: opacity 0.2s;
+}
+
+.s-found .caret,
+.no-js .caret {
+  opacity: 0;
+  animation: none;
+}
+
+.search__placeholder {
+  position: absolute;
+  left: 11.7cqw;
+  color: rgba(245, 237, 225, 0.4);
+  opacity: 0;
+}
+
+.s-empty .search__placeholder {
+  opacity: 1;
+}
+
+@keyframes caret-blink {
+  50% { opacity: 0; }
+}
+
+/* Pin */
+.pin {
+  position: absolute;
+  left: 50%;
+  top: 47%;
+  width: 11cqw;
+  height: 11cqw;
+  transform: translate(-50%, -100%);
+  transition: transform 0.6s cubic-bezier(0.3, 1.45, 0.5, 1), opacity 0.3s;
+}
+
+.pin__head {
+  position: absolute;
+  inset: 0;
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg);
+  background: var(--orange);
+  box-shadow: 0 1cqw 3cqw rgba(0, 0, 0, 0.45);
+}
+
+.pin__head::after {
+  content: "";
+  position: absolute;
+  inset: 30%;
+  border-radius: 50%;
+  background: var(--cream);
+}
+
+.pin__shadow {
+  position: absolute;
+  left: 50%;
+  bottom: -2.4cqw;
+  width: 6cqw;
+  height: 1.8cqw;
+  margin-left: -3cqw;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.js .scene:not(.s-found) .pin {
+  opacity: 0;
+  transform: translate(-50%, -320%);
+}
+
+/* Place card */
+.card {
+  position: absolute;
+  left: 4cqw;
+  right: 4cqw;
+  bottom: 4cqw;
+  padding: 5cqw;
+  border-radius: 6cqw;
+  background: var(--surface);
+  box-shadow: 0 -2cqw 8cqw -3cqw rgba(0, 0, 0, 0.6);
+  transition: transform var(--t);
+}
+
+.js .scene:not(.s-found) .card {
+  transform: translateY(125%);
+}
+
+.card__title {
+  font-family: var(--font-head);
+  font-size: 1.3em;
+  font-weight: 600;
+}
+
+.card__meta {
+  margin-top: 0.8cqw;
+  color: rgba(245, 237, 225, 0.6);
+  font-size: 0.82em;
+}
+
+.card__star {
+  color: #f0b84a;
+}
+
+.card__actions {
+  display: flex;
+  gap: 2.6cqw;
+  margin-top: 4.4cqw;
+}
+
+.chip {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 1.6cqw;
+  padding: 2.4cqw 4cqw;
+  border-radius: 999px;
+  font-size: 0.82em;
+  font-weight: 600;
+  transition: background-color var(--t), color var(--t), box-shadow var(--t);
+}
+
+.chip svg {
+  width: 3.8cqw;
+  height: 3.8cqw;
+}
+
+.chip--primary {
+  background: var(--teal-deep);
+}
+
+.chip--share {
+  background: rgba(245, 237, 225, 0.1);
+}
+
+.s-press .chip--share {
+  background: var(--orange);
+  color: var(--bg);
+  box-shadow: 0 0 0 4px rgba(226, 112, 58, 0.3);
+}
+
+/* Tap ripple: a one-shot animation started by the class, never tracked by JS. */
+.ripple {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+  background: rgba(245, 237, 225, 0.55);
+}
+
+.s-press .chip--share .ripple,
+.s-pick .app--spotjar .ripple {
+  animation: ripple 0.8s ease-out;
+}
+
+@keyframes ripple {
+  0% { opacity: 0.7; transform: scale(0.3); }
+  100% { opacity: 0; transform: scale(1.9); }
+}
+
+/* Dimmer + share sheet */
+.dim {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 12, 10, 0.55);
+  opacity: 0;
+  transition: opacity var(--t);
+}
+
+.s-sheet .dim {
+  opacity: 1;
+}
+
+.sheet {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 2.4cqw 5cqw 7cqw;
+  border-radius: 7cqw 7cqw 0 0;
+  background: #37302a;
+  box-shadow: 0 -4cqw 10cqw -4cqw rgba(0, 0, 0, 0.7);
+  transform: translateY(105%);
+  transition: transform var(--t);
+}
+
+.s-sheet .sheet {
+  transform: none;
+}
+
+.sheet__grabber {
+  display: block;
+  width: 11cqw;
+  height: 1.2cqw;
+  margin: 0 auto 4cqw;
+  border-radius: 999px;
+  background: rgba(245, 237, 225, 0.25);
+}
+
+.sheet__link {
+  display: flex;
+  align-items: center;
+  gap: 3.4cqw;
+  padding-bottom: 4cqw;
+  border-bottom: 1px solid rgba(245, 237, 225, 0.1);
+}
+
+.sheet__link > span:last-child {
+  display: flex;
+  flex-direction: column;
+}
+
+.sheet__thumb {
+  flex-shrink: 0;
+  width: 11cqw;
+  height: 11cqw;
+  border-radius: 2.6cqw;
+  background:
+    radial-gradient(circle at 50% 45%, var(--orange) 0 18%, transparent 19%),
+    linear-gradient(115deg, transparent 42%, rgba(245, 237, 225, 0.18) 0 54%, transparent 0),
+    #2b302d;
+}
+
+.sheet__name {
+  font-weight: 600;
+  font-size: 0.9em;
+}
+
+.sheet__url {
+  color: rgba(245, 237, 225, 0.55);
+  font-size: 0.76em;
+}
+
+.sheet__apps {
+  display: flex;
+  justify-content: space-between;
+  padding: 5cqw 1cqw;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.8cqw;
+  width: 18cqw;
+}
+
+.app__icon {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 14cqw;
+  height: 14cqw;
+  border-radius: 3.6cqw;
+  color: #fff;
+  transition: box-shadow var(--t), transform var(--t);
+}
+
+.app__icon svg {
+  width: 7cqw;
+  height: 7cqw;
+}
+
+.app__icon--msg { background: #4f8a6c; }
+.app__icon--notes { background: #c9a449; color: #3a2f16; }
+.app__icon--mail { background: #4d6f9c; }
+
+.app__icon--jar {
+  background: var(--bg);
+  border: 1px solid rgba(245, 237, 225, 0.14);
+}
+
+.app__icon--jar img {
+  width: auto;
+  height: 10.5cqw;
+}
+
+.s-pick .app--spotjar .app__icon {
+  transform: scale(1.06);
+  box-shadow: 0 0 0 3px var(--orange), 0 0 0 7px rgba(226, 112, 58, 0.3);
+}
+
+.app__label {
+  font-size: 0.66em;
+  color: rgba(245, 237, 225, 0.8);
+}
+
+.sheet__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3.4cqw 4.4cqw;
+  border-radius: 3.6cqw;
+  background: rgba(245, 237, 225, 0.07);
+  font-size: 0.86em;
+}
+
+.sheet__row svg {
+  width: 4.6cqw;
+  height: 4.6cqw;
+  color: rgba(245, 237, 225, 0.7);
+}
+
+/* Toast */
+.toast {
+  position: absolute;
+  left: 50%;
+  top: 42%;
+  display: flex;
+  align-items: center;
+  gap: 3.6cqw;
+  padding: 3.6cqw 6cqw 3.6cqw 4cqw;
+  border-radius: 5cqw;
+  background: rgba(46, 40, 35, 0.97);
+  border: 1px solid rgba(245, 237, 225, 0.1);
+  box-shadow: 0 4cqw 12cqw -3cqw rgba(0, 0, 0, 0.8);
+  white-space: nowrap;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.85);
+  transition: opacity var(--t), transform var(--t);
+}
+
+.s-saved .toast {
+  opacity: 1;
+  transform: translate(-50%, -50%);
+}
+
+.toast img {
+  width: auto;
+  height: 12cqw;
+}
+
+.toast > span {
+  display: flex;
+  flex-direction: column;
+}
+
+.toast__title {
+  font-family: var(--font-head);
+  font-weight: 600;
+  font-size: 1.1em;
+}
+
+.toast__sub {
+  color: rgba(245, 237, 225, 0.6);
+  font-size: 0.78em;
+}
+
+/* --- The floating jar ---------------------------------------------------- */
+
+.jar {
+  --level: 0;
+  position: fixed;
+  z-index: 40;
+  top: 150px;
+  left: calc(max(var(--gutter), (100vw - var(--max-w)) / 2) + 76px);
+  width: 118px;
+  height: 230px;
+  pointer-events: none;
+  opacity: 0;
+  translate: -40px 0;
+  transition: opacity var(--t), translate var(--t);
+}
+
+.no-js .jar {
+  display: none;
+}
+
+.jar.is-visible {
+  opacity: 1;
+  translate: 0 0;
+}
+
+.jar__lid {
+  position: absolute;
+  top: 0;
+  left: 14px;
+  right: 14px;
+  height: 16px;
+  border-radius: 8px;
+  background: linear-gradient(#4a4039, #3a322c);
+  border: 1px solid rgba(245, 237, 225, 0.14);
+}
+
+.jar__body {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  right: 0;
+  height: 160px;
+  overflow: hidden;
+  border-radius: var(--radius-card);
+  border: 2px solid rgba(245, 237, 225, 0.22);
+  background: rgba(245, 237, 225, 0.04);
+  box-shadow: inset 10px 0 20px -12px rgba(245, 237, 225, 0.25), var(--shadow);
+}
+
+.jar__fill {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: calc(var(--level) / 6 * 100%);
+  background: linear-gradient(to top, var(--teal-deep), var(--teal));
+  opacity: 0.9;
+  transition: height 0.7s var(--ease);
+}
+
+.jar__fill::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: rgba(245, 237, 225, 0.35);
+}
+
+/* The pin hovers above the jar until it drops in at p >= 0.84. */
+.jar__pin {
+  position: absolute;
+  left: 50%;
+  top: -46px;
+  width: 30px;
+  height: 30px;
+  margin-left: -15px;
+  transition: top 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.jar__pin::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg);
+  background: var(--orange);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.jar__pin::after {
+  content: "";
+  position: absolute;
+  inset: 9px;
+  border-radius: 50%;
+  background: var(--cream);
+}
+
+.jar.is-in .jar__pin {
+  /* 58% down the glass body (which starts 20px from the top). */
+  top: calc(20px + 160px * 0.58 - 15px);
+}
+
+.jar__label {
+  position: absolute;
+  top: 194px;
+  left: 50%;
+  translate: -50% 0;
+  color: var(--text);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* --- The five steps ------------------------------------------------------ */
+
+.sj-steps {
+  padding: 96px 0 160px;
+}
+
+.sj-steps__grid {
+  display: grid;
+  grid-template-columns: var(--left-col) 1fr;
+  row-gap: 140px;
+}
+
+.sj-step {
+  grid-column: 2;
+}
+
+.sj-step h3 {
+  font-size: 1.75rem;
+  margin-bottom: 14px;
+}
+
+.sj-step p {
+  max-width: 440px;
+}
+
+.shots {
+  display: flex;
+  gap: 20px;
+  margin-top: 36px;
+}
+
+.shots picture {
+  display: block;
+  width: 100%;
+  max-width: 280px;
+}
+
+.shot {
+  width: 100%;
+  max-width: 280px;
+  border-radius: var(--radius-card);
+  border: 1px solid rgba(245, 237, 225, 0.12);
+  box-shadow: var(--shadow);
+  background: var(--surface);
+}
+
+.shots--pair .shot {
+  flex: 1;
+}
+
+.shot--todo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  aspect-ratio: 560 / 1218;
+  border-style: dashed;
+  color: var(--text-muted);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.shot--todo img {
+  width: auto;
+  height: 64px;
+  opacity: 0.5;
+}
+
+/* --- Small screens ------------------------------------------------------- */
+
+@media (max-width: 900px) {
+  .scene__grid,
+  .sj-steps__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .scene__stage,
+  .sj-step {
+    grid-column: 1;
+  }
+
+  .scene__stage {
+    flex-direction: column;
+    gap: 22px;
+    text-align: center;
+  }
+
+  .js .scene__sticky {
+    align-items: flex-start;
+    padding-top: 16px;
+  }
+
+  .phone {
+    height: min(470px, calc(100vh - 290px));
+    border-width: 6px;
+    border-radius: 32px;
+  }
+
+  @supports (height: 100svh) {
+    .phone {
+      height: min(470px, calc(100svh - 290px));
+    }
+  }
+
+  .phone__screen {
+    border-radius: 26px;
+  }
+
+  .no-js .phone {
+    height: 470px;
+  }
+
+  .captions {
+    max-width: 440px;
+  }
+
+  .kicker {
+    display: none;
+  }
+
+  .no-js .kicker {
+    display: block;
+  }
+
+  .cap h3 {
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+  }
+
+  .cap p {
+    font-size: 1rem;
+  }
+
+  .cap__hint {
+    margin-top: 10px;
+  }
+
+  .dots {
+    justify-content: center;
+    margin-top: 16px;
+  }
+
+  .sj-steps__grid {
+    row-gap: 96px;
+  }
+
+  .sj-step h3 {
+    font-size: 1.5rem;
+  }
+
+  .shots {
+    justify-content: center;
+  }
+
+  .shots--pair .shot {
+    max-width: 200px;
+  }
+
+  /* The jar shrinks into the bottom-left corner. */
+  .jar {
+    top: auto;
+    bottom: 12px;
+    left: 12px;
+    transform-origin: 0 100%;
+    scale: calc(64 / 118);
+  }
+
+  /* It floats over the text here, so it gets a backdrop like any floating button. */
+  .jar::before {
+    content: "";
+    position: absolute;
+    inset: -14px -14px 34px;
+    border-radius: 34px;
+    background: rgba(33, 28, 25, 0.88);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.7);
+  }
+
+  .jar__label {
+    display: none;
+  }
+}
+
+@media (max-width: 900px) and (max-height: 700px) {
+  .dots {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .caret {
+    animation: none;
+  }
+
+  .s-press .chip--share .ripple,
+  .s-pick .app--spotjar .ripple {
+    animation: none;
+  }
+}

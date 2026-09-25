@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://spotjar.app/sitemap.xml
