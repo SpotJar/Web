@@ -633,8 +633,8 @@
   gap: 3.6cqw;
   /* left: 50% would cap the automatic width at half the phone. */
   width: max-content;
-  max-width: 88%;
-  padding: 3.6cqw 6cqw 3.6cqw 4cqw;
+  max-width: 96%;
+  padding: 3.6cqw 8cqw 3.6cqw 5cqw;
   border-radius: 5cqw;
   background: rgba(46, 40, 35, 0.97);
   border: 1px solid rgba(245, 237, 225, 0.1);
