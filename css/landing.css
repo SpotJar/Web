@@ -829,7 +829,8 @@
   background: var(--surface);
 }
 
-.shots--pair .shot {
+.shots--pair .shot,
+.shots--pair picture {
   flex: 1;
 }
 
@@ -939,7 +940,8 @@
     justify-content: center;
   }
 
-  .shots--pair .shot {
+  .shots--pair .shot,
+  .shots--pair picture {
     max-width: 200px;
   }
 
