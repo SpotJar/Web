@@ -245,16 +245,16 @@
           <h3>See everything on the map</h3>
           <p>Each spot appears as a pin. Colors show whether it is open, experienced, must-see or a favorite. The map also shows which countries you have visited.</p>
           <div class="shots shots--pair">
-            <!-- TODO: raw in-app screenshots img/app-map-pins.(webp|jpg) and
-                 img/app-map-countries.(webp|jpg) -->
-            <div class="shot shot--todo" role="img" aria-label="Screenshot: map with color-coded pins and a legend">
-              <img src="./img/jar-icon.png" alt="" width="240" height="371" loading="lazy">
-              <span>Pins by status</span>
-            </div>
-            <div class="shot shot--todo" role="img" aria-label="Screenshot: map highlighting the countries already visited">
-              <img src="./img/jar-icon.png" alt="" width="240" height="371" loading="lazy">
-              <span>Countries visited</span>
-            </div>
+            <picture>
+              <source srcset="./img/app-map-pins.webp" type="image/webp">
+              <img class="shot" src="./img/app-map-pins.jpg" width="560" height="1218" loading="lazy" decoding="async"
+                   alt="SpotJar's map of Europe with many pins, colored by status, and a legend for Open, Experienced, Must-See and Favorites.">
+            </picture>
+            <picture>
+              <source srcset="./img/app-map-countries.webp" type="image/webp">
+              <img class="shot" src="./img/app-map-countries.jpg" width="560" height="1218" loading="lazy" decoding="async"
+                   alt="SpotJar's map with Visited countries switched on. Italy, Austria, Czechia and Hungary are highlighted.">
+            </picture>
           </div>
         </article>
 
