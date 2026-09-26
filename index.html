@@ -216,13 +216,11 @@
           <h3>SpotJar creates the spot</h3>
           <p>The shared link becomes a saved spot automatically. You can also paste a link, search by name or add a place by hand.</p>
           <div class="shots">
-            <!-- TODO: raw in-app screenshot "New spot" (link / search / manual) as
-                 img/app-new-spot.webp + .jpg, 560×1212, then swap this placeholder
-                 for a <picture> like the ones in step 4 and 5. -->
-            <div class="shot shot--todo" role="img" aria-label="Screenshot: the New spot screen with the options Link, Search and Manual">
-              <img src="./img/jar-icon.png" alt="" width="240" height="371" loading="lazy">
-              <span>New spot</span>
-            </div>
+            <picture>
+              <source srcset="./img/app-new-spot-1.webp" type="image/webp">
+              <img class="shot" src="./img/app-new-spot-1.jpg" width="560" height="1218" loading="lazy" decoding="async"
+                   alt="SpotJar's Create spot screen, filled in automatically: a photo of the place, the name Domkirche St. Stephan, the address Stephansplatz 3, 1010 Wien, the city Wien and the country Austria.">
+            </picture>
           </div>
         </article>
 
@@ -230,12 +228,10 @@
           <h3>Add the details that matter</h3>
           <p>Make a note of why the place caught your eye and choose a category such as view, food or hike. You do not need to plan a trip yet.</p>
           <div class="shots">
-            <!-- TODO: once there is a raw screenshot of "Create spot" with note + categories
-                 (img/app-spot-details.webp + .jpg), it fits this step better than the list. -->
             <picture>
-              <source srcset="./img/app-spot-list.webp" type="image/webp">
-              <img class="shot" src="./img/app-spot-list.jpg" width="560" height="1218" loading="lazy" decoding="async"
-                   alt="SpotJar's Your spots list. It shows 2 of 10 spots experienced, filters for All, Viewpoint and Town, and spots grouped by country, including the United States, France, Nepal and India.">
+              <source srcset="./img/app-new-spot-2.webp" type="image/webp">
+              <img class="shot" src="./img/app-new-spot-2.jpg" width="560" height="1218" loading="lazy" decoding="async"
+                   alt="SpotJar's Create spot screen further down: category chips such as Viewpoint, Food, Water, Route, Hike and Town, a menu for adding the spot to a trip, and switches for Save as favourite and Must-See.">
             </picture>
           </div>
         </article>
