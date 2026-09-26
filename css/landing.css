@@ -631,6 +631,9 @@
   display: flex;
   align-items: center;
   gap: 3.6cqw;
+  /* left: 50% would cap the automatic width at half the phone. */
+  width: max-content;
+  max-width: 88%;
   padding: 3.6cqw 6cqw 3.6cqw 4cqw;
   border-radius: 5cqw;
   background: rgba(46, 40, 35, 0.97);
