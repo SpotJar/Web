@@ -39,7 +39,7 @@
     <div class="policy__head">
       <img src="../../img/logo.png" alt="SpotJar" width="1040" height="303">
       <h1>Datenschutzerklärung</h1>
-      <p class="policy__date">Stand <time datetime="2026-09-25">25. September 2026</time></p>
+      <p class="policy__date">Stand <time datetime="2026-10-02">2. Oktober 2026</time></p>
     </div>
 
     <p>
@@ -224,18 +224,22 @@
     <section id="photos">
       <h2>10. Automatische Fotos von Wikimedia</h2>
       <p>
-        Wenn du einen Ort über einen Link speicherst, etwa aus Google Maps, Apple Karten oder dem
-        Teilen-Menü, sucht SpotJar nach dem Speichern auf Wikipedia und Wikimedia Commons nach
-        einem frei lizenzierten Foto. Bei manuell erstellten Orten, Orten von der Karte,
-        importierten Orten und Orten mit einem eigenen Foto findet keine Suche statt.
+        Wenn du einen Ort über einen Link anlegst, etwa aus Google Maps, Apple Karten oder dem
+        Teilen-Menü, sucht SpotJar auf Wikidata, Wikipedia und Wikimedia Commons nach einem frei
+        lizenzierten Foto. In der App beginnt die Suche, sobald der Link ausgelesen ist, sonst
+        nach dem Speichern. Du kannst sie abbrechen oder ein eigenes Foto wählen. Speicherst du
+        den Ort nicht, wird ein gefundenes Foto verworfen. Bei manuell erstellten Orten, Orten
+        von der Karte, importierten Orten und Orten mit einem eigenen Foto findet keine Suche statt.
       </p>
       <p>
         Dafür sendet die App die <strong>Koordinaten des Ortes</strong> und wie bei jeder
         Internetanfrage deine <strong>IP-Adresse</strong> sowie Name und Version der App an die
         Wikimedia Foundation, Inc., 1 Montgomery Street, Suite 1600, San Francisco, CA 94104,
-        USA. Name, Notizen und andere Inhalte des Ortes werden nicht gesendet. Die Zuordnung des
-        Fotos geschieht auf deinem Gerät. Wird ein passendes Foto gefunden, lädt die App es von
-        den Servern der Wikimedia Foundation herunter.
+        USA. Die Anfragen enthalten außerdem Suchradius und Sprachcodes sowie anschließend IDs
+        passender öffentlicher Wikidata-Einträge, Wikipedia-Artikeltitel und Bilddateinamen zum
+        Abruf von Fotos und Lizenzangaben. Die Zuordnung geschieht auf deinem Gerät; der von dir
+        gespeicherte Ortsname und deine Notizen werden nicht gesendet. Das ausgewählte Foto wird
+        von den Servern der Wikimedia Foundation heruntergeladen.
       </p>
       <p>
         Das Foto sowie Angaben zu Urheber und Lizenz werden nur auf deinem Gerät gespeichert. Du
@@ -312,7 +316,7 @@
             <tr><td>GitHub, Inc.</td><td>Website-Hosting</td><td>IP-Adresse, Anfrageprotokolle</td><td>USA</td></tr>
             <tr><td>Apple</td><td>Kartenanzeige und Ortssuche unter iOS, Auflösen kurzer Apple-Karten-Links</td><td>IP-Adresse, Kartenausschnitt, Suchtext, Suchbereich und Kurzlink</td><td>EU / USA</td></tr>
             <tr><td>Google</td><td>Kartenanzeige und Ortssuche unter Android, Auflösen kurzer Kartenlinks</td><td>IP-Adresse, Kartenausschnitt, Suchtext, Suchbereich, App-Kennung und Kurzlink</td><td>EU / USA</td></tr>
-            <tr><td>Wikimedia Foundation, Inc.</td><td>Foto eines gespeicherten Ortes</td><td>IP-Adresse, Koordinaten des Ortes, Name und Version der App</td><td>USA</td></tr>
+            <tr><td>Wikimedia Foundation, Inc.</td><td>Foto eines gespeicherten Ortes</td><td>IP-Adresse, Ortskoordinaten, Name und Version der App, Suchradius, Sprachcodes, öffentliche Eintrags-IDs, Artikeltitel und Bilddateinamen</td><td>USA</td></tr>
             <tr><td>Functional Software, Inc. (Sentry)</td><td>Fehlerberichte</td><td>Fehlerdetails, technische Protokolle, Geräte- und App-Metadaten, IP-Adresse</td><td>EU, Anbieter in den USA</td></tr>
             <tr><td>Apple Karten / Google Maps</td><td>Navigation, nur beim Öffnen eines Ortes oder einer Route</td><td>Koordinaten, Namen oder Adressen der geöffneten Orte</td><td>Je nach Anbieter</td></tr>
           </tbody>

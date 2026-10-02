@@ -42,7 +42,7 @@
     <div class="policy__head">
       <img src="../img/logo.png" alt="SpotJar" width="1040" height="303">
       <h1>Privacy Policy</h1>
-      <p class="policy__date">Last updated <time datetime="2026-09-25">25 September 2026</time></p>
+      <p class="policy__date">Last updated <time datetime="2026-10-02">2 October 2026</time></p>
     </div>
 
     <p>
@@ -273,24 +273,27 @@
     <section id="photos">
       <h2>10. Automatic photos from Wikimedia</h2>
       <p>
-        When you save a spot from a link (for example from Google Maps or Apple Maps, or through
-        the share menu), SpotJar looks for a freely licensed photo of that place on Wikipedia and
-        Wikimedia Commons after saving it. No lookup happens for spots you create by hand, place
-        on the map or import from a backup, or for spots you have already given a photo of your
-        own.
+        When you add a spot from a link (for example from Google Maps or Apple Maps, or through
+        the share menu), SpotJar looks for a freely licensed photo on Wikidata, Wikipedia and
+        Wikimedia Commons. In the app, the lookup starts once the link has been read; otherwise,
+        it starts after saving. You can cancel it or choose your own photo. If you do not save
+        the spot, a photo already found is discarded. No lookup happens for spots created by
+        hand, placed on the map, imported from a backup or already given your own photo.
       </p>
       <p>
         For this, the app sends the <strong>spot's coordinates</strong> (latitude and longitude)
         and, as with any internet request, your <strong>IP address</strong> and an identifier of
         the app (name and version) to the Wikimedia Foundation, Inc., 1 Montgomery Street,
-        Suite 1600, San Francisco, CA 94104, USA. The spot's name, your notes and any other content
-        are not sent. Matching a photo to the spot happens on your device. If a suitable photo is
-        found, the app downloads it from the Wikimedia Foundation's servers.
+        Suite 1600, San Francisco, CA 94104, USA. Requests also include the search radius and
+        language codes, followed by IDs of matching public Wikidata entries, Wikipedia article
+        titles and image file names to retrieve photos and licence details. Matching happens on
+        your device; the spot's name as you stored it and your notes are not sent. The chosen
+        photo is downloaded from the Wikimedia Foundation's servers.
       </p>
       <p>
         The photo and its author and licence information are stored only on your device. You can
         remove such a photo or replace it with your own at any time in the spot's edit screen.
-        deleting the spot deletes it as well. The Wikimedia Foundation processes this data under
+        Deleting the spot deletes it as well. The Wikimedia Foundation processes this data under
         its own <a href="https://foundation.wikimedia.org/wiki/Policy:Privacy_policy">privacy policy</a>.
         The photos belong to their authors and are published under free licences (public domain,
         CC0, CC BY or CC BY-SA). Author, licence and source are shown directly below the photo.
@@ -394,7 +397,7 @@
             <tr>
               <td>Wikimedia Foundation, Inc.</td>
               <td>Photo of a saved place</td>
-              <td>IP address, the spot's coordinates, app name and version</td>
+              <td>IP address, spot coordinates, app name and version, search radius, language codes, public entry IDs, article titles and image file names</td>
               <td>USA</td>
             </tr>
             <tr>
