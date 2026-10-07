@@ -38,6 +38,45 @@
   line-height: 1.65;
 }
 
+.hero__availability {
+  margin-bottom: 18px;
+  color: var(--cream);
+  font-weight: 600;
+}
+
+.store-badges {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 20px;
+}
+
+.store-badge {
+  display: block;
+  width: 180px;
+  text-decoration: none;
+}
+
+.store-badge img {
+  width: 180px;
+  height: 60px;
+}
+
+.store-badge--soon img {
+  opacity: 0.5;
+  filter: grayscale(1);
+}
+
+.store-badge--soon p {
+  margin-top: 8px;
+  font-size: 0.875rem;
+}
+
+.hero__how {
+  margin-top: 28px;
+}
+
 /* --- Scene layout -------------------------------------------------------- */
 
 .scene {

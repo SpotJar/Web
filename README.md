@@ -19,7 +19,8 @@ css/policy.css        Policy page only
 js/scroll-scene.js    Maps scroll position to scene state (classes + custom properties)
 img/                  Web-ready images (logo, jar icon, screenshots, app icons)
 fonts/                Fredoka + Inter as Latin-subset variable woff2 (+ source TTFs, OFL licences)
-images/               Source images (not deployed); raw app screenshots in images/mocks/
+images/badges/        App Store and Google Play badges (deployed)
+images/               Other source images (not deployed); raw app screenshots in images/mocks/
 favicon.ico, apple-touch-icon.png, robots.txt, sitemap.xml, CNAME, .nojekyll
 .github/workflows/pages.yml   Deploys to GitHub Pages on push to main
 ```
