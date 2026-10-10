@@ -40,7 +40,7 @@
     <div class="policy__head">
       <img src="../../img/logo.png" alt="SpotJar" width="1040" height="303">
       <h1>Datenschutzerklärung</h1>
-      <p class="policy__date">Stand <time datetime="2026-10-02">2. Oktober 2026</time></p>
+      <p class="policy__date">Stand <time datetime="2026-10-10">10. Oktober 2026</time></p>
     </div>
 
     <p>
@@ -106,6 +106,7 @@
           <tbody>
             <tr><td>Speichern deiner Orte, Notizen, Fotos, Reisen und Packlisten auf deinem Gerät</td><td>Art. 6 Abs. 1 lit. b, Bereitstellung der von dir verwendeten App</td></tr>
             <tr><td>Suchen von Orten und Adressen, Öffnen kurzer Kartenlinks und Anzeigen der Karte</td><td>Art. 6 Abs. 1 lit. b, auf deine Anforderung beim Speichern, Suchen oder Öffnen der Karte</td></tr>
+            <tr><td>Auslesen öffentlicher Beitragslinks aus Instagram und TikTok, um Ortsnamen zu finden</td><td>Art. 6 Abs. 1 lit. b und f, von dir ausgelöste Funktion</td></tr>
             <tr><td>Automatisches Foto eines gespeicherten Ortes von Wikimedia</td><td>Art. 6 Abs. 1 lit. f, berechtigtes Interesse an einem Bild des gespeicherten Ortes</td></tr>
             <tr><td>Dein Standort zum Sortieren nach Entfernung und zur Anzeige auf der Reisekarte</td><td>Art. 6 Abs. 1 lit. a, deine Einwilligung über die Systemberechtigung</td></tr>
             <tr><td>Fehlerberichte</td><td>Art. 6 Abs. 1 lit. f, berechtigtes Interesse an einer stabilen App</td></tr>
@@ -204,6 +205,26 @@
         bestimmen, fragt die App auf iOS und Android den Server des Links, also Google oder
         Apple, wohin er führt. Der jeweilige Anbieter erhält dabei den Link selbst.
       </p>
+      <h3>Teilen aus Instagram und TikTok</h3>
+      <p>
+        Wenn du einen öffentlichen Beitragslink aus Instagram oder TikTok mit SpotJar teilst,
+        wird der Link sofort nur auf deinem Gerät gespeichert. Danach ruft die App von deinem
+        Gerät aus ab: bei TikTok gegebenenfalls die Weiterleitung des Kurzlinks und den
+        öffentlichen oEmbed-Dienst, bei Instagram die öffentliche Beitragsseite.
+        TikTok beziehungsweise Instagram/Meta erfahren dabei die Beitrags-URL und deine
+        IP-Adresse. Es gibt keine Anmeldung, keine Cookies, kein Meta- oder TikTok-Token und
+        keine inoffiziellen Schnittstellen.
+      </p>
+      <p>
+        Aus der öffentlichen Beschreibung oder Ortsangabe ermittelt die App Ortsnamen lokal auf
+        deinem Gerät. Nur diese Namen, nicht der Beitrag, gehen an die Ortssuche: Apple MapKit
+        (iOS) beziehungsweise Photon/OpenStreetMap (Android). Bilder, Videos, Vorschaubilder und
+        Bildschirmfotos werden weder gespeichert noch übertragen. Beschreibungstexte werden
+        nicht protokolliert und nicht an Fehlerberichte gesendet. Gibt es keinen Treffer oder
+        bist du offline, bleibt der Ort mit dem Link gespeichert und du ergänzt ihn manuell.
+        Dabei ist kein Server des Entwicklers beteiligt.
+      </p>
+
       <h3>Dein Standort</h3>
       <p>
         Der Standortzugriff ist freiwillig und wird nur während der App-Nutzung angefordert. Auf
@@ -298,8 +319,8 @@
       <p>
         Einige der genannten Anbieter haben ihren Sitz in den USA oder können Daten dort
         verarbeiten. Dazu gehören GitHub für das Website-Hosting, Apple für Karten unter iOS,
-        Google für Karten, Ortssuche unter Android und Kurzlinks, die Wikimedia Foundation für
-        Fotos sowie Functional Software beziehungsweise Sentry für Fehlerberichte. Ist ein
+        Google für Karten, Ortssuche unter Android und Kurzlinks, TikTok und Meta für
+        geteilte Beitragslinks, die Wikimedia Foundation für Fotos sowie Functional Software beziehungsweise Sentry für Fehlerberichte. Ist ein
         Anbieter nach dem EU-U.S. Data Privacy Framework zertifiziert, stützt sich die
         Übermittlung auf den Angemessenheitsbeschluss der Europäischen Kommission vom 10. Juli
         2023 nach Art. 45 DSGVO. Andernfalls gelten die EU-Standardvertragsklauseln nach Art. 46
@@ -317,6 +338,8 @@
             <tr><td>GitHub, Inc.</td><td>Website-Hosting</td><td>IP-Adresse, Anfrageprotokolle</td><td>USA</td></tr>
             <tr><td>Apple</td><td>Kartenanzeige und Ortssuche unter iOS, Auflösen kurzer Apple-Karten-Links</td><td>IP-Adresse, Kartenausschnitt, Suchtext, Suchbereich und Kurzlink</td><td>EU / USA</td></tr>
             <tr><td>Google</td><td>Kartenanzeige und Ortssuche unter Android, Auflösen kurzer Kartenlinks</td><td>IP-Adresse, Kartenausschnitt, Suchtext, Suchbereich, App-Kennung und Kurzlink</td><td>EU / USA</td></tr>
+            <tr><td>TikTok / Instagram (Meta)</td><td>Auslesen eines von dir geteilten öffentlichen Beitragslinks</td><td>IP-Adresse, Beitrags-URL</td><td>Je nach Anbieter</td></tr>
+            <tr><td>Photon (OpenStreetMap), nur Android</td><td>Suche nach Ortsnamen aus geteilten Beiträgen</td><td>IP-Adresse, Ortsnamen</td><td>Je nach Anbieter</td></tr>
             <tr><td>Wikimedia Foundation, Inc.</td><td>Foto eines gespeicherten Ortes</td><td>IP-Adresse, Ortskoordinaten, Name und Version der App, Suchradius, Sprachcodes, öffentliche Eintrags-IDs, Artikeltitel und Bilddateinamen</td><td>USA</td></tr>
             <tr><td>Functional Software, Inc. (Sentry)</td><td>Fehlerberichte</td><td>Fehlerdetails, technische Protokolle, Geräte- und App-Metadaten, IP-Adresse</td><td>EU, Anbieter in den USA</td></tr>
             <tr><td>Apple Karten / Google Maps</td><td>Navigation, nur beim Öffnen eines Ortes oder einer Route</td><td>Koordinaten, Namen oder Adressen der geöffneten Orte</td><td>Je nach Anbieter</td></tr>
@@ -368,7 +391,14 @@
         Inhalte ersetzen keine offiziellen Informationen, keinen Rat vor Ort und nicht die
         Einschätzung qualifizierter Fachleute.
       </p>
-      <!-- TODO: KI-Anbieter, Verarbeitungsort und Datenweitergabe bestätigen und in Abschnitt 3 und 14 (Übersicht der Datenweitergabe) ergänzen. -->
+      <p>
+        Du wählst die Fotos selbst aus. Texterkennung (Apple Vision) und Sprachmodell (Apple
+        Foundation Models) laufen vollständig auf deinem Gerät. Fotos und Texte werden weder an
+        uns noch an Dritte oder eine Cloud-KI gesendet. Das Ergebnis wird erst nach deiner
+        Bestätigung gespeichert. Du kannst die Funktion in den Einstellungen unter
+        <strong>KI-Funktionen</strong> ausschalten; dann ist sie nicht mehr sichtbar und läuft
+        nicht. Auf Geräten ohne diese Funktion und unter Android ist sie nicht verfügbar.
+      </p>
     </section>
 
     <section id="security">
