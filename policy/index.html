@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Privacy Policy | SpotJar</title>
-  <meta name="description" content="How the SpotJar app and spotjar.app handle personal data, including local app data, map and photo services, crash reports and your rights.">
+  <meta name="description" content="How the SpotJar app and spotjar.app handle personal data, including local app data, group trips and the SpotJar account, map and photo services, crash reports and your rights.">
   <link rel="canonical" href="https://spotjar.app/policy/">
   <link rel="alternate" hreflang="en" href="https://spotjar.app/policy/">
   <link rel="alternate" hreflang="de" href="https://spotjar.app/de/datenschutz/">
@@ -43,14 +43,16 @@
     <div class="policy__head">
       <img src="../img/logo.png" alt="SpotJar" width="1040" height="303">
       <h1>Privacy Policy</h1>
-      <p class="policy__date">Last updated <time datetime="2026-10-10">10 October 2026</time></p>
+      <p class="policy__date">Last updated <time datetime="2026-10-15">15 October 2026</time></p>
     </div>
 
     <p>
       This policy covers the SpotJar app for iOS and Android and the website
-      <a href="https://spotjar.app/">spotjar.app</a>. SpotJar has no accounts and no server of
-      its own. Your spots, notes and trips stay on your device. This policy explains the few
-      cases in which the app or website contacts another service and why that happens.
+      <a href="https://spotjar.app/">spotjar.app</a>. You need no account to use SpotJar, and
+      your spots, notes and trips stay on your device. Only if you share a trip with others
+      (group trips, section <a href="#group-trips">11</a>) do you sign in and is that trip's plan
+      stored online. This policy explains the cases in which the app or website contacts
+      another service and why that happens.
       A short summary is also in the app itself: in Settings, tap the info button next to
       the privacy note.
     </p>
@@ -68,6 +70,7 @@
         <li><a href="#device">App data on your device</a></li>
         <li><a href="#maps">Map and location services</a></li>
         <li><a href="#photos">Automatic photos from Wikimedia</a></li>
+        <li><a href="#group-trips">Group trips and the SpotJar account</a></li>
         <li><a href="#crash">Crash reports and diagnostics</a></li>
         <li><a href="#transfers">International data transfers</a></li>
         <li><a href="#sharing">Data sharing overview</a></li>
@@ -98,8 +101,9 @@
       <!-- TODO: confirm the age limit (16 used here, as for PhaseParadise). -->
       <p>
         SpotJar is meant for people aged 16 and over, or the age of digital consent in your
-        country if that is higher. Because the app has no accounts and asks for no personal
-        details, it cannot verify anyone's age.
+        country if that is higher. Most of the app needs no account, and signing in for group
+        trips only uses your name and email address from Google or Apple, so SpotJar cannot
+        verify anyone's age.
       </p>
     </section>
 
@@ -133,6 +137,10 @@
               <td>Art. 6(1)(a), your consent given through the system permission</td>
             </tr>
             <tr>
+              <td>Group trips: your SpotJar account and sharing and planning a trip with others</td>
+              <td>Art. 6(1)(b), you ask for the trip to be shared and planned together</td>
+            </tr>
+            <tr>
               <td>Crash reports</td>
               <td>Art. 6(1)(f), legitimate interest in a stable, working app</td>
             </tr>
@@ -158,7 +166,7 @@
       <p>
         We have no access to these logs and receive no visitor statistics. See GitHub's
         <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">privacy statement</a>
-        and section <a href="#transfers">12</a> on transfers to the USA.
+        and section <a href="#transfers">13</a> on transfers to the USA.
       </p>
     </section>
 
@@ -198,8 +206,9 @@
         favorite, trips with their day plans, packing lists and templates, and your settings.
       </p>
       <ul>
-        <li><strong>No account, no cloud backend.</strong> We operate no server and never receive
-          this data.</li>
+        <li><strong>No account needed.</strong> We operate no server of our own and never receive
+          this data. The only exception is a trip you share with others as a group trip: its
+          plan is stored online, as described in section <a href="#group-trips">11</a>.</li>
         <li><strong>Sharing into SpotJar.</strong> When you share a place from a map app to
           SpotJar, the link is handed to the app through a shared folder on your device. It does
           not pass through any server of ours.</li>
@@ -313,7 +322,9 @@
         photo is downloaded from the Wikimedia Foundation's servers.
       </p>
       <p>
-        The photo and its author and licence information are stored only on your device. You can
+        The photo and its author and licence information are stored only on your device. If the
+        spot is in a group trip, only the link to the photo's public Wikimedia page is shared with
+        the group (section <a href="#group-trips">11</a>). You can
         remove such a photo or replace it with your own at any time in the spot's edit screen.
         Deleting the spot deletes it as well. The Wikimedia Foundation processes this data under
         its own <a href="https://foundation.wikimedia.org/wiki/Policy:Privacy_policy">privacy policy</a>.
@@ -329,8 +340,94 @@
       </p>
     </section>
 
+    <section id="group-trips">
+      <h2>11. Group trips and the SpotJar account</h2>
+      <p>
+        You can share a trip with others and plan it together: everyone in the group sees and
+        edits the same days, order, breaks and backup list. To do so, you sign in with Google
+        (iOS and Android) or Apple (iOS). For this we use Firebase Authentication and Cloud
+        Firestore by Google Ireland Ltd., Gordon House, Barrow Street, Dublin 4, Ireland, and
+        Google LLC, USA. The data is stored in the EU (Firestore multi-region <code>eur3</code>).
+        Nobody needs an account who does not use group trips, and nothing is uploaded for a trip
+        that is not shared.
+      </p>
+
+      <h3>What is stored</h3>
+      <ul>
+        <li><strong>Your account</strong> (when you sign in): user ID, name and email address from
+          Google or Apple (Apple may give a relay address instead of your real one), and the
+          sign-in provider.</li>
+        <li><strong>The name other members see</strong> (when you share or join a trip). You can
+          change it.</li>
+        <li><strong>Your Google account picture</strong> (when you share or join a trip, and when
+          the picture changes): only the web address Google gives for it. Other members' phones
+          then load the picture themselves from Google's servers. Apple provides no picture.</li>
+        <li><strong>The shared trip</strong>: its name, region (name, coordinates, radius), number
+          of days, start and end date, owner, members' IDs and names, and the invite code.</li>
+        <li><strong>The plan</strong>: for each entry its day, order, break label, approximate
+          duration, done marker, trip note, who added it and which members ticked it as seen.</li>
+        <li><strong>Each spot in the shared trip</strong>: name, coordinates, address, city,
+          country, category, source link (for example the Maps link) and provider ID.</li>
+        <li><strong>The trip's accommodation</strong>: check-in and check-out, assigned nights,
+          booking code, booking link, provider, phone, email, booking notes, and the
+          accommodation's name, coordinates, address, city, country, category, source link and
+          provider ID. A booking's documents are never uploaded.</li>
+        <li><strong>Photos of the spots and accommodations in the trip, and its cover</strong>: a
+          photo you took or picked only as a small preview (JPEG, at most 800 pixels, re-encoded on
+          your device, so no camera or location metadata travels); a free Wikimedia photo only as
+          the link to its public Wikimedia file page. Who shared each photo is stored with it. A
+          replaced photo is deleted at once; a spot's photo is deleted when the spot leaves the
+          trip.</li>
+      </ul>
+      <p>
+        With every request, Google also processes your IP address and the technical data needed
+        for the connection.
+      </p>
+      <p>
+        <strong>Wikimedia photos of other members.</strong> When a member shared a Wikimedia
+        photo, every other member's phone loads that photo and its licence information directly
+        from the Wikimedia Foundation (servers in the USA), named by its public file page. This is
+        the same kind of request a browser makes to show the page. No coordinates and no spot name
+        are sent, and nothing about you beyond your IP address and the app's identifier. Received
+        photos are stored on your device, so each one is loaded only once.
+      </p>
+      <p>
+        <strong>Never uploaded:</strong> the rest of your spot list, spots that are not in a
+        shared trip, photos of spots that are not in a shared trip, the original files of your
+        photos (only previews), a spot's own note, favorite, must-see and visited markers, the
+        documents attached to an accommodation, packing lists, settings and your location.
+      </p>
+
+      <h3>Who can see it</h3>
+      <p>
+        Only the trip's members, meaning people who entered its invite code while signed in.
+        Firebase Security Rules enforce this on the server. Organizers (whoever shared the trip,
+        and anyone they make one) can remove members and give the roles organizer, planner or
+        viewer; each member's role is stored with the trip. Google
+        processes the data as our processor for Firebase.
+      </p>
+
+      <h3>Leaving a group and deleting your account</h3>
+      <ul>
+        <li><strong>Leave a group:</strong> your name and ID are removed from the trip, and you
+          keep a private copy on your phone. When the last member leaves, the trip is deleted from
+          the server.</li>
+        <li><strong>Delete your account</strong> at any time under Settings &gt; Account: the app
+          leaves every group trip as above and then deletes your Firebase account. Entries you
+          added stay in trips that others still plan, without your name.</li>
+        <li><strong>Signing out</strong> removes nothing from the server.</li>
+      </ul>
+      <p>
+        The legal basis is Art. 6(1)(b) GDPR: you ask for the trip to be shared and planned with
+        others. See Google's <a href="https://firebase.google.com/support/privacy">Firebase privacy
+        information</a> and section <a href="#transfers">13</a> on transfers to the USA.
+      </p>
+      <!-- TODO: have the wording, the legal basis and the Firebase data processing terms
+           (accepted in the Firebase console) checked before publishing. -->
+    </section>
+
     <section id="crash">
-      <h2>11. Crash reports and diagnostics</h2>
+      <h2>12. Crash reports and diagnostics</h2>
       <p>
         To find and fix errors, the app can send crash and error reports to Sentry, a service of
         Functional Software, Inc., 45 Fremont Street, 8th Floor, San Francisco, CA 94105, USA.
@@ -349,8 +446,10 @@
       </ul>
       <p>
         By default, the app does not send personal information or screenshots, and performance
-        tracing is disabled. Reports are not linked to you because SpotJar has no user accounts.
+        tracing is disabled. Reports are not linked to your SpotJar account.
       </p>
+      <!-- TODO: confirm Sentry receives no Firebase user ID (no Sentry.setUser), otherwise
+           change the sentence above. -->
       <!-- Only claim "IP addresses are not stored" once "Prevent Storing of IP Addresses" is on
            in the Sentry project settings. -->
       <p>
@@ -367,11 +466,11 @@
     </section>
 
     <section id="transfers">
-      <h2>12. International data transfers</h2>
+      <h2>13. International data transfers</h2>
       <p>
         Some of the providers named above are based in the USA or may process data there:
         GitHub (website hosting), Apple (maps on iOS), Google (maps and place search on Android,
-        short links), TikTok and Meta (shared post links), the Wikimedia Foundation (photos) and Functional Software / Sentry (crash
+        short links, Firebase for group trips), TikTok and Meta (shared post links), the Wikimedia Foundation (photos) and Functional Software / Sentry (crash
         reports). Where a provider is certified under the EU-U.S. Data Privacy Framework, the
         transfer is based on the European Commission's adequacy decision of 10 July 2023
         (Art. 45 GDPR). Otherwise it is based on the EU Standard Contractual Clauses
@@ -385,7 +484,7 @@
     </section>
 
     <section id="sharing">
-      <h2>13. Data sharing overview</h2>
+      <h2>14. Data sharing overview</h2>
       <div class="table-wrap" tabindex="0" role="region" aria-labelledby="sharing-caption">
         <table>
           <caption id="sharing-caption">Who receives which data</caption>
@@ -417,6 +516,12 @@
               <td>EU / USA</td>
             </tr>
             <tr>
+              <td>Google (Firebase Authentication, Cloud Firestore)</td>
+              <td>SpotJar account and group trips, only if you use them</td>
+              <td>User ID, name, email address, sign-in provider, displayed name, link to the Google account picture, IP address, and the shared trip with its plan, spots, accommodation, roles and photo previews or Wikimedia links as listed in section 11</td>
+              <td>EU (provider also in USA)</td>
+            </tr>
+            <tr>
               <td>TikTok / Instagram (Meta)</td>
               <td>Reading a public post link you shared</td>
               <td>IP address, post URL</td>
@@ -430,8 +535,8 @@
             </tr>
             <tr>
               <td>Wikimedia Foundation, Inc.</td>
-              <td>Photo of a saved place</td>
-              <td>IP address, spot coordinates, app name and version, search radius, language codes, public entry IDs, article titles and image file names</td>
+              <td>Photo of a saved place; loading the Wikimedia photos other members shared in a group trip</td>
+              <td>IP address, spot coordinates, app name and version, search radius, language codes, public entry IDs, article titles and image file names (for photos shared by others only IP address, app identifier and the photo's public Wikimedia page)</td>
               <td>USA</td>
             </tr>
             <tr>
@@ -452,11 +557,16 @@
     </section>
 
     <section id="retention">
-      <h2>14. Data retention</h2>
+      <h2>15. Data retention</h2>
       <ul>
         <li><strong>App data</strong> stays on your device until you delete it in the app or
           uninstall the app.</li>
         <li><strong>Location</strong> is used while the app runs and not stored.</li>
+        <li><strong>Your SpotJar account</strong> is kept until you delete it under Settings &gt;
+          Account.</li>
+        <li><strong>A shared trip</strong> is kept until its last member leaves or the owner
+          deletes it. Your name and ID are removed from it as soon as you leave. A replaced photo
+          is deleted at once; a spot's photo is deleted when the spot leaves the trip.</li>
         <li><strong>Crash reports</strong> are deleted by Sentry after the retention period of the
           project. <span class="todo">TODO: confirm the period in Sentry, for example 90 days</span>.</li>
         <li><strong>Website logs, map and photo requests</strong> are kept by GitHub, Apple, Google
@@ -466,7 +576,7 @@
     </section>
 
     <section id="ai">
-      <h2>15. AI notice</h2>
+      <h2>16. AI notice</h2>
       <p>
         SpotJar uses AI to generate suggestions and ideas within the app, for example route
         proposals and tour plans worked out from your pictures, such as a photo of a tour plan.
@@ -506,17 +616,18 @@
     </section>
 
     <section id="security">
-      <h2>16. Security measures</h2>
+      <h2>17. Security measures</h2>
       <p>
         App data lives in the app's private storage, which the operating system shields from
         other apps. The app talks to the services named above over encrypted HTTPS connections,
-        and this website is only served over HTTPS. Because there is no account and no server of ours, there is no central database
-        of users that could leak.
+        and this website is only served over HTTPS. Data outside shared trips is in no database of
+        ours. Shared trips and accounts are stored in Firebase, where Security Rules allow only
+        a trip's members to read or change it.
       </p>
     </section>
 
     <section id="rights">
-      <h2>17. Your rights</h2>
+      <h2>18. Your rights</h2>
       <p>The GDPR gives you these rights:</p>
       <ul>
         <li>access the personal data we process about you (Art. 15).</li>
@@ -528,15 +639,16 @@
           access, change the permission in your device's settings.</li>
       </ul>
       <p>
-        Since your app data never reaches us, you exercise most of these rights directly in the
-        app. For everything else, write to the address in section 1. You also have the right to
+        Since most of your app data never reaches us, you exercise most of these rights directly
+        in the app; this includes leaving group trips and deleting your account under
+        Settings &gt; Account. For everything else, write to the address in section 1. You also have the right to
         lodge a complaint with a data protection supervisory authority, in particular in the EU
         member state where you live or work.
       </p>
     </section>
 
     <section id="changes">
-      <h2>18. Changes to this policy</h2>
+      <h2>19. Changes to this policy</h2>
       <p>
         We update this policy when the app or the website changes in a way that affects your
         data. The current version is always available at this address, with its date at the top.
@@ -544,7 +656,7 @@
     </section>
 
     <section id="support">
-      <h2>19. Support</h2>
+      <h2>20. Support</h2>
       <p>
         For questions, feedback or privacy requests, email
         <a href="mailto:app.spotjar@gmail.com">app.spotjar@gmail.com</a>.
