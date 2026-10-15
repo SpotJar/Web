@@ -1,0 +1,15 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["868H9L25Q3.com.spotjar.app"],
+        "components": [
+          {
+            "/": "/t/*",
+            "comment": "A trip shared by link: https://spotjar.app/t/#<id>"
+          }
+        ]
+      }
+    ]
+  }
+}

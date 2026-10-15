@@ -1,0 +1,13 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.spotjar.app",
+      "sha256_cert_fingerprints": [
+        "2B:A9:79:4D:2A:3A:8C:81:01:F7:EF:5C:CD:2A:1F:39:8C:3F:B4:98:B6:43:33:CD:A2:6A:31:05:B0:10:06:D9",
+        "58:FA:DC:AE:4B:45:40:FE:E5:BD:11:E5:A2:0D:7B:5A:F5:3E:DF:D6:83:BF:02:2F:94:F1:C1:1F:FC:CD:12:E9"
+      ]
+    }
+  }
+]
