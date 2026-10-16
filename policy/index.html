@@ -400,7 +400,10 @@
 
       <h3>Who can see it</h3>
       <p>
-        Only the trip's members, meaning people who entered its invite code while signed in.
+        Only the trip's members, meaning people who entered its invite code, or opened its
+        invite link, while signed in. Anyone who has the link or the code can join. The invite
+        link (https://spotjar.app/j/#…) carries the code after the “#”, which browsers never
+        send, so this website never learns which trip it opens.
         Firebase Security Rules enforce this on the server. Organizers (whoever shared the trip,
         and anyone they make one) can remove members and give the roles organizer, planner or
         viewer; each member's role is stored with the trip. Google

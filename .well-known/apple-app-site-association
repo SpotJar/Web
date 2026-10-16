@@ -7,6 +7,10 @@
           {
             "/": "/t/*",
             "comment": "A trip shared by link: https://spotjar.app/t/#<id>"
+          },
+          {
+            "/": "/j/*",
+            "comment": "A group trip invite: https://spotjar.app/j/#<code>"
           }
         ]
       }

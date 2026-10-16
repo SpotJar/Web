@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Plan a trip together | SpotJar</title>
+  <meta name="description" content="Somebody invited you to plan a trip together in SpotJar.">
+  <!-- An invite to somebody's group trip; nothing to index. -->
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="referrer" content="no-referrer">
+  <meta name="theme-color" content="#211C19">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="SpotJar">
+  <meta property="og:title" content="Plan a trip together">
+  <meta property="og:description" content="Somebody invited you to plan a trip together. Open the link in SpotJar to join.">
+  <meta property="og:image" content="https://spotjar.app/img/icon-512.png">
+
+  <link rel="icon" href="../favicon.ico" sizes="any">
+  <link rel="icon" href="../img/favicon-64.png" type="image/png">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+
+  <link rel="preload" href="../fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/policy.css">
+  <style>
+    .trip-link { text-align: center; }
+    .trip-link__actions { display: flex; flex-direction: column; align-items: center; gap: 1rem; margin-top: 2rem; }
+    .trip-link__open { display: inline-block; padding: 0.9rem 1.6rem; border-radius: 11px; background: #247E76; color: #FDF8F2; font-weight: 600; text-decoration: none; }
+    .trip-link__badge img { height: 48px; width: auto; }
+    .trip-link__note { opacity: 0.75; font-size: 0.95rem; }
+  </style>
+</head>
+<body>
+  <!--
+    The page behind every group trip invite, https://spotjar.app/j/#<code>.
+
+    With SpotJar installed the link opens the app directly (universal links
+    on iOS, verified app links on Android, see /.well-known/) and this page
+    is never shown. Without it, or when the system did not hand the link to
+    the app, it offers the app and a button that opens it by its own scheme.
+
+    The invite code is in the fragment (#…), which browsers never send:
+    GitHub Pages, which serves this file, never learns which trip was
+    opened. This page reads no trip data either. The code is the same one
+    the app shows, so it is also offered to type in by hand.
+  -->
+  <header class="site-header">
+    <div class="container">
+      <a class="pill" href="../">SpotJar</a>
+    </div>
+  </header>
+
+  <main id="main" class="policy trip-link">
+    <div class="policy__head">
+      <img src="../img/logo.png" alt="SpotJar" width="1040" height="303">
+      <h1 data-en="Plan a trip together" data-de="Plant den Trip gemeinsam">Plan a trip together</h1>
+    </div>
+
+    <p id="intro"
+       data-en="Somebody invited you to plan a trip with them. Open the invite in SpotJar and join – you then see and edit the same days and spots."
+       data-de="Jemand hat dich eingeladen, einen Trip gemeinsam zu planen. Öffne die Einladung in SpotJar und tritt bei – dann seht und bearbeitet ihr dieselben Tage und Spots.">
+      Somebody invited you to plan a trip with them. Open the invite in SpotJar and join – you then see and edit the same days and spots.
+    </p>
+
+    <div class="trip-link__actions">
+      <a id="open" class="trip-link__open" href="#"
+         data-en="Open in SpotJar" data-de="In SpotJar öffnen">Open in SpotJar</a>
+      <a class="trip-link__badge" href="https://apps.apple.com/at/app/spotjar/id6803794730">
+        <img src="../images/badges/app-store.svg" alt="Download on the App Store">
+      </a>
+      <p class="trip-link__note"
+         data-en="No SpotJar yet? Install it, then open this link again. Android is coming soon."
+         data-de="Noch kein SpotJar? Installiere die App und öffne diesen Link danach noch einmal. Android folgt bald.">
+        No SpotJar yet? Install it, then open this link again. Android is coming soon.
+      </p>
+      <p class="trip-link__note" id="code-note" hidden>
+        <span data-en="Or in SpotJar, open Trips, tap “Join trip” and enter this code:"
+              data-de="Oder öffne in SpotJar „Trips“, tippe auf „Trip beitreten“ und gib diesen Code ein:">Or in SpotJar, open Trips, tap “Join trip” and enter this code:</span>
+        <strong id="code"></strong>
+      </p>
+    </div>
+  </main>
+
+  <script>
+    (function () {
+      var german = (navigator.language || '').toLowerCase().indexOf('de') === 0;
+      if (german) {
+        document.documentElement.lang = 'de';
+        document.title = 'Plant den Trip gemeinsam | SpotJar';
+        document.querySelectorAll('[data-de]').forEach(function (element) {
+          element.textContent = element.getAttribute('data-de');
+        });
+      }
+
+      var code = window.location.hash.replace(/^#/, '').toUpperCase();
+      var open = document.getElementById('open');
+      if (/^[A-HJKMNP-Z2-9]{4}-?[A-HJKMNP-Z2-9]{4}$/.test(code)) {
+        open.href = 'spotjar://j/' + code;
+        document.getElementById('code').textContent = code;
+        document.getElementById('code-note').hidden = false;
+      } else {
+        open.remove();
+        var intro = document.getElementById('intro');
+        intro.textContent = german
+          ? 'Dieser Link ist unvollständig. Bitte die Person, ihn noch einmal zu schicken.'
+          : 'This link is incomplete. Ask whoever sent it to send it again.';
+      }
+    })();
+  </script>
+</body>
+</html>
