@@ -362,7 +362,11 @@
         Nur die Mitglieder der Reise, also Personen, die angemeldet ihren Einladungscode
         eingegeben oder ihren Einladungslink geöffnet haben. Wer den Link oder den Code hat, kann
         beitreten. Der Einladungslink (https://spotjar.app/j/#…) trägt den Code nach dem „#“,
-        den Browser nie mitschicken – diese Website erfährt also nicht, welche Reise er öffnet. Firebase Security Rules setzen das auf dem Server durch. Organisatoren
+        den Browser nie mitschicken – diese Website erfährt also nicht, welche Reise er öffnet.
+        Vor dem Beitritt sieht, wer angemeldet den Link öffnet oder den Code eingibt, eine
+        Vorschau, die mit der Einladung gespeichert ist: Name, Region, Dauer und Daten der Reise
+        sowie den Namen des Mitglieds, das sie geteilt hat – nichts vom Plan, von den Mitgliedern
+        oder den Unterkünften. Firebase Security Rules setzen das auf dem Server durch. Organisatoren
         (wer die Reise geteilt hat und alle, die dazu ernannt werden) können Mitglieder entfernen
         und die Rollen Organisator, Planer oder Betrachter vergeben; die Rolle jedes Mitglieds
         wird mit der Reise gespeichert. Google verarbeitet die Daten als unser Auftragsverarbeiter für

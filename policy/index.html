@@ -411,7 +411,10 @@
         Only the trip's members, meaning people who entered its invite code, or opened its
         invite link, while signed in. Anyone who has the link or the code can join. The invite
         link (https://spotjar.app/j/#…) carries the code after the “#”, which browsers never
-        send, so this website never learns which trip it opens.
+        send, so this website never learns which trip it opens. Before joining, whoever opens
+        the link or enters the code while signed in sees a preview stored with the invite: the
+        trip's name, region, length and dates and the name of the member who shared it –
+        nothing of the plan, the members or the stays.
         Firebase Security Rules enforce this on the server. Organizers (whoever shared the trip,
         and anyone they make one) can remove members and give the roles organizer, planner or
         viewer; each member's role is stored with the trip. Google
