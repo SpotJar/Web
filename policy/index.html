@@ -43,15 +43,15 @@
     <div class="policy__head">
       <img src="../img/logo.png" alt="SpotJar" width="1040" height="303">
       <h1>Privacy Policy</h1>
-      <p class="policy__date">Last updated <time datetime="2026-10-15">15 October 2026</time></p>
+      <p class="policy__date">Last updated <time datetime="2026-10-18">18 October 2026</time></p>
     </div>
 
     <p>
       This policy covers the SpotJar app for iOS and Android and the website
       <a href="https://spotjar.app/">spotjar.app</a>. You need no account to use SpotJar, and
       your spots, notes and trips stay on your device. Only if you share a trip with others
-      (group trips, section <a href="#group-trips">11</a>) do you sign in and is that trip's plan
-      stored online. This policy explains the cases in which the app or website contacts
+      (group trips or a trip link, section <a href="#group-trips">11</a>) do you sign in and is
+      that trip stored online. This policy explains the cases in which the app or website contacts
       another service and why that happens.
       A short summary is also in the app itself: in Settings, tap the info button next to
       the privacy note.
@@ -141,6 +141,10 @@
               <td>Art. 6(1)(b), you ask for the trip to be shared and planned together</td>
             </tr>
             <tr>
+              <td>Trip links: storing one trip for 24 hours so that others can open it</td>
+              <td>Art. 6(1)(b), you ask for the trip to be shared by link</td>
+            </tr>
+            <tr>
               <td>Crash reports</td>
               <td>Art. 6(1)(f), legitimate interest in a stable, working app</td>
             </tr>
@@ -207,8 +211,8 @@
       </p>
       <ul>
         <li><strong>No account needed.</strong> We operate no server of our own and never receive
-          this data. The only exception is a trip you share with others as a group trip: its
-          plan is stored online, as described in section <a href="#group-trips">11</a>.</li>
+          this data. The only exceptions are a trip you share with others as a group trip or by
+          link: it is stored online, as described in section <a href="#group-trips">11</a>.</li>
         <li><strong>Sharing into SpotJar.</strong> When you share a place from a map app to
           SpotJar, the link is handed to the app through a shared folder on your device. It does
           not pass through any server of ours.</li>
@@ -356,8 +360,8 @@
         (iOS and Android) or Apple (iOS). For this we use Firebase Authentication and Cloud
         Firestore by Google Ireland Ltd., Gordon House, Barrow Street, Dublin 4, Ireland, and
         Google LLC, USA. The data is stored in the EU (Firestore multi-region <code>eur3</code>).
-        Nobody needs an account who does not use group trips, and nothing is uploaded for a trip
-        that is not shared.
+        Nobody needs an account who uses neither group trips nor trip links, and nothing is
+        uploaded for a trip that is not shared.
       </p>
 
       <h3>What is stored</h3>
@@ -423,18 +427,44 @@
 
       <h3>Leaving a group and deleting your account</h3>
       <ul>
-        <li><strong>Leave a group:</strong> your name and ID are removed from the trip, and you
-          keep a private copy on your phone. When the last member leaves, the trip is deleted from
-          the server.</li>
+        <li><strong>Leave a group:</strong> your name and ID are removed from the trip, and the
+          trip is deleted from your phone. The others keep planning. When the last member leaves,
+          the trip is deleted from the server.</li>
+        <li><strong>Dissolve a group</strong> (owner only): the trip, its plan, photos and invite
+          are deleted from the server at once, and the trip is removed from every other member's
+          phone. The owner may keep a private copy of the trip on their own phone. Each affected
+          member gets a short notice in the app (their ID, the trip's ID and name, whether the
+          group was dissolved or they were removed, and the name of who did it); it can be read
+          only by that member and is deleted as soon as their app has shown it.</li>
+        <li><strong>Removed by an organizer:</strong> the member gets the same notice, and the
+          trip is deleted from their phone.</li>
         <li><strong>Delete your account</strong> at any time under Settings &gt; Account: the app
-          leaves every group trip as above and then deletes your Firebase account. Entries you
-          added stay in trips that others still plan, without your name.</li>
+          leaves every group trip, keeping a private copy for you, and then deletes your Firebase
+          account. Entries you added stay in trips that others still plan, without your name.</li>
         <li><strong>Signing out</strong> removes nothing from the server.</li>
       </ul>
       <p>
         The legal basis is Art. 6(1)(b) GDPR: you ask for the trip to be shared and planned with
         others. See Google's <a href="https://firebase.google.com/support/privacy">Firebase privacy
         information</a> and section <a href="#transfers">13</a> on transfers to the USA.
+      </p>
+
+      <h3>Sharing a trip by link</h3>
+      <p>
+        You can also send one private trip to someone as a link
+        (<code>https://spotjar.app/t/#…</code>). You need to be signed in for this. The trip is
+        then stored in Cloud Firestore (Google, EU) for <strong>24 hours</strong>: its name,
+        region, dates and day plan with breaks, its spots (name, coordinates, address, city,
+        country, category, source link and provider ID), the categories you created that they
+        use, the spots' photos as small previews (a Wikimedia photo with its credit), its cover,
+        and the ID of your account. Spot notes, favorite, must-see and visited markers,
+        what you ticked off, bookings and their documents and the packing list are never
+        included. During these 24 hours <strong>anyone who has the link</strong> can open the
+        trip, without an account. After that the server refuses access, and your app deletes the
+        expired link the next time it starts or resumes. The part of the link that identifies the
+        trip comes after the “#”, which browsers never send, so this website never learns which
+        trip is opened. Anyone who imports the trip receives a copy of their own on their phone.
+        The legal basis is Art. 6(1)(b) GDPR: you ask for the trip to be shared.
       </p>
       <!-- TODO: have the wording, the legal basis and the Firebase data processing terms
            (accepted in the Firebase console) checked before publishing. -->
@@ -532,7 +562,7 @@
             <tr>
               <td>Google (Firebase Authentication, Cloud Firestore)</td>
               <td>SpotJar account and group trips, only if you use them</td>
-              <td>User ID, name, email address, sign-in provider, displayed name, link to the Google account picture, IP address, and the shared trip with its plan, spots, accommodation, roles and photo previews or Wikimedia links as listed in section 11</td>
+              <td>User ID, name, email address, sign-in provider, displayed name, link to the Google account picture, IP address, and the shared trip with its plan, spots, accommodation, roles and photo previews or Wikimedia links as listed in section 11, or a trip shared by link for 24 hours</td>
               <td>EU (provider also in USA)</td>
             </tr>
             <tr>
@@ -578,8 +608,10 @@
         <li><strong>Location</strong> is used while the app runs and not stored.</li>
         <li><strong>Your SpotJar account</strong> is kept until you delete it under Settings &gt;
           Account.</li>
+        <li><strong>A trip shared by link</strong> can be opened for 24 hours only. The server
+          refuses access after that, and the sharer's app deletes it on its next start.</li>
         <li><strong>A shared trip</strong> is kept until its last member leaves or the owner
-          deletes it. Your name and ID are removed from it as soon as you leave. A replaced photo
+          deletes or dissolves it. Your name and ID are removed from it as soon as you leave. A replaced photo
           is deleted at once; a spot's photo is deleted when the spot leaves the trip.</li>
         <li><strong>Crash reports</strong> are deleted by Sentry after the retention period of the
           project. <span class="todo">TODO: confirm the period in Sentry, for example 90 days</span>.</li>

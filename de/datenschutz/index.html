@@ -40,15 +40,15 @@
     <div class="policy__head">
       <img src="../../img/logo.png" alt="SpotJar" width="1040" height="303">
       <h1>Datenschutzerklärung</h1>
-      <p class="policy__date">Stand <time datetime="2026-10-15">15. Oktober 2026</time></p>
+      <p class="policy__date">Stand <time datetime="2026-10-18">18. Oktober 2026</time></p>
     </div>
 
     <p>
       Diese Datenschutzerklärung gilt für die SpotJar-App auf iOS und Android sowie für die
       Website <a href="https://spotjar.app/de/">spotjar.app</a>. Für SpotJar brauchst du kein
       Konto, und deine Orte, Notizen und Reisen bleiben auf deinem Gerät. Nur wenn du eine Reise
-      mit anderen teilst (Gruppen-Trips, Abschnitt <a href="#group-trips">11</a>), meldest du
-      dich an und der Plan dieser Reise wird online gespeichert. Hier wird beschrieben, wann die
+      mit anderen teilst (Gruppen-Trips oder Trip-Link, Abschnitt <a href="#group-trips">11</a>), meldest du
+      dich an und diese Reise wird online gespeichert. Hier wird beschrieben, wann die
       App oder Website einen anderen Dienst kontaktiert. Eine kurze Zusammenfassung findest du auch direkt in der App: In den
       Einstellungen auf den Info-Button neben dem Datenschutzhinweis tippen.
     </p>
@@ -113,6 +113,7 @@
             <tr><td>Automatisches Foto eines gespeicherten Ortes von Wikimedia</td><td>Art. 6 Abs. 1 lit. f, berechtigtes Interesse an einem Bild des gespeicherten Ortes</td></tr>
             <tr><td>Dein Standort zum Sortieren nach Entfernung und zur Anzeige auf der Reisekarte</td><td>Art. 6 Abs. 1 lit. a, deine Einwilligung über die Systemberechtigung</td></tr>
             <tr><td>Gruppen-Trips: dein SpotJar-Konto sowie das Teilen und gemeinsame Planen einer Reise</td><td>Art. 6 Abs. 1 lit. b, du möchtest die Reise teilen und gemeinsam planen</td></tr>
+            <tr><td>Trip-Links: Speichern einer Reise für 24 Stunden, damit andere sie öffnen können</td><td>Art. 6 Abs. 1 lit. b, du möchtest die Reise per Link teilen</td></tr>
             <tr><td>Fehlerberichte</td><td>Art. 6 Abs. 1 lit. f, berechtigtes Interesse an einer stabilen App</td></tr>
             <tr><td>Auslieferung der Website und Serverprotokolle</td><td>Art. 6 Abs. 1 lit. f, berechtigtes Interesse an einer sicheren Website</td></tr>
           </tbody>
@@ -172,7 +173,7 @@
         Reisen mit Tagesplänen, Packlisten und Vorlagen sowie deine Einstellungen.
       </p>
       <ul>
-        <li><strong>Kein Konto nötig.</strong> Wir betreiben keinen eigenen Server und erhalten diese Daten nie. Einzige Ausnahme ist eine Reise, die du als Gruppen-Trip mit anderen teilst: Ihr Plan wird online gespeichert, wie in Abschnitt <a href="#group-trips">11</a> beschrieben.</li>
+        <li><strong>Kein Konto nötig.</strong> Wir betreiben keinen eigenen Server und erhalten diese Daten nie. Einzige Ausnahmen sind eine Reise, die du als Gruppen-Trip oder per Link teilst: Sie wird online gespeichert, wie in Abschnitt <a href="#group-trips">11</a> beschrieben.</li>
         <li><strong>Teilen mit SpotJar.</strong> Wenn du einen Ort aus einer Karten-App an SpotJar teilst, übergibt dein Gerät den Link über einen gemeinsamen Ordner an die App. Er läuft nicht über einen unserer Server.</li>
         <li><strong>Reise aus Fotos</strong> (nur iOS). Wenn du aus Fotos eines Reiseplans eine Reise erstellst, laufen die Texterkennung mit Apple Vision und die Analyse mit Apple Foundation Models vollständig auf deinem Gerät. Fotos und erkannter Text werden nicht hochgeladen. Die Kamera wird nur dafür und erst nach deiner Zustimmung verwendet.</li>
         <li><strong>Export.</strong> Beim Export erstellt die App eine Datei. Du entscheidest, wo sie gespeichert wird. Fotos sind nur enthalten, wenn du das auswählst.</li>
@@ -303,7 +304,7 @@
         Google (iOS und Android) oder Apple (iOS) an. Wir verwenden dazu Firebase Authentication
         und Cloud Firestore der Google Ireland Ltd., Gordon House, Barrow Street, Dublin 4, Irland,
         und der Google LLC, USA. Die Daten werden in der EU gespeichert (Firestore-Multi-Region
-        <code>eur3</code>). Wer keine Gruppen-Trips nutzt, braucht kein Konto, und für eine nicht
+        <code>eur3</code>). Wer weder Gruppen-Trips noch Trip-Links nutzt, braucht kein Konto, und für eine nicht
         geteilte Reise wird nichts hochgeladen.
       </p>
 
@@ -376,10 +377,19 @@
       <h3>Gruppe verlassen und Konto löschen</h3>
       <ul>
         <li><strong>Gruppe verlassen:</strong> Dein Name und deine ID werden aus der Reise
-          entfernt, und du behältst eine private Kopie auf deinem Gerät. Verlässt das letzte
-          Mitglied die Reise, wird sie vom Server gelöscht.</li>
+          entfernt, und die Reise wird von deinem Gerät gelöscht. Die anderen planen weiter.
+          Verlässt das letzte Mitglied die Reise, wird sie vom Server gelöscht.</li>
+        <li><strong>Gruppe auflösen</strong> (nur der Eigentümer): Die Reise, ihr Plan, die Fotos
+          und die Einladung werden sofort vom Server gelöscht, und die Reise verschwindet von den
+          Geräten aller anderen Mitglieder. Der Eigentümer kann eine private Kopie auf seinem
+          Gerät behalten. Jedes betroffene Mitglied erhält in der App einen kurzen Hinweis (seine
+          ID, die ID und der Name der Reise, ob die Gruppe aufgelöst oder es entfernt wurde, und
+          der Name dessen, der das getan hat); ihn kann nur dieses Mitglied lesen, und er wird
+          gelöscht, sobald seine App ihn angezeigt hat.</li>
+        <li><strong>Von einem Organisator entfernt:</strong> Das Mitglied erhält denselben
+          Hinweis, und die Reise wird von seinem Gerät gelöscht.</li>
         <li><strong>Konto löschen</strong> jederzeit unter Einstellungen &gt; Konto: Die App
-          verlässt wie oben alle Gruppen-Trips und löscht dann dein Firebase-Konto. Einträge, die
+          verlässt alle Gruppen-Trips, wobei du eine private Kopie behältst, und löscht dann dein Firebase-Konto. Einträge, die
           du hinzugefügt hast, bleiben ohne deinen Namen in Reisen, die andere weiter planen.</li>
         <li><strong>Abmelden</strong> löscht nichts vom Server.</li>
       </ul>
@@ -388,6 +398,25 @@
         und gemeinsam planen. Siehe auch die
         <a href="https://firebase.google.com/support/privacy">Datenschutzinformationen zu Firebase</a>
         und Abschnitt <a href="#transfers">13</a> zur Datenübermittlung in die USA.
+      </p>
+
+      <h3>Reise per Link teilen</h3>
+      <p>
+        Du kannst auch eine private Reise als Link
+        (<code>https://spotjar.app/t/#…</code>) an jemanden schicken. Dafür musst du angemeldet
+        sein. Die Reise wird dann <strong>24 Stunden</strong> lang in Cloud Firestore (Google, EU)
+        gespeichert: Name, Region, Daten und Tagesplan mit Pausen, ihre Orte (Name, Koordinaten,
+        Adresse, Ort, Land, Kategorie, Quell-Link und Anbieter-ID), die von dir angelegten
+        Kategorien, die sie verwenden, die Fotos der Orte als kleine Vorschau (ein Wikimedia-Foto
+        mit seinen Angaben), das Titelbild und die ID deines Kontos. Notizen zu Orten, Markierungen
+        als Favorit, Muss oder erlebt, abgehakte Punkte, Unterkünfte samt Dokumenten und die
+        Packliste werden nie mitgeschickt. In diesen 24 Stunden kann <strong>jede Person, die den
+        Link hat</strong>, die Reise öffnen, ohne Konto. Danach verweigert der Server den Zugriff,
+        und deine App löscht den abgelaufenen Link beim nächsten Start oder Fortsetzen. Der Teil
+        des Links, der die Reise bezeichnet, steht nach dem „#“, den Browser nie mitschicken –
+        diese Website erfährt also nicht, welche Reise geöffnet wird. Wer die Reise importiert,
+        erhält eine eigene Kopie auf dem Handy. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO:
+        Du möchtest die Reise teilen.
       </p>
     </section>
 
@@ -447,7 +476,7 @@
             <tr><td>GitHub, Inc.</td><td>Website-Hosting</td><td>IP-Adresse, Anfrageprotokolle</td><td>USA</td></tr>
             <tr><td>Apple</td><td>Kartenanzeige und Ortssuche unter iOS, Auflösen kurzer Apple-Karten-Links</td><td>IP-Adresse, Kartenausschnitt, Suchtext, Suchbereich und Kurzlink</td><td>EU / USA</td></tr>
             <tr><td>Google</td><td>Kartenanzeige und Ortssuche unter Android, Auflösen kurzer Kartenlinks</td><td>IP-Adresse, Kartenausschnitt, Suchtext, Suchbereich, App-Kennung und Kurzlink</td><td>EU / USA</td></tr>
-            <tr><td>Google (Firebase Authentication, Cloud Firestore)</td><td>SpotJar-Konto und Gruppen-Trips, nur wenn du sie nutzt</td><td>Nutzer-ID, Name, E-Mail-Adresse, Anmeldedienst, angezeigter Name, Link zum Google-Profilbild, IP-Adresse sowie die geteilte Reise mit Plan, Orten, Unterkünften, Rollen und Foto-Vorschauen beziehungsweise Wikimedia-Links wie in Abschnitt 11 beschrieben</td><td>EU, Anbieter auch in den USA</td></tr>
+            <tr><td>Google (Firebase Authentication, Cloud Firestore)</td><td>SpotJar-Konto und Gruppen-Trips, nur wenn du sie nutzt</td><td>Nutzer-ID, Name, E-Mail-Adresse, Anmeldedienst, angezeigter Name, Link zum Google-Profilbild, IP-Adresse sowie die geteilte Reise mit Plan, Orten, Unterkünften, Rollen und Foto-Vorschauen beziehungsweise Wikimedia-Links wie in Abschnitt 11 beschrieben, oder eine per Link für 24 Stunden geteilte Reise</td><td>EU, Anbieter auch in den USA</td></tr>
             <tr><td>TikTok / Instagram (Meta)</td><td>Auslesen eines von dir geteilten öffentlichen Beitragslinks</td><td>IP-Adresse, Beitrags-URL</td><td>Je nach Anbieter</td></tr>
             <tr><td>Photon (OpenStreetMap), nur Android</td><td>Suche nach Ortsnamen aus geteilten Beiträgen</td><td>IP-Adresse, Ortsnamen</td><td>Je nach Anbieter</td></tr>
             <tr><td>Wikimedia Foundation, Inc.</td><td>Foto eines gespeicherten Ortes; Laden der Wikimedia-Fotos, die andere Mitglieder in einem Gruppen-Trip geteilt haben</td><td>IP-Adresse, Ortskoordinaten, Name und Version der App, Suchradius, Sprachcodes, öffentliche Eintrags-IDs, Artikeltitel und Bilddateinamen (beim Laden geteilter Fotos nur IP-Adresse, App-Kennung und öffentliche Wikimedia-Seite des Fotos)</td><td>USA</td></tr>
@@ -464,7 +493,8 @@
         <li><strong>App-Daten</strong> bleiben auf deinem Gerät, bis du sie in der App löschst oder die App deinstallierst.</li>
         <li><strong>Standort</strong> wird während der App-Nutzung verwendet und nicht gespeichert.</li>
         <li><strong>Dein SpotJar-Konto</strong> bleibt bestehen, bis du es unter Einstellungen &gt; Konto löschst.</li>
-        <li><strong>Eine geteilte Reise</strong> bleibt gespeichert, bis das letzte Mitglied sie verlässt oder der Eigentümer sie löscht. Dein Name und deine ID werden entfernt, sobald du sie verlässt. Ein ersetztes Foto wird sofort gelöscht, das Foto eines Ortes, sobald der Ort die Reise verlässt.</li>
+        <li><strong>Eine per Link geteilte Reise</strong> ist nur 24 Stunden lang abrufbar. Danach verweigert der Server den Zugriff, und die App des Teilenden löscht sie beim nächsten Start.</li>
+        <li><strong>Eine geteilte Reise</strong> bleibt gespeichert, bis das letzte Mitglied sie verlässt oder der Eigentümer sie löscht oder auflöst. Dein Name und deine ID werden entfernt, sobald du sie verlässt. Ein ersetztes Foto wird sofort gelöscht, das Foto eines Ortes, sobald der Ort die Reise verlässt.</li>
         <li><strong>Fehlerberichte</strong> löscht Sentry nach der Speicherdauer des Projekts. <span class="todo">TODO: zum Beispiel 90 Tage, in Sentry bestätigen</span>.</li>
         <li><strong>Website-Protokolle sowie Karten- und Fotoanfragen</strong> speichern GitHub, Apple, Google und die Wikimedia Foundation nach ihren eigenen Richtlinien. Wir haben keinen Zugriff darauf.</li>
       </ul>
