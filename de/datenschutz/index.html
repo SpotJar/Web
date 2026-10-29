@@ -125,7 +125,7 @@
       </p>
       <ul>
         <li><strong>Teilen mit SpotJar:</strong> Ein aus einer anderen App geteilter Link wird über einen gemeinsamen Ordner auf dem Gerät an die App übergeben.</li>
-        <li><strong>Export/Import:</strong> Die Exportdatei (Fotos nur auf Wunsch) speicherst oder sendest du selbst. Titelbilder aus Instagram und TikTok werden auch beim Export mit Fotos nicht mitgegeben.</li>
+        <li><strong>Export/Import:</strong> Die Exportdatei (Fotos nur auf Wunsch) speicherst oder sendest du selbst.</li>
         <li><strong>Trip aus Fotos:</strong> Texterkennung und Auswertung der von dir gewählten Fotos laufen auf dem Gerät (Abschnitt <a href="#ai">9</a>). Die Kamera wird nur dafür und erst nach deiner Zustimmung verwendet.</li>
         <li><strong>Geräte-Backups:</strong> Je nach Geräteeinstellung sichert iCloud oder Google die App-Daten; das betrifft nur dich und den Anbieter.</li>
       </ul>
@@ -148,7 +148,7 @@
             <tr><td>Photon / OpenStreetMap (komoot, Android)</td><td>Ortssuche und Suche nach Ortsnamen aus geteilten Beiträgen</td><td>Suchtext; Suchbereich wie oben</td><td>lit. b</td></tr>
             <tr><td>Geräte-Geocoder (Android, Google Play-Dienste)</td><td>Adresse zu Koordinaten</td><td>Koordinaten des Orts</td><td>lit. b</td></tr>
             <tr><td>Google, Apple</td><td>Kurzlinks (<code>maps.app.goo.gl</code>, <code>maps.apple/p</code>) auflösen, höchstens fünf Weiterleitungen</td><td>der Link</td><td>lit. b</td></tr>
-            <tr><td>TikTok, Instagram (Meta)</td><td>von dir geteilter öffentlicher Beitrag: Beitragsseite, oEmbed, Titelbild</td><td>Beitrags-URL; kein Login, keine Cookies</td><td>lit. b</td></tr>
+            <tr><td>TikTok, Instagram (Meta)</td><td>von dir geteilter öffentlicher Beitrag: Beitragsseite, oEmbed, Ortsangaben, gegebenenfalls TikTok-Untertitel und Titelbild für lokale Texterkennung</td><td>Beitrags-URL; kein Login, keine Cookies</td><td>lit. b</td></tr>
             <tr><td>Wikimedia Foundation, Inc., 1 Montgomery Street, Suite 1600, San Francisco, CA 94104, USA (Wikipedia, Wikidata, Commons)</td><td>Foto für Spots aus Links und Titelbild eines Trips (Region); Sehenswürdigkeiten beim Bearbeiten eines Trips</td><td>Koordinaten des Orts oder der Region (bei einem Land dessen Ländercode), Suchradius, Sprachcode, Name und Version der App; danach öffentliche Eintrags-IDs, Artikeltitel, Dateinamen</td><td>Foto: lit. f; Sehenswürdigkeiten: lit. b</td></tr>
             <tr><td>Overpass API / OpenStreetMap (overpass-api.de)</td><td>Öffnungszeiten und Eintritt, wenn du einen Spot öffnest</td><td>Koordinaten und ein Radius von 75 m</td><td>lit. f</td></tr>
             <tr><td>Geoapify (Android; iOS für öffentliche Verkehrsmittel)</td><td>Wegzeiten beim Bearbeiten eines Trips</td><td>Koordinaten zweier Orte, Verkehrsmittel, App-Schlüssel</td><td>lit. b</td></tr>
@@ -171,13 +171,20 @@
         <a href="https://www.apple.com/legal/privacy/de-ww/">Apple</a>,
         <a href="https://www.geoapify.com/privacy-policy/">Geoapify</a>.
       </p>
-      <h3>Titelbilder geteilter Beiträge</h3>
+      <h3>Titelbild-Analyse und Fotos von Orten</h3>
       <p>
-        Ein Titelbild aus einem Instagram- oder TikTok-Beitrag kann als Ortsfoto auf deinem
-        Gerät gespeichert werden. Die Quellenangabe erteilt keine Nutzungslizenz. Diese Bilder
-        werden nicht in Gruppen-Trips hochgeladen und nicht in Trip-Dateien, Trip-Links oder
-        Datenexporte aufgenommen. Der Ort und sein Quell-Link können weiterhin geteilt werden.
-        Geräte-Backups nach Abschnitt 4 sind davon unabhängig.
+        Ein Titelbild aus einem Instagram- oder TikTok-Beitrag wird bei verfügbarer
+        Texterkennung vorübergehend in den Arbeitsspeicher geladen und auf deinem Gerät
+        ausgewertet, um Ortsnamen zu erkennen. Der Bildanbieter erhält dabei Bildadresse und
+        IP-Adresse. Das Bild wird nicht als Datei, Editor-Vorschau oder Spot-Foto gespeichert,
+        nicht in einem Bild-Cache behalten und nicht weitergegeben. Die Analyse überträgt
+        keine Bilddaten an einen KI-Server.
+      </p>
+      <p>
+        Für einen erkannten Ort kann die normale Wikimedia-Suche ein frei lizenziertes Foto
+        finden, wenn du diese Funktion aktiviert hast. Andernfalls bleibt der Ort ohne Foto,
+        bis du selbst eines auswählst. Ohne Foto zeigt SpotJar das Symbol der Quelle.
+        Ein von dir gewähltes Foto hat Vorrang vor der automatischen Suche.
       </p>
       <h3>Dein Standort</h3>
       <p>
@@ -297,7 +304,7 @@
         eine Reise aus Fotos eines Reiseplans (iOS), Ortsnamen in geteilten TikTok- und
         Instagram-Beiträgen sowie Titel und Beschreibung von Trip-Vorschlägen. Die
         Texterkennung (Apple Vision, ML Kit der Google Play-Dienste) liest Text auf Fotos und
-        Titelbildern ebenfalls auf dem Gerät. Alles, was eine KI erzeugt hat, trägt dieses Zeichen:
+        vorübergehend geladenen Titelbildern ebenfalls auf dem Gerät. Alles, was eine KI erzeugt hat, trägt dieses Zeichen:
       </p>
       <div class="ai-marker">
         <figure>

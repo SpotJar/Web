@@ -125,7 +125,7 @@
       </p>
       <ul>
         <li><strong>Sharing to SpotJar:</strong> A link shared from another app is handed to the app through a shared folder on the device.</li>
-        <li><strong>Export/import:</strong> You save or send the export file (photos only on request) yourself. Instagram and TikTok cover images are excluded even from exports with photos.</li>
+        <li><strong>Export/import:</strong> You save or send the export file (photos only on request) yourself.</li>
         <li><strong>Trip from photos:</strong> Text recognition and analysis of the photos you choose run on the device (section <a href="#ai">9</a>). The camera is used only for that, and only after you agree.</li>
         <li><strong>Device backups:</strong> Depending on your device settings, iCloud or Google may back up the app data; that concerns only you and the provider.</li>
       </ul>
@@ -148,7 +148,7 @@
             <tr><td>Photon / OpenStreetMap (komoot, Android)</td><td>Place search, and search for place names from shared posts</td><td>Search text; search area as above</td><td>(b)</td></tr>
             <tr><td>Device geocoder (Android, Google Play services)</td><td>Address for coordinates</td><td>Coordinates of the place</td><td>(b)</td></tr>
             <tr><td>Google, Apple</td><td>Resolving short links (<code>maps.app.goo.gl</code>, <code>maps.apple/p</code>), at most five redirects</td><td>The link</td><td>(b)</td></tr>
-            <tr><td>TikTok, Instagram (Meta)</td><td>A public post you share: post page, oEmbed, cover picture</td><td>Post URL; no login, no cookies</td><td>(b)</td></tr>
+            <tr><td>TikTok, Instagram (Meta)</td><td>A public post you share: post page, oEmbed, location metadata, optional TikTok subtitles and cover for on-device text recognition</td><td>Post URL; no login, no cookies</td><td>(b)</td></tr>
             <tr><td>Wikimedia Foundation, Inc., 1 Montgomery Street, Suite 1600, San Francisco, CA 94104, USA (Wikipedia, Wikidata, Commons)</td><td>Photo for spots from links and a trip's cover (region); sights while you edit a trip</td><td>Coordinates of the place or region (for a country its country code), search radius, language code, app name and version; then public entry IDs, article titles, file names</td><td>Photo: (f); sights: (b)</td></tr>
             <tr><td>Overpass API / OpenStreetMap (overpass-api.de)</td><td>Opening hours and admission when you open a spot</td><td>Coordinates and a 75 m radius</td><td>(f)</td></tr>
             <tr><td>Geoapify (Android; iOS for public transport)</td><td>Travel times while you edit a trip</td><td>Coordinates of two places, mode of travel, app key</td><td>(b)</td></tr>
@@ -170,13 +170,19 @@
         <a href="https://www.apple.com/legal/privacy/en-ww/">Apple</a>,
         <a href="https://www.geoapify.com/privacy-policy/">Geoapify</a>.
       </p>
-      <h3>Cover images of shared posts</h3>
+      <h3>Cover analysis and place photos</h3>
       <p>
-        An Instagram or TikTok post's cover can be stored as a place photo on your device.
-        Attribution does not grant a licence. These images are not uploaded to group trips or
-        included in trip files, trip links or data exports. The place and its source link can
-        still be shared.
-        Device backups under section 4 are independent of this.
+        Where text recognition is available, an Instagram or TikTok cover image is temporarily
+        loaded into memory and analyzed on your device to recognize place names. The image
+        provider receives the image address and your IP address. The image is not saved as a
+        file, editor preview or place photo, kept in an image cache, or shared. The analysis
+        does not send image data to an AI server.
+      </p>
+      <p>
+        For an identified place, the normal Wikimedia lookup can find a freely licensed photo
+        if you enabled that feature. Otherwise the place has no photo until you select one
+        yourself. Without a photo, SpotJar shows the source platform's icon. A photo you select
+        takes priority over an automatic lookup.
       </p>
       <h3>Your location</h3>
       <p>
@@ -289,7 +295,7 @@
         neither to us nor to third parties or a cloud AI. It is used for suggestions: a trip from
         photos of a travel plan (iOS), place names in shared TikTok and Instagram posts, and
         titles and descriptions of trip ideas. Text recognition (Apple Vision, ML Kit from Google
-        Play services) also reads text on photos and cover pictures on the device. Everything an
+        Play services) reads text on photos and temporarily loaded cover images on the device. Everything an
         AI produced carries this mark:
       </p>
       <div class="ai-marker">
