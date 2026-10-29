@@ -125,7 +125,7 @@
       </p>
       <ul>
         <li><strong>Sharing to SpotJar:</strong> A link shared from another app is handed to the app through a shared folder on the device.</li>
-        <li><strong>Export/import:</strong> You save or send the export file (photos only on request) yourself.</li>
+        <li><strong>Export/import:</strong> You save or send the export file (photos only on request) yourself. Instagram and TikTok cover images are excluded even from exports with photos.</li>
         <li><strong>Trip from photos:</strong> Text recognition and analysis of the photos you choose run on the device (section <a href="#ai">9</a>). The camera is used only for that, and only after you agree.</li>
         <li><strong>Device backups:</strong> Depending on your device settings, iCloud or Google may back up the app data; that concerns only you and the provider.</li>
       </ul>
@@ -170,6 +170,16 @@
         <a href="https://www.apple.com/legal/privacy/en-ww/">Apple</a>,
         <a href="https://www.geoapify.com/privacy-policy/">Geoapify</a>.
       </p>
+      <h3>Cover images of shared posts</h3>
+      <p>
+        An Instagram or TikTok post's cover can be stored as a place photo on your device.
+        Attribution does not grant a licence. These images are not uploaded to group trips or
+        included in trip files, trip links or data exports. The place and its source link can
+        still be shared. Older group uploads belonging to you are removed on the next permitted
+        photo sync where your local spot identifies them as such a cover. Already distributed
+        files or copies without that identification cannot be recalled by this change.
+        Device backups under section 4 are independent of this.
+      </p>
       <h3>Your location</h3>
       <p>
         Optional and only while you use the app (Art. 6(1)(a) GDPR, via the system permission; on
@@ -185,7 +195,11 @@
         You sign in only for these two features: with Google (iOS, Android) or Apple (iOS), via
         Firebase Authentication. Data is stored in Cloud Firestore (Google Ireland Ltd., Gordon
         House, Barrow Street, Dublin 4, Ireland, and Google LLC, USA; location EU,
-        <code>eur3</code>). Google is our processor. The legal basis is Art. 6(1)(b) GDPR, because
+        <code>eur3</code>). This EU region applies to the Firestore database, not to all
+        Firebase services: according to
+        <a href="https://firebase.google.com/support/privacy">Google</a>, Firebase Authentication
+        processes sign-in data in the USA; App Check and Cloud Messaging can process globally.
+        Google processes account and trip data supplied by us as a processor. The legal basis is Art. 6(1)(b) GDPR, because
         you want to share the trip. Firebase App Check (Apple App Attest, Google Play Integrity)
         verifies that requests come from the genuine app and transmits device attestations to
         Apple or Google for that (point (f), protection against abuse).
@@ -301,11 +315,20 @@
     <section id="transfers">
       <h2>10. Transfers to third countries</h2>
       <p>
-        Several recipients are in the USA or may process data there (GitHub, Apple, Google, Meta,
-        TikTok, Wikimedia Foundation, Sentry). If a provider is certified under the EU-U.S. Data
-        Privacy Framework, the transfer relies on the European Commission's adequacy decision of
-        10 July 2023 (Art. 45 GDPR), otherwise on EU standard contractual clauses (Art. 46(2)(c)
-        GDPR).
+        Requests described in this policy may involve processing outside the EEA, particularly
+        in the USA. An EU database or EU region does not rule out access or further processing
+        in third countries across all services. Such transfers must satisfy Articles 44 onwards
+        GDPR; the relevant grounds depend on the specific recipient, service and applicable
+        agreements.
+      </p>
+      <p>
+        Providers publish information on privacy and transfers at
+        <a href="https://firebase.google.com/support/privacy">Google/Firebase</a> and in
+        <a href="https://sentry.io/legal/dpa/">Sentry's data processing terms</a>;
+        other recipients are linked in sections 3 and 5. Provider information does not replace
+        any required agreement. You can use the contact details in section 1 to request
+        information about the safeguards used for a transfer and, where applicable, a copy
+        of those safeguards.
       </p>
     </section>
 
@@ -317,7 +340,7 @@
         <li><strong>Group trip:</strong> until the last member leaves or the owner deletes or dissolves it; replaced photos at once, photos of removed places with the place.</li>
         <li><strong>Trip link:</strong> 24 hours.</li>
         <li><strong>Push data:</strong> until you sign out, leave the group or delete the account; markers 30 days.</li>
-        <li><strong>Error reports:</strong> at most 90 days at Sentry.</li>
+        <li><strong>Error reports:</strong> according to the retention setting of the Sentry project. You can request the current period using the contact details in section 1.</li>
         <li><strong>Logs at GitHub, Apple, Google, Wikimedia, Meta, TikTok, OpenStreetMap servers, Geoapify and komoot:</strong> under their policies; we have no access.</li>
       </ul>
     </section>

@@ -125,7 +125,7 @@
       </p>
       <ul>
         <li><strong>Teilen mit SpotJar:</strong> Ein aus einer anderen App geteilter Link wird über einen gemeinsamen Ordner auf dem Gerät an die App übergeben.</li>
-        <li><strong>Export/Import:</strong> Die Exportdatei (Fotos nur auf Wunsch) speicherst oder sendest du selbst.</li>
+        <li><strong>Export/Import:</strong> Die Exportdatei (Fotos nur auf Wunsch) speicherst oder sendest du selbst. Titelbilder aus Instagram und TikTok werden auch beim Export mit Fotos nicht mitgegeben.</li>
         <li><strong>Trip aus Fotos:</strong> Texterkennung und Auswertung der von dir gewählten Fotos laufen auf dem Gerät (Abschnitt <a href="#ai">9</a>). Die Kamera wird nur dafür und erst nach deiner Zustimmung verwendet.</li>
         <li><strong>Geräte-Backups:</strong> Je nach Geräteeinstellung sichert iCloud oder Google die App-Daten; das betrifft nur dich und den Anbieter.</li>
       </ul>
@@ -171,6 +171,17 @@
         <a href="https://www.apple.com/legal/privacy/de-ww/">Apple</a>,
         <a href="https://www.geoapify.com/privacy-policy/">Geoapify</a>.
       </p>
+      <h3>Titelbilder geteilter Beiträge</h3>
+      <p>
+        Ein Titelbild aus einem Instagram- oder TikTok-Beitrag kann als Ortsfoto auf deinem
+        Gerät gespeichert werden. Die Quellenangabe erteilt keine Nutzungslizenz. Diese Bilder
+        werden nicht in Gruppen-Trips hochgeladen und nicht in Trip-Dateien, Trip-Links oder
+        Datenexporte aufgenommen. Der Ort und sein Quell-Link können weiterhin geteilt werden.
+        Ältere eigene Gruppen-Uploads werden beim nächsten zulässigen Foto-Abgleich entfernt,
+        soweit dein lokaler Spot sie als solches Titelbild kennzeichnet. Bereits weitergegebene
+        Dateien oder Kopien ohne diese Kennzeichnung können dadurch nicht zurückgerufen werden.
+        Geräte-Backups nach Abschnitt 4 sind davon unabhängig.
+      </p>
       <h3>Dein Standort</h3>
       <p>
         Freiwillig und nur während der App-Nutzung (Art. 6 Abs. 1 lit. a DSGVO, über die
@@ -187,7 +198,11 @@
         Nur für diese beiden Funktionen meldest du dich an: mit Google (iOS, Android) oder Apple
         (iOS), über Firebase Authentication. Gespeichert wird in Cloud Firestore (Google Ireland
         Ltd., Gordon House, Barrow Street, Dublin 4, Irland, und Google LLC, USA; Speicherort EU,
-        <code>eur3</code>). Google ist unser Auftragsverarbeiter. Rechtsgrundlage ist
+        <code>eur3</code>). Diese EU-Region betrifft die Firestore-Datenbank, nicht sämtliche
+        Firebase-Dienste: Firebase Authentication verarbeitet Anmeldedaten laut
+        <a href="https://firebase.google.com/support/privacy">Google</a> in den USA;
+        App Check und Cloud Messaging können global verarbeiten. Google verarbeitet die
+        von uns bereitgestellten Konten- und Reisedaten als Auftragsverarbeiter. Rechtsgrundlage ist
         Art. 6 Abs. 1 lit. b DSGVO, weil du die Reise teilen willst. Firebase App Check
         (Apple App Attest, Google Play Integrity) prüft, dass Anfragen von der echten App kommen,
         und überträgt dafür Gerätenachweise an Apple beziehungsweise Google (lit. f, Schutz vor
@@ -308,11 +323,20 @@
     <section id="transfers">
       <h2>10. Übermittlung in Drittländer</h2>
       <p>
-        Mehrere Empfänger sitzen in den USA oder können dort verarbeiten (GitHub, Apple, Google,
-        Meta, TikTok, Wikimedia Foundation, Sentry). Ist ein Anbieter nach dem EU-U.S. Data
-        Privacy Framework zertifiziert, stützt sich die Übermittlung auf den
-        Angemessenheitsbeschluss der Kommission vom 10. Juli 2023 (Art. 45 DSGVO), sonst auf
-        EU-Standardvertragsklauseln (Art. 46 Abs. 2 lit. c DSGVO).
+        Bei den in dieser Erklärung genannten Anfragen können Daten auch außerhalb des EWR
+        verarbeitet werden, insbesondere in den USA. Eine EU-Datenbank oder EU-Region schließt
+        Zugriffe oder weitere Verarbeitung in Drittländern nicht für sämtliche Dienste aus.
+        Für eine solche Übermittlung sind die Voraussetzungen der Art. 44 ff. DSGVO zu beachten;
+        maßgeblich sind der konkrete Empfänger, der Dienst und die geltenden Vereinbarungen.
+      </p>
+      <p>
+        Angaben der Anbieter zu Datenschutz und Übermittlungen findest du bei
+        <a href="https://firebase.google.com/support/privacy">Google/Firebase</a> und in den
+        <a href="https://sentry.io/legal/dpa/">Datenverarbeitungsbedingungen von Sentry</a>;
+        weitere Empfänger sind in den Abschnitten 3 und 5 verlinkt. Diese Anbieterinformationen
+        ersetzen keine erforderliche Vereinbarung. Über die Kontaktdaten in Abschnitt 1 kannst
+        du Informationen zu den für eine Übermittlung verwendeten Garantien und gegebenenfalls
+        eine Kopie dieser Garantien anfordern.
       </p>
     </section>
 
@@ -324,7 +348,7 @@
         <li><strong>Gruppen-Trip:</strong> bis das letzte Mitglied geht oder der Eigentümer löscht oder auflöst; ersetzte Fotos sofort, Fotos entfernter Orte mit dem Ort.</li>
         <li><strong>Trip-Link:</strong> 24 Stunden.</li>
         <li><strong>Push-Daten:</strong> bis zum Abmelden, Verlassen der Gruppe oder Löschen des Kontos; Marker 30 Tage.</li>
-        <li><strong>Fehlerberichte:</strong> bei Sentry höchstens 90 Tage.</li>
+        <li><strong>Fehlerberichte:</strong> nach der im Sentry-Projekt eingestellten Aufbewahrungsfrist. Die aktuell geltende Frist kannst du über die Kontaktdaten in Abschnitt 1 erfragen.</li>
         <li><strong>Protokolle von GitHub, Apple, Google, Wikimedia, Meta, TikTok, OpenStreetMap-Servern, Geoapify und komoot:</strong> nach deren Richtlinien; wir haben keinen Zugriff.</li>
       </ul>
     </section>
