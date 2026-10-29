@@ -148,7 +148,7 @@
             <tr><td>Photon / OpenStreetMap (komoot, Android)</td><td>Place search, and search for place names from shared posts</td><td>Search text; search area as above</td><td>(b)</td></tr>
             <tr><td>Device geocoder (Android, Google Play services)</td><td>Address for coordinates</td><td>Coordinates of the place</td><td>(b)</td></tr>
             <tr><td>Google, Apple</td><td>Resolving short links (<code>maps.app.goo.gl</code>, <code>maps.apple/p</code>), at most five redirects</td><td>The link</td><td>(b)</td></tr>
-            <tr><td>TikTok, Instagram (Meta)</td><td>A public post you share: post page, oEmbed, location metadata, optional TikTok subtitles and cover for on-device text recognition</td><td>Post URL; no login, no cookies</td><td>(b)</td></tr>
+            <tr><td>TikTok, Instagram (Meta)</td><td>Public text, location information and cover images of shared posts for place recognition</td><td>Post and image addresses; no login, no cookies</td><td>(b)</td></tr>
             <tr><td>Wikimedia Foundation, Inc., 1 Montgomery Street, Suite 1600, San Francisco, CA 94104, USA (Wikipedia, Wikidata, Commons)</td><td>Photo for spots from links and a trip's cover (region); sights while you edit a trip</td><td>Coordinates of the place or region (for a country its country code), search radius, language code, app name and version; then public entry IDs, article titles, file names</td><td>Photo: (f); sights: (b)</td></tr>
             <tr><td>Overpass API / OpenStreetMap (overpass-api.de)</td><td>Opening hours and admission when you open a spot</td><td>Coordinates and a 75 m radius</td><td>(f)</td></tr>
             <tr><td>Geoapify (Android; iOS for public transport)</td><td>Travel times while you edit a trip</td><td>Coordinates of two places, mode of travel, app key</td><td>(b)</td></tr>
@@ -170,19 +170,17 @@
         <a href="https://www.apple.com/legal/privacy/en-ww/">Apple</a>,
         <a href="https://www.geoapify.com/privacy-policy/">Geoapify</a>.
       </p>
-      <h3>Cover analysis and place photos</h3>
+      <h3>Shared posts</h3>
       <p>
-        Where text recognition is available, an Instagram or TikTok cover image is temporarily
-        loaded into memory and analyzed on your device to recognize place names. The image
-        provider receives the image address and your IP address. The image is not saved as a
-        file, editor preview or place photo, kept in an image cache, or shared. The analysis
-        does not send image data to an AI server.
+        SpotJar analyzes public text, location information and cover images of shared
+        Instagram and TikTok posts on your device. Cover images are loaded temporarily
+        and are not stored permanently or shared. Providers see the requested addresses
+        and your IP address; no login or cookies are used. Recognized place names go
+        to the place search.
       </p>
       <p>
-        For an identified place, the normal Wikimedia lookup can find a freely licensed photo
-        if you enabled that feature. Otherwise the place has no photo until you select one
-        yourself. Without a photo, SpotJar shows the source platform's icon. A photo you select
-        takes priority over an automatic lookup.
+        Place photos are freely licensed Wikimedia images (if enabled) or photos you select
+        yourself.
       </p>
       <h3>Your location</h3>
       <p>
