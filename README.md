@@ -1,63 +1,28 @@
 # SpotJar website
 
-Static site for [spotjar.app](https://spotjar.app): a landing page with a scroll-driven story and
-the privacy policy and imprint. Plain HTML, CSS and vanilla JS: no framework, no build step, no npm, and no
-requests to other domains at runtime.
+Static, bilingual website for [spotjar.app](https://spotjar.app). Plain HTML, CSS and vanilla JavaScript, with no build step, framework, analytics or external runtime requests.
+
+The design follows the Flutter app's light palette and shapes in `app-spotjar/lib/ui/core/themes/`: cream `#F6F1E8`, cards `#FFFCF7`, charcoal `#2B2421`, petrol `#247E76` and orange `#F4772E`. Fredoka and Inter are self-hosted. The landing pages work with JavaScript disabled; JavaScript only handles language preference and first-visit detection.
 
 ## Structure
 
+```text
+index.html                  English landing page
+de/index.html               German landing page
+policy/ and imprint/        English legal pages
+de/datenschutz/             German privacy policy
+de/impressum/               German imprint
+t/ and j/                   Shared-trip and group-invite app links
+css/base.css                Shared app palette, typography, header and footer
+css/landing.css             Responsive landing-page layout
+css/policy.css              Legal and app-link pages
+js/lang.js                  Language detection and remembered language choice
+img/illustrations/          Optimized artwork copied from the app
+img/                        Screenshots, logos, markers and app icons
+fonts/                      Local variable WOFF2 fonts and licenses
+images/badges/              App Store and Google Play badges
+.github/workflows/pages.yml GitHub Pages deployment
 ```
-index.html            Landing page
-policy/index.html     Privacy policy
-imprint/index.html    Imprint (Impressum)
-de/index.html         German landing page
-de/datenschutz/       German privacy policy
-de/impressum/         German imprint
-css/base.css          Fonts, design tokens, reset, header/footer/buttons (shared)
-css/landing.css       Landing page only: hero, pinned scene, floating jar, steps
-css/policy.css        Policy page only
-js/scroll-scene.js    Maps scroll position to scene state (classes + custom properties)
-img/                  Web-ready images (logo, jar icon, screenshots, app icons)
-fonts/                Fredoka + Inter as Latin-subset variable woff2 (+ source TTFs, OFL licences)
-images/badges/        App Store and Google Play badges (deployed)
-images/               Other source images (not deployed); raw app screenshots in images/mocks/
-favicon.ico, apple-touch-icon.png, robots.txt, sitemap.xml, CNAME, .nojekyll
-.github/workflows/pages.yml   Deploys to GitHub Pages on push to main
-```
-
-## How the scene works
-
-`#how` is a 420vh section with a sticky, viewport-high stage inside. `js/scroll-scene.js`
-computes the progress `p` (0–1) through that section and derives everything from it, and
-from nothing else:
-
-| p | classes on `#how` | caption |
-|---|---|---|
-| 0–0.20 | `s-empty` until the first letter; `--chars` on `.typed` types the name | Find it in Maps |
-| 0.20–0.40 | `s-found`: pin drops, place card slides in | Found a spot worth keeping? |
-| 0.40–0.50 | `s-press`: Share button pressed | Tap Share |
-| 0.50–0.84 | `s-sheet`: share sheet up; from 0.64 also `s-pick` | Tap Share, then pick SpotJar |
-| 0.84–1 | `s-saved`: toast "In your jar" | It's in your jar |
-
-The floating `.jar` shows from `p ≥ 0.40`, fills to level 1 at `p ≥ 0.84`, then one level per
-`.sj-step` whose top is above 55% of the viewport, and fades out once the steps section is
-scrolled past. All movement is CSS transitions. Without JS the page is a plain long read.
-
-## Replacing screenshots
-
-Screenshots are shown at max 280px wide, so export them at **560 × 1218** (the ratio of an iPhone screenshot), without
-a device frame. Put a WebP and a JPEG fallback in `img/` under the same name:
-
-```sh
-cwebp -q 80 -resize 560 0 raw.png -o img/app-new-spot.webp
-sips -s format jpeg -s formatOptions 80 -Z 1218 raw.png --out img/app-new-spot.jpg
-```
-
-Keep each file under 250 KB. Steps 1 and 3 still use placeholders (`.shot--todo`); swap each
-one for the same `<picture>` markup the other steps use, and write a real `alt` text.
-
-Current sources in `images/mocks/`: `spotList.png` (step 2, until there is a "create spot"
-screen with note and categories), `tripDetails.png` (step 4), `tripMap.png` (step 5).
 
 ## Run locally
 
@@ -65,21 +30,23 @@ screen with note and categories), `tripDetails.png` (step 4), `tripMap.png` (ste
 python3 -m http.server 8000
 ```
 
-Then open <http://localhost:8000>. To check the no-JS fallback, disable JavaScript in the dev
-tools. To check that nothing loads from other domains, watch the Network tab.
+Open <http://localhost:8000/de/> or <http://localhost:8000/>. The layout adapts to phone, tablet and desktop widths and respects reduced-motion preferences.
+
+## Artwork
+
+The optimized WebP illustrations come from `../app-spotjar/assets/images/illustrations/`:
+
+| Website asset | App source |
+| --- | --- |
+| `spotjar-full.webp` | `jar/SpotJar_full_open.png` |
+| `save-a-spot.webp` | `onbaording_spotToJar.png` |
+| `plan-a-trip.webp` | `onbaording_jarToTrip.png` |
+| `pack-your-bag.webp` | `onbaording_packaging.png` |
+
+Keep exported web artwork in `img/` so the existing deployment includes it. Source PNGs remain in the app. Screenshots have WebP sources and JPEG fallbacks in `img/`; update both language versions when replacing them.
 
 ## Deploying
 
-In the repository settings under **Pages**, set the source to **GitHub Actions**. Every push to
-`main` then deploys through `.github/workflows/pages.yml`, which just copies the files.
+The existing GitHub Actions workflow deploys pushes to `main` to GitHub Pages. It copies the static files without a build step. This repository uses the custom domain `spotjar.app`; preserve `CNAME`, `.well-known/` and the `t/` and `j/` app-link pages.
 
-Custom domain: `CNAME` contains `spotjar.app`. With Actions deployments GitHub reads the
-domain from the Pages settings, not from the file, so enter it there too, point DNS at GitHub
-Pages, and turn on **Enforce HTTPS** (the policy says the site is only served over HTTPS).
-
-All paths are relative, so the site also works under `user.github.io/repo/`. Only `canonical`,
-`og:url`, `og:image`, `robots.txt` and `sitemap.xml` name the domain.
-
-English pages live at the root and German pages under `de/`. Each page links to its translation
-through the language switcher and matching `hreflang` metadata. Keep both versions in sync when
-changing user-facing text.
+English pages live at the root and German pages under `de/`. Keep both versions in sync, including language-switch links and `hreflang` metadata. Asset and navigation paths are relative so the site can also be previewed under a repository subpath.

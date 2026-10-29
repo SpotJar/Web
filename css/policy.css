@@ -1,5 +1,5 @@
 /* ==========================================================================
-   SpotJar privacy policy (same dark theme as the landing page)
+   SpotJar privacy policy (shared app palette and typography)
    ========================================================================== */
 
 .policy {
@@ -175,7 +175,7 @@ tbody tr:last-child td {
 }
 
 tbody tr:nth-child(even) {
-  background: rgba(245, 237, 225, 0.025);
+  background: var(--surface);
 }
 
 /* Visible marker for anything that still has to be filled in before going live. */

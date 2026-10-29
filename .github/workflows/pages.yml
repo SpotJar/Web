@@ -29,11 +29,12 @@ jobs:
         run: |
           mkdir _site
           cp -r index.html policy imprint de css js img fonts _site/
-          # Trip links: the page behind https://spotjar.app/t/#<id>, and the
+          # Trip and invite links, plus the
           # files that let iOS and Android open such a link in the app.
-          cp -r t .well-known _site/
+          cp -r t j .well-known _site/
           mkdir -p _site/images
           cp -r images/badges _site/images/
+          cp images/ai_marker-lightMode.png images/ai_marker-darkMode.png _site/images/
           cp favicon.ico apple-touch-icon.png robots.txt sitemap.xml CNAME .nojekyll _site/
           # Only the web fonts go online, not the source TTFs.
           find _site/fonts -type f ! -name '*.woff2' ! -name 'OFL-*' -delete

@@ -7,7 +7,7 @@
 @font-face {
   font-family: "Fredoka";
   src: url("../fonts/fredoka-latin.woff2") format("woff2");
-  font-weight: 500 600;
+  font-weight: 400 600;
   font-style: normal;
   font-display: swap;
 }
@@ -21,30 +21,29 @@
 }
 
 :root {
-  --bg: #211c19;
-  --surface: #2e2823;
-  --cream: #f5ede1;
-  --orange: #e2703a;
-  --teal: #3fb39d;
-  --teal-deep: #1f7a6c;
-
-  --text: rgba(245, 237, 225, 0.8);
-  --text-strong: var(--cream);
-  --text-muted: rgba(245, 237, 225, 0.5);
-  --line: rgba(245, 237, 225, 0.08);
-
-  --radius-card: 26px;
-  --radius-pill: 999px;
-  --shadow: 0 30px 60px -24px rgba(0, 0, 0, 0.6);
-
+  /* AppPalette.light and AppShapes from the Flutter app. */
+  --bg: #f6f1e8;
+  --surface: #fffcf7;
+  --surface-secondary: #ece6dc;
+  --cream: #f6f1e8;
+  --orange: #f4772e;
+  --teal: #247e76;
+  --teal-deep: #1f706a;
+  --text: #665e58;
+  --text-strong: #2b2421;
+  --text-muted: #756c64;
+  --line: #e4ddd3;
+  --border: #d5ccc1;
+  --radius-control: 22px;
+  --radius-card: 24px;
+  --radius-pill: 22px;
+  --shadow: 0 20px 50px -28px rgba(43, 36, 33, 0.24);
   --font-head: "Fredoka", system-ui, -apple-system, "Segoe UI", sans-serif;
   --font-body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
-
-  --header-h: 64px;
+  --header-h: 84px;
   --max-w: 1160px;
-  --gutter: max(6vw, 16px);
-
-  color-scheme: dark;
+  --gutter: clamp(20px, 5vw, 72px);
+  color-scheme: light;
 }
 
 /* --- Reset --------------------------------------------------------------- */
@@ -103,12 +102,12 @@ p {
 }
 
 a {
-  color: var(--orange);
+  color: var(--teal-deep);
   text-underline-offset: 0.18em;
 }
 
 a:hover {
-  color: #ee8a58;
+  color: var(--text-strong);
 }
 
 :focus-visible {
@@ -118,8 +117,8 @@ a:hover {
 }
 
 ::selection {
-  background: rgba(226, 112, 58, 0.45);
-  color: var(--cream);
+  background: #ffdccb;
+  color: var(--text-strong);
 }
 
 /* --- Utilities ----------------------------------------------------------- */
@@ -144,14 +143,14 @@ a:hover {
   padding: 10px 18px;
   border-radius: var(--radius-pill);
   background: var(--orange);
-  color: var(--bg);
+  color: var(--text-strong);
   font-weight: 600;
   text-decoration: none;
 }
 
 .skip-link:focus {
   top: 12px;
-  color: var(--bg);
+  color: var(--text-strong);
 }
 
 .container {
@@ -168,7 +167,7 @@ a:hover {
   top: 0;
   z-index: 50;
   height: var(--header-h);
-  background: rgba(33, 28, 25, 0.92);
+  background: rgba(246, 241, 232, 0.94);
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--line);
@@ -206,7 +205,7 @@ a:hover {
 .language-switch {
   display: inline-flex;
   padding: 3px;
-  border: 1px solid rgba(245, 237, 225, 0.16);
+  border: 1px solid var(--border);
   border-radius: var(--radius-pill);
 }
 
@@ -223,12 +222,12 @@ a:hover {
 }
 
 .language-switch a:hover {
-  color: var(--cream);
+  color: var(--text-strong);
 }
 
 .language-switch a[aria-current="page"] {
-  background: var(--cream);
-  color: var(--bg);
+  background: var(--teal);
+  color: var(--surface);
 }
 
 /* --- Buttons & pills ----------------------------------------------------- */
@@ -239,9 +238,9 @@ a:hover {
   gap: 6px;
   min-height: 40px;
   padding: 8px 18px;
-  border: 1px solid rgba(245, 237, 225, 0.16);
+  border: 1px solid var(--border);
   border-radius: var(--radius-pill);
-  color: var(--cream);
+  color: var(--text-strong);
   font-size: 0.9375rem;
   font-weight: 500;
   text-decoration: none;
@@ -250,9 +249,9 @@ a:hover {
 }
 
 .pill:hover {
-  color: var(--cream);
-  background: rgba(245, 237, 225, 0.06);
-  border-color: rgba(245, 237, 225, 0.28);
+  color: var(--text-strong);
+  background: var(--surface);
+  border-color: var(--teal);
 }
 
 .btn {
@@ -263,26 +262,26 @@ a:hover {
   min-height: 52px;
   padding: 14px 28px;
   border-radius: var(--radius-pill);
-  background: var(--orange);
-  /* Charcoal on orange: 5.2:1. Cream on this orange would fail AA. */
-  color: var(--bg);
+  background: var(--teal);
+  color: #fffcf7;
   font-weight: 600;
   font-size: 1.0625rem;
   text-decoration: none;
-  box-shadow: 0 16px 32px -16px rgba(226, 112, 58, 0.7);
+  box-shadow: none;
+  font-family: var(--font-head);
   transition: transform 0.2s, background-color 0.2s;
 }
 
 .btn:hover {
-  color: var(--bg);
-  background: #ec7f4a;
+  color: #fffcf7;
+  background: var(--teal-deep);
   transform: translateY(-1px);
 }
 
 /* --- Footer -------------------------------------------------------------- */
 
 .site-footer {
-  padding: 72px 0 56px;
+  padding: 44px 0;
   border-top: 1px solid var(--line);
   text-align: center;
   color: var(--text-muted);
@@ -311,7 +310,7 @@ a:hover {
 }
 
 .site-footer a:hover {
-  color: var(--cream);
+  color: var(--text-strong);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -345,4 +344,25 @@ a:hover {
   .site-header .pill {
     padding-inline: 12px;
   }
+}
+
+/* Compact app-style wordmark; legal pages use the full light logo. */
+.wordmark { display: inline-flex; align-items: center; gap: 10px; color: var(--text-strong); font-family: var(--font-head); font-size: 1.8rem; font-weight: 600; line-height: 1; text-decoration: none; }
+.wordmark__jar { color: var(--teal); }
+.wordmark img { width: 32px; height: 40px; object-fit: contain; }
+.site-header__nav .pill { border-color: transparent; font-size: .875rem; }
+.site-header__actions { gap: 16px; }
+.site-header__nav { gap: 4px; }
+.language-switch { background: var(--surface-secondary); border-color: transparent; border-radius: 14px; }
+.language-switch a { border-radius: 10px; }
+.language-switch a[aria-current="page"] { background: var(--surface); color: var(--teal-deep); box-shadow: 0 1px 4px #2b24210d; }
+.site-footer__inner { display: flex; justify-content: space-between; align-items: center; gap: 28px; flex-wrap: wrap; text-align: left; }
+.site-footer__brand p { margin-top: 12px; font-size: .8125rem; }
+.site-footer ul { margin: 0; font-size: .875rem; }
+@media (max-width: 760px) {
+  :root { --header-h: 72px; }
+  .site-header__nav .pill { display: none; }
+  .site-header__actions { gap: 8px; }
+  .wordmark { font-size: 1.55rem; }
+  .site-footer__inner { align-items: flex-start; flex-direction: column; }
 }
