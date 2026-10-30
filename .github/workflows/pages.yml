@@ -28,7 +28,7 @@ jobs:
       - name: Collect site files
         run: |
           mkdir _site
-          cp -r index.html policy imprint de css js img fonts _site/
+          cp -r index.html policy imprint delete-account de css js img fonts _site/
           # Trip and invite links, plus the
           # files that let iOS and Android open such a link in the app.
           cp -r t j .well-known _site/

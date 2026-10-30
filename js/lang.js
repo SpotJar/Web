@@ -3,7 +3,7 @@
    remembered and wins over detection from then on. */
 (function () {
   var KEY = 'spotjar-lang';
-  var DE = { '/': '/de/', '/policy/': '/de/datenschutz/', '/imprint/': '/de/impressum/' };
+  var DE = { '/': '/de/', '/policy/': '/de/datenschutz/', '/imprint/': '/de/impressum/', '/delete-account/': '/de/konto-loeschen/' };
   var stored = null;
   try { stored = localStorage.getItem(KEY); } catch (e) {}
 

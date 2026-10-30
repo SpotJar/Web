@@ -12,6 +12,8 @@ de/index.html               German landing page
 policy/ and imprint/        English legal pages
 de/datenschutz/             German privacy policy
 de/impressum/               German imprint
+de/konto-loeschen/          German account deletion instructions
+delete-account/            English account deletion instructions
 t/ and j/                   Shared-trip and group-invite app links
 css/base.css                Shared app palette, typography, header and footer
 css/landing.css             Responsive landing-page layout
