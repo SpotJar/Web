@@ -86,18 +86,18 @@ h2 { font-size: clamp(2rem, 3.2vw, 3rem); font-weight: 650; letter-spacing: -.01
 .wordmark__jar { position: relative; }
 .wordmark__jar::after { content: ''; position: absolute; width: 20px; height: 20px; top: -10px; right: -17px; background: var(--teal); mask: url('../img/doodles/rays.svg?v=2') center / contain no-repeat; transform: rotate(-35deg); }
 .heading--accent { padding-inline-end: .8em; }
-.text-highlight { padding: .025em .14em .065em; border-radius: .16em .22em .15em .2em; background: #d5eae6; color: var(--teal-deep); -webkit-box-decoration-break: clone; box-decoration-break: clone; }
-.feature--reverse .text-highlight { background: #ffdccb; color: #943b20; }
+.text-highlight { color: var(--teal-deep); }
+.feature--reverse .text-highlight { color: #943b20; }
 .sentence-end { position: relative; display: inline-block; white-space: nowrap; }
 .sentence-end::after { content: ''; position: absolute; left: calc(100% + .2em); bottom: -.06em; width: .52em; height: .52em; background: currentColor; mask: url('../img/doodles/rays.svg?v=2') center / contain no-repeat; pointer-events: none; }
-.download .text-highlight { background: #d5eae6; color: var(--teal-deep); }
-.hero__caption::before { content: ''; position: absolute; right: calc(100% + 5px); bottom: 4px; width: 58px; height: 42px; background: var(--teal); mask: url('../img/doodles/arrow.svg') center / contain no-repeat; transform: rotate(-95deg); }
+.download .text-highlight { color: #81bdb1; }
+.hero__caption::before { content: ''; position: absolute; right: calc(100% + 8px); bottom: 2px; width: 64px; height: 56px; background: currentColor; mask: url('../img/doodles/arrow.svg?v=2') center / contain no-repeat; pointer-events: none; }
 .art-caption { transform: rotate(-3deg); }
 .packing__tag { font-family: var(--font-head); font-size: 1rem; font-weight: 550; }
 .download__inner::after { width: 440px; height: 490px; aspect-ratio: auto; top: -70px; right: -80px; border: 0; border-radius: 0; background: url('../img/doodles/route.svg?v=2') center / contain no-repeat; opacity: .6; transform: rotate(15deg); }
 .download h2 { padding-bottom: .2em; }
 @media (max-width: 760px) {
-  .hero__caption::before { width: 42px; height: 32px; right: calc(100% + 2px); }
+  .hero__caption::before { width: 44px; height: 40px; right: calc(100% + 5px); }
 }
 @media (min-width: 1500px) { .hero { padding-top: 100px; padding-bottom: 90px; } }
 @media (max-width: 1000px) {
