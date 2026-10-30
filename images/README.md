@@ -5,7 +5,8 @@ partly with ChatGPT assistance. No unrelated stock images were added during the 
 This records the owner's statement; it is not independent clearance of every depicted element.
 
 - `img/illustrations/*.webp` are optimized copies of artwork in the sibling app repository's
-  `assets/images/illustrations/`. The source mapping is in the website README.
+  `assets/images/illustrations/`; `img/illustrations/spotjar-full.svg` and `img/marker-*.svg`
+  use the SVG originals from that repository. The source mapping is in the website README.
 - The app screenshots in `img/app-*` come from SpotJar. Map data, third-party pictures, logos and
   interfaces depicted inside a screenshot or illustration can have separate rights and usage
   conditions. Preserve visible provider attributions; review promotional usage independently.

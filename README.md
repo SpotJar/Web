@@ -36,14 +36,16 @@ Open <http://localhost:8000/de/> or <http://localhost:8000/>. The layout adapts 
 
 ## Artwork
 
-The optimized WebP illustrations come from `../app-spotjar/assets/images/illustrations/`:
+The illustrations come from `../app-spotjar/assets/images/illustrations/`. PNGs are optimized as transparent WebP images; the jar and map markers use the app's SVG originals.
 
 | Website asset | App source |
 | --- | --- |
-| `spotjar-full.webp` | `jar/SpotJar_full_open.png` |
+| `spotjar-full.svg` | `jar/SpotJar_Jar_Complete_Full_Open.svg` |
 | `save-a-spot.webp` | `onbaording_spotToJar.png` |
 | `plan-a-trip.webp` | `onbaording_jarToTrip.png` |
 | `pack-your-bag.webp` | `onbaording_packaging.png` |
+
+The four `img/marker-*.svg` files come from `../app-spotjar/assets/images/marker/` (`marker_open.svg`, `marker_viewed.svg`, `marker_mustSee.svg`, and `marker_favorite.svg`).
 
 Keep exported web artwork in `img/` so the existing deployment includes it. Source PNGs remain in the app. Screenshots have WebP sources and JPEG fallbacks in `img/`; update both language versions when replacing them.
 

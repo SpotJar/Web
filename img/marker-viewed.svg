@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 73 104" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:affinity="https://www.affinity.studio/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;">
+    <g transform="matrix(1,0,0,1,-251.142304,-41.570975)">
+        <g transform="matrix(0.705739,0.000291,-0.000291,0.705739,287.375118,76.152174)">
+            <path d="M0,-47C-35,-47 -52,-17 -49,11C-46,47 -17,81 0,96C17,81 46,47 49,11C52,-17 35,-47 0,-47Z" style="fill:url(#_Linear1);stroke:rgb(7,108,94);stroke-width:4px;"/>
+        </g>
+        <g transform="matrix(0.705739,0.000291,-0.000291,0.705739,287.375118,80.429378)">
+            <path d="M-25,2L-5,20L28,-19" style="fill:none;stroke:rgb(255,253,247);stroke-width:12px;stroke-linecap:round;"/>
+        </g>
+    </g>
+    <defs>
+        <linearGradient id="_Linear1" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(69.073688,143,-143,69.073688,-49.338349,-47)"><stop offset="0" style="stop-color:rgb(145,230,198);stop-opacity:1"/><stop offset="0.34" style="stop-color:rgb(72,195,154);stop-opacity:1"/><stop offset="0.79" style="stop-color:rgb(26,156,121);stop-opacity:1"/><stop offset="1" style="stop-color:rgb(8,120,92);stop-opacity:1"/></linearGradient>
+    </defs>
+</svg>
