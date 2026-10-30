@@ -7,7 +7,10 @@ This records the owner's statement; it is not independent clearance of every dep
 - `img/illustrations/*.webp` are optimized copies of artwork in the sibling app repository's
   `assets/images/illustrations/`; `img/illustrations/spotjar-full.svg` and `img/marker-*.svg`
   use the SVG originals from that repository. The source mapping is in the website README.
-- The app screenshots in `img/app-*` come from SpotJar. Map data, third-party pictures, logos and
+- The landing-page screenshots (`img/app-spot-list.*`, `img/app-trip-route.*`, and
+  `img/app-trip-days.*`) come from `../Marketing/Mocks/v1.1.3/`; the source mapping is in the
+  website README. Other app screenshots in `img/app-*` also come from SpotJar.
+  Map data, third-party pictures, logos and
   interfaces depicted inside a screenshot or illustration can have separate rights and usage
   conditions. Preserve visible provider attributions; review promotional usage independently.
 - The wordmark and other SpotJar artwork are supplied by the project owner.

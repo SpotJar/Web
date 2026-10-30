@@ -49,6 +49,14 @@ The four `img/marker-*.svg` files come from `../app-spotjar/assets/images/marker
 
 Keep exported web artwork in `img/` so the existing deployment includes it. Source PNGs remain in the app. Screenshots have WebP sources and JPEG fallbacks in `img/`; update both language versions when replacing them.
 
+The three landing-page screenshots come from `../Marketing/Mocks/v1.1.3/`, exported at 560 × 1216 pixels in both formats:
+
+| Website asset (WebP and JPEG) | Marketing source |
+| --- | --- |
+| `app-spot-list` | `2.png` — populated spot list |
+| `app-trip-route` | `6.png` — Kyoto trip map |
+| `app-trip-days` | `5.png` — Kyoto day plan |
+
 ## Deploying
 
 The existing GitHub Actions workflow deploys pushes to `main` to GitHub Pages. It copies the static files without a build step. This repository uses the custom domain `spotjar.app`; preserve `CNAME`, `.well-known/` and the `t/` and `j/` app-link pages.
