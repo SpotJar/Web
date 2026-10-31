@@ -1,5 +1,5 @@
 /* AppPalette.light and optimized onboarding artwork from the Flutter app. */
-:root { --section-space: clamp(72px, 9vw, 132px); }
+:root { --section-space: clamp(72px, 9vw, 132px); --highlight-orange: #de3c0a; }
 section[id] { scroll-margin-top: calc(var(--header-h) + 24px); }
 h1 { font-size: clamp(3rem, 5.25vw, 4.75rem); font-weight: 700; line-height: 1.02; letter-spacing: -.025em; }
 h2 { font-size: clamp(2rem, 3.2vw, 3rem); font-weight: 650; letter-spacing: -.015em; line-height: 1.13; text-wrap: balance; }
@@ -26,7 +26,7 @@ h2 { font-size: clamp(2rem, 3.2vw, 3rem); font-weight: 650; letter-spacing: -.01
 .hero__route { position: absolute; z-index: -1; width: 115%; max-width: none; height: 115%; object-fit: contain; pointer-events: none; }
 .hero__caption { display: flex; align-items: center; gap: .5em; width: 66.6667%; margin-inline-start: 33.3333%; font-family: var(--font-head); color: var(--teal-deep); font-size: min(1.25rem, 3.8cqi); font-weight: 600; line-height: 1.35; white-space: nowrap; transform: rotate(-4deg); }
 .hero__caption::before { content: ''; display: block; flex: 0 0 2.7em; width: 2.7em; aspect-ratio: 72 / 64; background: currentColor; mask: url('../img/doodles/arrow.svg?v=2') center / contain no-repeat; pointer-events: none; }
-.hero__caption-text { flex: 0 0 auto; }
+.hero__caption-text { flex: 0 0 auto; transform: translateY(-.86em); }
 .journey__steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; list-style: none; margin: 0; padding: 30px 0; border-block: 1px solid var(--border); }
 .journey__steps li { display: flex; gap: 15px; align-items: flex-start; }
 .journey__number { flex: 0 0 auto; display: grid; place-items: center; width: 40px; height: 40px; border-radius: 14px; background: #d5eae6; color: var(--teal-deep); font-family: var(--font-head); font-size: 1.125rem; }
@@ -44,6 +44,7 @@ h2 { font-size: clamp(2rem, 3.2vw, 3rem); font-weight: 650; letter-spacing: -.01
 .feature--reverse .feature__visual { order: 2; }
 .feature-list { display: grid; gap: 22px; padding: 0; margin: 28px 0 0; list-style: none; }
 .feature-list li { display: flex; align-items: flex-start; gap: 12px; }
+.feature-list li::before { content: ''; flex: 0 0 auto; width: 15px; height: 22px; margin-top: 4px; background: var(--text-strong); mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-52 -50 104 150'%3E%3Cpath fill-rule='evenodd' d='M0,-47C-35,-47-52,-17-49,11C-46,47-17,81 0,96C17,81 46,47 49,11C52,-17 35,-47 0,-47ZM0,-12a16,16 0 1,0 .01,0Z'/%3E%3C/svg%3E") center / contain no-repeat; }
 .feature-list h3 { font-family: var(--font-head); font-size: 1.0625rem; font-weight: 550; line-height: 1.5; margin: 1px 0 5px; }
 .feature-list p { font-size: .8125rem; line-height: 1.75; }
 .statuses { display: flex; flex-wrap: wrap; gap: 8px 14px; border-top: 1px solid var(--line); padding-top: 22px; margin-top: 26px; }
@@ -73,9 +74,12 @@ h2 { font-size: clamp(2rem, 3.2vw, 3rem); font-weight: 650; letter-spacing: -.01
 .download__lead { font-size: .9375rem; margin: 20px 0 26px; line-height: 1.8; }
 .download__inner > img { width: 100%; max-width: 260px; justify-self: center; transform: rotate(12deg); }
 /* Hand-drawn accents echo the printed SpotJar artwork. */
+.text-highlight { color: var(--teal); }
+.feature--reverse .text-highlight { color: var(--highlight-orange); }
+.download .text-highlight { color: var(--teal); }
 .sentence-end { position: relative; display: inline-block; white-space: nowrap; }
 .art-caption { transform: rotate(-3deg); }
-.download__inner::after { width: 440px; height: 490px; aspect-ratio: auto; top: -70px; right: -80px; border: 0; border-radius: 0; background: url('../img/doodles/route.svg?v=2') center / contain no-repeat; opacity: .6; transform: rotate(15deg); }
+.download__inner::after { width: 440px; height: 490px; aspect-ratio: auto; top: -70px; right: -80px; border: 0; border-radius: 0; background: url('../img/doodles/route.svg?v=3') center / contain no-repeat; opacity: .6; transform: rotate(15deg); }
 .download h2 { padding-bottom: .2em; }
 @media (min-width: 1500px) { .hero { padding-top: 100px; padding-bottom: 90px; } }
 @media (max-width: 1000px) {
