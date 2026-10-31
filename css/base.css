@@ -355,10 +355,6 @@ a:hover {
   }
 }
 
-/* Compact app-style wordmark; legal pages use the full light logo. */
-.wordmark { display: inline-flex; align-items: center; gap: 10px; color: var(--text-strong); font-family: var(--font-head); font-size: 1.8rem; font-weight: 600; line-height: 1; text-decoration: none; }
-.wordmark__jar { color: var(--teal); }
-.wordmark img { width: 32px; height: 40px; object-fit: contain; }
 .site-header__nav .pill { border-color: transparent; font-size: .875rem; }
 .site-header__actions { gap: 16px; }
 .site-header__nav { gap: 4px; }
@@ -366,6 +362,8 @@ a:hover {
 .language-switch a { border-radius: 10px; }
 .language-switch a[aria-current="page"] { background: var(--surface); color: var(--teal-deep); box-shadow: 0 1px 4px #2b24210d; }
 .site-footer__inner { display: flex; justify-content: space-between; align-items: center; gap: 28px; flex-wrap: wrap; text-align: left; }
+.site-footer__logo { display: inline-block; vertical-align: top; }
+.site-footer__logo img { width: auto; height: 52px; margin: 0; opacity: 1; }
 .site-footer__brand p { margin-top: 12px; font-size: .8125rem; }
 .site-footer ul { margin: 0; font-size: .875rem; }
 @media (max-width: 760px) {
@@ -373,6 +371,6 @@ a:hover {
   .site-header__logo img { height: 44px; }
   .site-header__nav .pill { display: none; }
   .site-header__actions { gap: 8px; }
-  .wordmark { font-size: 1.55rem; }
+  .site-footer__logo img { height: 44px; }
   .site-footer__inner { align-items: flex-start; flex-direction: column; }
 }
