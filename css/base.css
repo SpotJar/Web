@@ -86,15 +86,6 @@ img {
   height: auto;
 }
 
-/* Hide the decorative rays embedded in the logos, keeping the lettering intact. */
-img[src$="/logo_lightMode.png"] {
-  clip-path: polygon(0 0, 92% 0, 92% 30%, 95% 35%, 100% 35%, 100% 100%, 0 100%);
-}
-
-img[src$="/logo-light.webp"] {
-  clip-path: polygon(0 0, 88% 0, 88% 27%, 94% 36%, 100% 36%, 100% 100%, 0 100%);
-}
-
 h1,
 h2,
 h3,
