@@ -24,9 +24,9 @@ h2 { font-size: clamp(2rem, 3.2vw, 3rem); font-weight: 650; letter-spacing: -.01
 .hero__art::before { content: ''; position: absolute; width: 100%; aspect-ratio: 1; z-index: -2; background: radial-gradient(closest-side, #e7e8da 30%, #e7e8da99 60%, #e7e8da00 100%); pointer-events: none; }
 .hero__jar { width: min(100%, 390px); transform: rotate(7deg); }
 .hero__route { position: absolute; z-index: -1; width: 115%; max-width: none; height: 115%; object-fit: contain; pointer-events: none; }
-.hero__caption { display: flex; align-items: center; gap: .5em; width: 66.6667%; margin-inline-start: 33.3333%; font-family: var(--font-head); color: var(--teal-deep); font-size: min(1.25rem, 3.8cqi); font-weight: 600; line-height: 1.35; white-space: nowrap; transform: rotate(-4deg); }
-.hero__caption::before { content: ''; display: block; flex: 0 0 2.7em; width: 2.7em; aspect-ratio: 72 / 64; background: currentColor; mask: url('../img/doodles/arrow.svg?v=2') center / contain no-repeat; pointer-events: none; transform: translateY(-1.65em); }
-.hero__caption-text { flex: 0 0 auto; transform: translateY(-.86em); }
+.hero__caption { display: flex; align-items: center; gap: .5em; width: 66.6667%; margin-inline-start: 33.3333%; margin-top: -50px; font-family: var(--font-head); color: var(--teal-deep); font-size: min(1.25rem, 3.8cqi); font-weight: 600; line-height: 1.35; white-space: nowrap; transform: rotate(-4deg); }
+.hero__caption::before { content: ''; display: block; flex: 0 0 2.7em; width: 2.7em; aspect-ratio: 72 / 64; background: currentColor; mask: url('../img/doodles/arrow.svg?v=2') center / contain no-repeat; pointer-events: none; }
+.hero__caption-text { flex: 0 0 auto; margin-top: 20px; }
 .journey__steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; list-style: none; margin: 0; padding: 30px 0; border-block: 1px solid var(--border); }
 .journey__steps li { display: flex; gap: 15px; align-items: flex-start; }
 .journey__number { flex: 0 0 auto; display: grid; place-items: center; width: 40px; height: 40px; border-radius: 14px; background: #d5eae6; color: var(--teal-deep); font-family: var(--font-head); font-size: 1.125rem; }
