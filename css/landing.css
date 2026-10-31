@@ -1,5 +1,5 @@
 /* AppPalette.light and optimized onboarding artwork from the Flutter app. */
-:root { --section-space: clamp(72px, 9vw, 132px); }
+:root { --section-space: clamp(72px, 9vw, 132px); --highlight-orange: #de3c0a; }
 section[id] { scroll-margin-top: calc(var(--header-h) + 24px); }
 h1 { font-size: clamp(3rem, 5.25vw, 4.75rem); font-weight: 700; line-height: 1.02; letter-spacing: -.025em; }
 h2 { font-size: clamp(2rem, 3.2vw, 3rem); font-weight: 650; letter-spacing: -.015em; line-height: 1.13; text-wrap: balance; }
@@ -21,15 +21,17 @@ h2 { font-size: clamp(2rem, 3.2vw, 3rem); font-weight: 650; letter-spacing: -.01
 .hero__android { font-size: .75rem; margin-top: 8px; color: var(--text-muted); }
 .hero__note { display: flex; align-items: center; gap: 7px; margin-top: 26px; font-size: .75rem; line-height: 1.6; }
 .hero__note svg { color: var(--teal); flex-shrink: 0; }
-.hero__visual { position: relative; min-width: 0; display: grid; place-items: center; isolation: isolate; padding: 0 35px 28px; }
-.hero__visual::before { content: ''; position: absolute; width: 94%; aspect-ratio: 1; border-radius: 50%; z-index: -2; background: #e7e8da; }
-.hero__jar { width: min(100%, 390px); transform: rotate(7deg); filter: drop-shadow(0 24px 20px #5d473319); }
+.hero__visual { min-width: 0; display: grid; place-items: center; gap: 38px; }
+.hero__art { position: relative; min-width: 0; width: 100%; display: grid; place-items: center; isolation: isolate; padding: 0 35px 28px; }
+/* Fade the backdrop fully inside its bounds; SVG filter shadows can clip in Safari. */
+.hero__art::before { content: ''; position: absolute; width: 100%; aspect-ratio: 1; z-index: -2; background: radial-gradient(closest-side, #e7e8da 30%, #e7e8da99 60%, #e7e8da00 100%); pointer-events: none; }
+.hero__jar { width: min(100%, 390px); transform: rotate(7deg); }
 .hero__route { position: absolute; z-index: -1; width: 115%; max-width: none; height: 115%; object-fit: contain; pointer-events: none; }
 .floating-label { position: absolute; display: inline-flex; align-items: center; gap: 8px; padding: 11px 16px; border: 1px solid var(--line); border-radius: 15px; background: var(--surface); color: var(--text-strong); font-family: var(--font-head); font-size: .9375rem; font-weight: 550; box-shadow: var(--shadow); white-space: nowrap; }
 .floating-label--one { top: 25%; right: -12px; transform: rotate(7deg); }
 .floating-label--two { bottom: 22%; left: -22px; transform: rotate(-7deg); }
 .floating-label img { width: 18px; height: 24px; object-fit: contain; flex: 0 0 auto; }
-.hero__caption { position: absolute; bottom: -13px; font-family: var(--font-head); color: var(--teal-deep); font-size: 1.0625rem; font-weight: 550; transform: rotate(-4deg); }
+.hero__caption { position: relative; width: max-content; max-width: calc(100% - 40px); font-family: var(--font-head); color: var(--teal-deep); font-size: clamp(1rem, 1.6vw, 1.25rem); font-weight: 600; line-height: 1.35; text-align: center; transform: rotate(-4deg); }
 .journey__steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; list-style: none; margin: 0; padding: 30px 0; border-block: 1px solid var(--border); }
 .journey__steps li { display: flex; gap: 15px; align-items: flex-start; }
 .journey__number { flex: 0 0 auto; display: grid; place-items: center; width: 40px; height: 40px; border-radius: 14px; background: #d5eae6; color: var(--teal-deep); font-family: var(--font-head); font-size: 1.125rem; }
@@ -71,7 +73,8 @@ h2 { font-size: clamp(2rem, 3.2vw, 3rem); font-weight: 650; letter-spacing: -.01
 .app-shot figcaption { min-height: 106px; }
 .app-shot h3 { font-size: 1.5rem; font-weight: 600; }
 .app-shot p { margin-top: 8px; max-width: 240px; font-size: .75rem; line-height: 1.7; }
-.app-shot__frame { max-width: 245px; margin: 0 auto -40px; padding: 6px; border: 1px solid #5a4d46; border-radius: 30px; background: #2b2421; box-shadow: 0 20px 40px #2b242121; }
+/* The phones extend past the cards, so omit shadows that would be cut off there. */
+.app-shot__frame { max-width: 245px; margin: 0 auto -40px; padding: 6px; border: 1px solid #5a4d46; border-radius: 30px; background: #2b2421; }
 .app-shot__frame img { border-radius: 24px; width: 100%; }
 .download { margin-top: var(--section-space); margin-bottom: 72px; }
 .download__inner { position: relative; isolation: isolate; display: grid; grid-template-columns: 1.3fr .7fr; align-items: center; gap: 44px; padding: clamp(30px, 5vw, 70px); border-radius: 28px; overflow: hidden; background: #2b2421; color: #c6bdb4; }
@@ -83,26 +86,19 @@ h2 { font-size: clamp(2rem, 3.2vw, 3rem); font-weight: 650; letter-spacing: -.01
 .download__inner > img { width: 100%; max-width: 260px; justify-self: center; transform: rotate(12deg); }
 /* Hand-drawn accents echo the printed SpotJar artwork. */
 .wordmark { font-weight: 650; letter-spacing: -.025em; }
-.wordmark__jar { position: relative; }
-.wordmark__jar::after { content: ''; position: absolute; width: 20px; height: 20px; top: -10px; right: -17px; background: var(--teal); mask: url('../img/doodles/rays.svg?v=2') center / contain no-repeat; transform: rotate(-35deg); }
-.heading--accent { padding-inline-end: .8em; }
-.text-highlight { color: var(--teal-deep); }
-.feature--reverse .text-highlight { color: #943b20; }
+.text-highlight { color: var(--teal); }
+.feature--reverse .text-highlight { color: var(--highlight-orange); }
 .sentence-end { position: relative; display: inline-block; white-space: nowrap; }
-.sentence-end::after { content: ''; position: absolute; left: calc(100% + .2em); bottom: -.06em; width: .52em; height: .52em; background: currentColor; mask: url('../img/doodles/rays.svg?v=2') center / contain no-repeat; pointer-events: none; }
-.download .text-highlight { color: #81bdb1; }
-.hero__caption::before { content: ''; position: absolute; right: calc(100% + 8px); bottom: 2px; width: 64px; height: 56px; background: currentColor; mask: url('../img/doodles/arrow.svg?v=2') center / contain no-repeat; pointer-events: none; }
+.download .text-highlight { color: var(--teal); }
+.hero__art::after { content: ''; position: absolute; left: 12%; bottom: -28px; width: 64px; height: 56px; background: var(--teal-deep); mask: url('../img/doodles/arrow.svg?v=2') center / contain no-repeat; pointer-events: none; transform: rotate(-10deg); }
 .art-caption { transform: rotate(-3deg); }
 .packing__tag { font-family: var(--font-head); font-size: 1rem; font-weight: 550; }
 .download__inner::after { width: 440px; height: 490px; aspect-ratio: auto; top: -70px; right: -80px; border: 0; border-radius: 0; background: url('../img/doodles/route.svg?v=2') center / contain no-repeat; opacity: .6; transform: rotate(15deg); }
 .download h2 { padding-bottom: .2em; }
-@media (max-width: 760px) {
-  .hero__caption::before { width: 44px; height: 40px; right: calc(100% + 5px); }
-}
 @media (min-width: 1500px) { .hero { padding-top: 100px; padding-bottom: 90px; } }
 @media (max-width: 1000px) {
   .hero__inner { gap: 24px; }
-  .hero__visual { padding-inline: 25px; }
+  .hero__art { padding-inline: 25px; }
   .floating-label { font-size: .6875rem; padding: 9px 12px; }
   .floating-label--one { right: -6px; }
   .floating-label--two { left: -10px; }
@@ -122,11 +118,12 @@ h2 { font-size: clamp(2rem, 3.2vw, 3rem); font-weight: 650; letter-spacing: -.01
   .hero__copy { max-width: 560px; }
   .hero h1 { margin-top: 18px; }
   .hero__lead { font-size: 1rem; margin-top: 20px; }
-  .hero__visual { width: min(100%, 410px); justify-self: center; padding-inline: 35px; }
+  .hero__visual { width: min(100%, 410px); justify-self: center; gap: 30px; }
+  .hero__art { padding-inline: 35px; }
   .hero__jar { max-width: 300px; }
   .floating-label--one { right: 0; }
   .floating-label--two { left: 0; }
-  .hero__caption { bottom: -5px; font-size: .875rem; }
+  .hero__art::after { width: 44px; height: 40px; bottom: -22px; }
   .journey__steps { grid-template-columns: 1fr; gap: 22px; padding-block: 28px; }
   .journey__steps li { gap: 16px; align-items: center; }
   .journey p { max-width: none; }
