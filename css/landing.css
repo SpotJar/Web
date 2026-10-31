@@ -1,9 +1,8 @@
 /* AppPalette.light and optimized onboarding artwork from the Flutter app. */
-:root { --section-space: clamp(72px, 9vw, 132px); --highlight-orange: #de3c0a; }
+:root { --section-space: clamp(72px, 9vw, 132px); }
 section[id] { scroll-margin-top: calc(var(--header-h) + 24px); }
 h1 { font-size: clamp(3rem, 5.25vw, 4.75rem); font-weight: 700; line-height: 1.02; letter-spacing: -.025em; }
 h2 { font-size: clamp(2rem, 3.2vw, 3rem); font-weight: 650; letter-spacing: -.015em; line-height: 1.13; text-wrap: balance; }
-.eyebrow { display: flex; align-items: center; gap: 9px; color: var(--teal-deep); font-family: var(--font-head); font-size: .9375rem; font-weight: 550; letter-spacing: .015em; line-height: 1.5; }
 .hero { padding: clamp(40px, 6vw, 86px) 0 64px; }
 .hero__inner { display: grid; grid-template-columns: 1.12fr 1fr; align-items: center; gap: 40px; }
 .hero__copy { position: relative; z-index: 2; }
@@ -17,7 +16,6 @@ h2 { font-size: clamp(2rem, 3.2vw, 3rem); font-weight: 650; letter-spacing: -.01
 .text-link { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; font-size: .875rem; font-weight: 600; text-decoration: none; }
 .text-link svg { transition: transform .2s; }
 .text-link:hover svg { transform: translate(2px, -2px); }
-.hero__android { font-size: .75rem; margin-top: 8px; color: var(--text-muted); }
 .hero__note { display: flex; align-items: center; gap: 7px; margin-top: 26px; font-size: .75rem; line-height: 1.6; }
 .hero__note svg { color: var(--teal); flex-shrink: 0; }
 .hero__visual { min-width: 0; display: grid; place-items: center; gap: 22px; container-type: inline-size; }
@@ -26,10 +24,6 @@ h2 { font-size: clamp(2rem, 3.2vw, 3rem); font-weight: 650; letter-spacing: -.01
 .hero__art::before { content: ''; position: absolute; width: 100%; aspect-ratio: 1; z-index: -2; background: radial-gradient(closest-side, #e7e8da 30%, #e7e8da99 60%, #e7e8da00 100%); pointer-events: none; }
 .hero__jar { width: min(100%, 390px); transform: rotate(7deg); }
 .hero__route { position: absolute; z-index: -1; width: 115%; max-width: none; height: 115%; object-fit: contain; pointer-events: none; }
-.floating-label { position: absolute; display: inline-flex; align-items: center; gap: 8px; padding: 11px 16px; border: 1px solid var(--line); border-radius: 15px; background: var(--surface); color: var(--text-strong); font-family: var(--font-head); font-size: .9375rem; font-weight: 550; box-shadow: var(--shadow); white-space: nowrap; }
-.floating-label--one { top: 25%; right: -12px; transform: rotate(7deg); }
-.floating-label--two { bottom: 22%; left: -22px; transform: rotate(-7deg); }
-.floating-label img { width: 18px; height: 24px; object-fit: contain; flex: 0 0 auto; }
 .hero__caption { display: flex; align-items: center; gap: .5em; width: 66.6667%; margin-inline-start: 33.3333%; font-family: var(--font-head); color: var(--teal-deep); font-size: min(1.25rem, 3.8cqi); font-weight: 600; line-height: 1.35; white-space: nowrap; transform: rotate(-4deg); }
 .hero__caption::before { content: ''; display: block; flex: 0 0 2.7em; width: 2.7em; aspect-ratio: 72 / 64; background: currentColor; mask: url('../img/doodles/arrow.svg?v=2') center / contain no-repeat; pointer-events: none; }
 .hero__caption-text { flex: 0 0 auto; }
@@ -41,7 +35,6 @@ h2 { font-size: clamp(2rem, 3.2vw, 3rem); font-weight: 650; letter-spacing: -.01
 .journey h3 { font-size: 1.25rem; font-weight: 600; margin: 0 0 6px; }
 .journey p { font-size: .8125rem; line-height: 1.7; max-width: 245px; }
 .feature { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: clamp(32px, 7vw, 100px); margin-top: var(--section-space); }
-.feature__copy .eyebrow, .packing__copy .eyebrow { margin-bottom: 16px; }
 .feature__intro { margin-top: 24px; font-size: .9375rem; line-height: 1.85; }
 .feature__visual { min-width: 0; position: relative; padding: 26px; border-radius: 28px; background: #ece8de; }
 .feature__visual--save { background: #e6ebe1; }
@@ -51,7 +44,6 @@ h2 { font-size: clamp(2rem, 3.2vw, 3rem); font-weight: 650; letter-spacing: -.01
 .feature--reverse .feature__visual { order: 2; }
 .feature-list { display: grid; gap: 22px; padding: 0; margin: 28px 0 0; list-style: none; }
 .feature-list li { display: flex; align-items: flex-start; gap: 12px; }
-.feature-list__icon { display: grid; place-items: center; width: 28px; height: 28px; flex: 0 0 auto; border-radius: 10px; background: #d5eae6; color: var(--teal-deep); }
 .feature-list h3 { font-family: var(--font-head); font-size: 1.0625rem; font-weight: 550; line-height: 1.5; margin: 1px 0 5px; }
 .feature-list p { font-size: .8125rem; line-height: 1.75; }
 .statuses { display: flex; flex-wrap: wrap; gap: 8px 14px; border-top: 1px solid var(--line); padding-top: 22px; margin-top: 26px; }
@@ -60,12 +52,9 @@ h2 { font-size: clamp(2rem, 3.2vw, 3rem); font-weight: 650; letter-spacing: -.01
 .packing { margin-top: var(--section-space); }
 .packing__inner { display: grid; grid-template-columns: 1.1fr 1fr; align-items: center; gap: 36px; padding: clamp(26px, 4vw, 56px); background: var(--surface); border: 1px solid var(--line); border-radius: 28px; overflow: hidden; }
 .packing__copy { max-width: 540px; }
-.packing__tag { display: flex; align-items: center; gap: 8px; margin-top: 25px; color: var(--teal-deep); font-size: .8125rem; font-weight: 500; }
-.packing__tag svg { flex-shrink: 0; }
 .packing__art { width: 100%; }
 .app-preview { padding-top: var(--section-space); }
 .section-heading { text-align: center; margin-bottom: 44px; }
-.section-heading .eyebrow { justify-content: center; margin-bottom: 14px; }
 .section-heading > p:last-child { margin-top: 18px; font-size: .9375rem; }
 .app-shots { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
 .app-shot { margin: 0; min-width: 0; padding: 26px 24px 0; border-radius: 24px; background: #e6e9df; overflow: hidden; }
@@ -81,26 +70,17 @@ h2 { font-size: clamp(2rem, 3.2vw, 3rem); font-weight: 650; letter-spacing: -.01
 .download__inner { position: relative; isolation: isolate; display: grid; grid-template-columns: 1.3fr .7fr; align-items: center; gap: 44px; padding: clamp(30px, 5vw, 70px); border-radius: 28px; overflow: hidden; background: #2b2421; color: #c6bdb4; }
 .download__inner::after { content: ''; position: absolute; z-index: -1; right: -50px; top: -40px; width: 440px; aspect-ratio: 1; border: 1px solid #463b36; border-radius: 50%; }
 .download h2 { color: #f6f1e8; font-size: clamp(2.125rem, 3.8vw, 3.5rem); }
-.download .eyebrow { color: #81bdb1; margin-bottom: 16px; }
 .download__lead { font-size: .9375rem; margin: 20px 0 26px; line-height: 1.8; }
-.download__android { font-size: .75rem; margin-top: 10px; }
 .download__inner > img { width: 100%; max-width: 260px; justify-self: center; transform: rotate(12deg); }
 /* Hand-drawn accents echo the printed SpotJar artwork. */
-.text-highlight { color: var(--teal); }
-.feature--reverse .text-highlight { color: var(--highlight-orange); }
 .sentence-end { position: relative; display: inline-block; white-space: nowrap; }
-.download .text-highlight { color: var(--teal); }
 .art-caption { transform: rotate(-3deg); }
-.packing__tag { font-family: var(--font-head); font-size: 1rem; font-weight: 550; }
 .download__inner::after { width: 440px; height: 490px; aspect-ratio: auto; top: -70px; right: -80px; border: 0; border-radius: 0; background: url('../img/doodles/route.svg?v=2') center / contain no-repeat; opacity: .6; transform: rotate(15deg); }
 .download h2 { padding-bottom: .2em; }
 @media (min-width: 1500px) { .hero { padding-top: 100px; padding-bottom: 90px; } }
 @media (max-width: 1000px) {
   .hero__inner { gap: 24px; }
   .hero__art { padding-inline: 25px; }
-  .floating-label { font-size: .6875rem; padding: 9px 12px; }
-  .floating-label--one { right: -6px; }
-  .floating-label--two { left: -10px; }
   .hero__actions { gap: 12px; }
   .journey__steps { gap: 20px; }
   .journey__steps li { gap: 10px; }
@@ -120,8 +100,6 @@ h2 { font-size: clamp(2rem, 3.2vw, 3rem); font-weight: 650; letter-spacing: -.01
   .hero__visual { width: min(100%, 410px); justify-self: center; gap: 18px; }
   .hero__art { padding-inline: 35px; }
   .hero__jar { max-width: 300px; }
-  .floating-label--one { right: 0; }
-  .floating-label--two { left: 0; }
   .journey__steps { grid-template-columns: 1fr; gap: 22px; padding-block: 28px; }
   .journey__steps li { gap: 16px; align-items: center; }
   .journey p { max-width: none; }
@@ -141,7 +119,6 @@ h2 { font-size: clamp(2rem, 3.2vw, 3rem); font-weight: 650; letter-spacing: -.01
   .app-shot__frame img { border-radius: 17px; }
   .app-shot h3 { font-size: 1.25rem; }
   .section-heading { text-align: left; margin-bottom: 30px; }
-  .section-heading .eyebrow { justify-content: flex-start; }
   .download { margin-bottom: 48px; }
   .download__inner { grid-template-columns: 1fr; gap: 30px; }
   .download__inner > img { max-width: 180px; margin-bottom: -70px; justify-self: end; }
@@ -151,7 +128,6 @@ h2 { font-size: clamp(2rem, 3.2vw, 3rem); font-weight: 650; letter-spacing: -.01
   h1 { font-size: 2.45rem; }
   .hero__actions { gap: 8px; }
   .text-link { font-size: .8125rem; }
-  .eyebrow { font-size: .8125rem; }
   .packing__inner { padding: 22px; }
   .app-shot { padding-inline: 14px; }
 }
