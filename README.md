@@ -54,8 +54,8 @@ The three landing-page screenshots come from `../Marketing/Mocks/v1.1.3/`, expor
 | Website asset (WebP and JPEG) | Marketing source |
 | --- | --- |
 | `app-spot-list` | `2.png` — populated spot list |
-| `app-trip-route` | `6.png` — Kyoto trip map |
-| `app-trip-days` | `5.png` — Kyoto day plan |
+| `app-trip-route` | `5.png` — Kyoto trip map |
+| `app-trip-days` | `4.png` — Kyoto day plan |
 
 ## Deploying
 
